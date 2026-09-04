@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Recommendation Observatory | AI-Recommendable (V2)</title>
+<meta name="description" content="Original research, benchmarks and experiments exploring how AI platforms discover, evaluate and recommend businesses. The AI Recommendation Observatory is the research and intelligence hub for the AI Recommendation Economy.">
+<meta property="og:title" content="AI Recommendation Observatory | AI-Recommendable">
+<meta property="og:description" content="Original research, benchmarks and experiments exploring how AI platforms discover, evaluate and recommend businesses.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in-view{opacity:1;transform:none}
+h1,h2,h3{letter-spacing:-0.02em}
+.research-card{transition:all .3s ease}
+.research-card:hover{transform:translateY(-2px);box-shadow:0 20px 40px -20px rgba(0,0,0,0.4);border-color:#fbbf24}
+.status-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:9999px;font-size:11px;font-weight:700;letter-spacing:0.05em}
+.section-cta{margin-top:3rem;text-align:center}
+</style>
+</head>
+<body class="antialiased bg-zinc-950 text-white">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-500/30 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable</span></div><div class="text-sm font-semibold tracking-wider text-amber-400">Know Your Visibility. Build Your Readiness.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
+<a href="/" class="block text-white transition py-2 font-semibold">Home</a>
+<a href="/how-it-works" class="block text-zinc-400 hover:text-white transition py-2">How It Works</a>
+<a href="/pricing" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
+<a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a>
+<a href="/blog" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
+<a href="/ai-readiness" class="block text-zinc-400 hover:text-white transition py-2">AI Readiness</a>
+<a href="/observatory" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
+<a href="/research" class="block text-zinc-400 hover:text-white transition py-2">Research</a>
+<a href="/contact" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
+<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE AI Visibility Report →</a>
+</div></nav>
+
+<!-- ===== HERO ===== -->
+<section class="relative pt-20 sm:pt-36 pb-20 sm:pb-20 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)">
+<div class="relative max-w-6xl mx-auto px-6">
+<div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">AI Recommendation Observatory™</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">How Does AI Decide Which Businesses to Recommend?</h1>
+<p class="mt-6 text-lg text-purple-200/80 max-w-xl">Original research, benchmarks, experiments and intelligence exploring how AI platforms discover, evaluate and recommend businesses.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="#research" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">EXPLORE THE RESEARCH →</a>
+<a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:border-amber-400">GET YOUR AI VISIBILITY REPORT</a>
+</div>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-8">
+<p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-6">The Emerging AI Recommendation Journey</p>
+<div class="space-y-5">
+<div><div class="text-sm font-bold text-white">BUSINESS</div><p class="text-xs text-zinc-500 mt-1">Your online presence and digital identity</p></div>
+<div class="flex items-center gap-2 text-amber-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+<div><div class="text-sm font-bold text-white">AI DISCOVERY</div><p class="text-xs text-zinc-500 mt-1">Can AI find your business?</p></div>
+<div class="flex items-center gap-2 text-amber-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+<div><div class="text-sm font-bold text-white">AI EVALUATION</div><p class="text-xs text-zinc-500 mt-1">How AI assesses your signals</p></div>
+<div class="flex items-center gap-2 text-amber-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+<div><div class="text-sm font-bold text-white">AI RECOMMENDATION</div><p class="text-xs text-zinc-500 mt-1">Will AI recommend you?</p></div>
+<div class="flex items-center gap-2 text-amber-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+<div><div class="text-sm font-bold text-white">CUSTOMER DECISION</div><p class="text-xs text-zinc-500 mt-1">The customer acts on the recommendation</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== INTRODUCTION ===== -->
+<div class="max-w-6xl mx-auto px-6 pt-24"><a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-amber-400 transition">← Back to Home</a></div>
+<section class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl">
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">AI Is Becoming Part of the Buying Journey.</h2>
+<p class="mt-6 text-zinc-400 leading-relaxed">When someone asks an AI platform:</p>
+<ul class="mt-4 space-y-2 text-zinc-400 italic">
+<li>"Who are the best accountants in London?"</li>
+<li>"Which dentist should I use?"</li>
+<li>"What is the best estate agent near me?"</li>
+<li>"Which marketing agency would you recommend?"</li>
+</ul>
+<p class="mt-6 text-zinc-400 leading-relaxed">the platform is no longer simply returning a traditional list of search results. It is interpreting the question, evaluating available information and generating a recommendation. This creates a new competitive environment: <span class="text-white font-semibold">The AI Recommendation Economy.</span></p>
+<p class="mt-4 text-zinc-400 leading-relaxed">The AI Recommendation Observatory exists to understand it.</p>
+</div>
+<div class="mt-14 grid sm:grid-cols-3 gap-6">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card"><div class="text-2xl mb-3">🔍</div><h3 class="font-bold text-white text-lg">AI DISCOVERY</h3><p class="text-sm text-zinc-400 mt-2">Can AI find your business? Measuring whether AI platforms can identify and surface your business in relevant responses.</p></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card"><div class="text-2xl mb-3">🤝</div><h3 class="font-bold text-white text-lg">AI RECOMMENDATION</h3><p class="text-sm text-zinc-400 mt-2">Will AI recommend your business? Measuring whether AI actively endorses your business in responses.</p></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card"><div class="text-2xl mb-3">🎯</div><h3 class="font-bold text-white text-lg">AI PREFERENCE</h3><p class="text-sm text-zinc-400 mt-2">Will AI favour your business over competitors? Measuring whether AI prioritises you in comparative responses.</p></div>
+</div>
+<div class="section-cta">
+<a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">SEE WHERE YOUR BUSINESS STANDS IN THE AI RECOMMENDATION ECONOMY →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== RESEARCH ENGINE ===== -->
+<section id="research" class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">The Research Engine</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">What We Research</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Six major research pillars powering the Observatory.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">01</span><h3 class="font-bold text-white">AI Recommendation Research</h3><p class="text-sm text-zinc-400 mt-2">Original research into how AI platforms recommend businesses across industries, locations and customer intents.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Research count: In development</span><span class="text-purple-400">Updated: 2026</span></div><a href="/obs-research-state-of-ai-recommendations" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">02</span><h3 class="font-bold text-white">AI Recommendation Benchmarks</h3><p class="text-sm text-zinc-400 mt-2">Comparative measurements showing how businesses perform against competitors.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Benchmarks: In development</span><span class="text-purple-400">Updated: 2026</span></div><a href="/obs-benchmark-accountants" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">03</span><h3 class="font-bold text-white">AI Recommendation Experiments</h3><p class="text-sm text-zinc-400 mt-2">Controlled tests investigating potential factors associated with AI recommendation behaviour.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Experiments: 10 proposed</span><span class="text-purple-400">Updated: 2026</span></div><a href="/obs-exp-review-volume" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">04</span><h3 class="font-bold text-white">AI Recommendation Factors</h3><p class="text-sm text-zinc-400 mt-2">An evolving framework tracking potential signals associated with AI recommendations.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Factors: 14 research areas</span><span class="text-purple-400">Updated: 2026</span></div><a href="#factors" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">05</span><h3 class="font-bold text-white">Industry Intelligence</h3><p class="text-sm text-zinc-400 mt-2">Research into differences in AI recommendation behaviour across industries.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Industries: 11 categories</span><span class="text-purple-400">Updated: 2026</span></div><a href="/obs-industry-accounting" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 research-card"><span class="inline-flex items-center gap-2 rounded-lg bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 mb-4">06</span><h3 class="font-bold text-white">Reports & Publications</h3><p class="text-sm text-zinc-400 mt-2">Major research reports documenting changes in the AI Recommendation Economy.</p><div class="mt-4 flex items-center justify-between text-xs"><span class="text-zinc-500">Reports: 6 planned</span><span class="text-purple-400">Updated: 2026</span></div><a href="/obs-research-ai-recommendation-economy" class="mt-4 inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">Explore →</a></div>
+</div>
+</div>
+</section>
+
+<!-- ===== FEATURED RESEARCH ===== -->
+<section id="featured" class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div id="featured" class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Featured Research</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Latest AI Recommendation Research</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Editorial research studies establishing the intellectual framework of the Observatory.</p>
+</div>
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card">
+<div class="flex items-center justify-between mb-4"><span class="text-xs font-semibold uppercase tracking-widest text-purple-400">Annual Research Report</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">RESEARCH IN DEVELOPMENT</span></div>
+<h3 class="font-bold text-white text-lg">The State of AI Recommendations 2026</h3>
+<p class="text-sm text-zinc-400 mt-2">A benchmark study examining how frequently businesses are recommended across relevant AI recommendation queries.</p>
+<p class="text-xs text-zinc-500 mt-4">Methodology: Systematic multi-platform, multi-query testing under development</p>
+<div class="mt-4"><a href="/obs-research-state-of-ai-recommendations" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">View Research →</a></div>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card">
+<div class="flex items-center justify-between mb-4"><span class="text-xs font-semibold uppercase tracking-widest text-purple-400">Research Study</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">RESEARCH IN DEVELOPMENT</span></div>
+<h3 class="font-bold text-white text-lg">The AI Recommendation Gap</h3>
+<p class="text-sm text-zinc-400 mt-2">Examining the difference between traditional online visibility and visibility within AI-generated recommendations.</p>
+<p class="text-xs text-zinc-500 mt-4">Methodology: Comparative visibility analysis under development</p>
+<div class="mt-4"><a href="/obs-research-ai-recommendation-gap" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">View Research →</a></div>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card">
+<div class="flex items-center justify-between mb-4"><span class="text-xs font-semibold uppercase tracking-widest text-purple-400">Research Study</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">RESEARCH IN DEVELOPMENT</span></div>
+<h3 class="font-bold text-white text-lg">Mentioned ≠ Recommended</h3>
+<p class="text-sm text-zinc-400 mt-2">Investigating the difference between appearing in an AI response and being actively recommended by the AI.</p>
+<p class="text-xs text-zinc-500 mt-4">Methodology: Response classification framework under development</p>
+<div class="mt-4"><a href="/obs-research-mentioned-vs-recommended" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">View Research →</a></div>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 research-card">
+<div class="flex items-center justify-between mb-4"><span class="text-xs font-semibold uppercase tracking-widest text-purple-400">Industry Report</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">RESEARCH IN DEVELOPMENT</span></div>
+<h3 class="font-bold text-white text-lg">The AI Recommendation Economy</h3>
+<p class="text-sm text-zinc-400 mt-2">Exploring how AI-generated recommendations could influence business discovery, consideration and customer choice.</p>
+<p class="text-xs text-zinc-500 mt-4">Methodology: Economic impact analysis under development</p>
+<div class="mt-4"><a href="/obs-research-ai-recommendation-economy" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold transition">View Research →</a></div>
+</div>
+</div>
+<div class="section-cta">
+<a href="/obs-research-state-of-ai-recommendations" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:border-amber-400">VIEW ALL RESEARCH →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== MENTIONED VS RECOMMENDED ===== -->
+<section class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Thought Leadership</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Being Mentioned Is Not the Same as Being Recommended.</h2>
+<p class="mt-6 text-zinc-400 leading-relaxed">A business can appear in an AI-generated answer without the AI actually endorsing it.</p>
+<div class="mt-6 grid sm:grid-cols-2 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><p class="text-sm text-zinc-300 italic">"Businesses including A, B and C offer this service."</p><p class="text-xs text-zinc-500 mt-2">Mentioned — but not endorsed.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><p class="text-sm text-zinc-300 italic">"I'd recommend Business A because..."</p><p class="text-xs text-zinc-500 mt-2">Actively recommended by the AI.</p></div>
+</div>
+<p class="mt-4 text-zinc-400 leading-relaxed">These are fundamentally different outcomes.</p>
+</div>
+<div class="mt-14 grid sm:grid-cols-3 gap-6">
+<div class="rounded-2xl border border-amber-400/30 bg-zinc-950 p-6"><div class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Level 1</div><h3 class="font-bold text-white text-lg">AI VISIBILITY</h3><p class="text-sm text-zinc-400 mt-2">Does AI mention you?</p></div>
+<div class="rounded-2xl border border-amber-400/30 bg-zinc-950 p-6"><div class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Level 2</div><h3 class="font-bold text-white text-lg">AI RECOMMENDATION</h3><p class="text-sm text-zinc-400 mt-2">Does AI recommend you?</p></div>
+<div class="rounded-2xl border border-amber-400/30 bg-zinc-950 p-6"><div class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">Level 3</div><h3 class="font-bold text-white text-lg">AI PREFERENCE</h3><p class="text-sm text-zinc-400 mt-2">Does AI favour you when compared with competitors?</p></div>
+</div>
+<div class="mt-10 rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
+<p class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">AI-Recommendable Proprietary Measurement Concepts</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Visibility</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation Strength</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation Share</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation Gap</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">Cross-Platform Recommendation</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation Volatility</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">AI Recommendation Intent</span>
+</div>
+</div>
+<div class="section-cta">
+<a href="/obs-research-mentioned-vs-recommended" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">UNDERSTAND THE DIFFERENCE FOR YOUR BUSINESS →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== BENCHMARKS ===== -->
+<section id="benchmarks" class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Benchmarks</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">AI Recommendation Benchmarks</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">How visible and recommendable are businesses within their competitive category?</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Accountants</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Solicitors</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Dentists</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Estate Agents</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Financial Advisers</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Recruitment Agencies</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Marketing Agencies</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Restaurants</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Health & Wellness</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Home Services</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white">Professional Services</h3><span class="status-badge mt-2" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">Benchmark coming soon</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5 flex items-center justify-between"><h3 class="font-bold text-white">More industries</h3><span class="text-purple-400 text-sm">Coming</span></div>
+</div>
+<div class="section-cta">
+<a href="/obs-benchmark-accountants" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">SEE HOW YOUR INDUSTRY REALLY COMPARES →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== EXPERIMENTS ===== -->
+<section id="experiments" class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Experiment Library</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">We Don't Just Talk About AI Recommendations. We Test Them.</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">A controlled experiment library investigating potential factors associated with AI recommendation behaviour.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #001</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Review Volume Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #002</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Review Sentiment Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #003</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Third-Party Coverage Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #004</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Topical Authority Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #005</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Schema Markup Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #006</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Service-Specific Content Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #007</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Local Authority Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #008</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Brand Familiarity Affect AI Recommendations?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #009</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does AI Recommend Differently Based on Customer Intent?</h3></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><div class="flex items-center justify-between"><span class="text-xs font-bold text-purple-400">EXPERIMENT #010</span><span class="status-badge" style="background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)">PROPOSED</span></div><h3 class="font-bold text-white mt-2">Does Cross-Platform Visibility Correlate With Recommendation Frequency?</h3></div>
+</div>
+<div class="section-cta">
+<a href="/obs-exp-review-volume" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">EXPLORE THE EXPERIMENT LIBRARY →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== FACTORS ===== -->
+<section id="factors" class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Research Framework</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">What Might Influence an AI Recommendation?</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Our evolving research framework for understanding the signals associated with AI recommendation behaviour.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Entity Clarity</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Third-Party Authority</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Reputation</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Review Signals</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Topical Relevance</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Service-Specific Content</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Local Authority</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Brand Information</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Website Content</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Structured Data</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Social Signals</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Citations and Mentions</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5"><h3 class="font-bold text-white text-sm">Business Information Consistency</h3><span class="inline-flex rounded-full border border-zinc-700 px-3 py-0.5 text-[10px] text-zinc-400 mt-2">UNTESTED</span></div>
+</div>
+<p class="mt-6 text-xs text-zinc-500 text-center max-w-lg mx-auto">These are research areas, not confirmed AI ranking factors. Evidence levels are updated only when actual research is completed.</p>
+<div class="section-cta">
+<a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">GET SIGNALS ON YOUR OWN BUSINESS →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== PLATFORM COMPARISON ===== -->
+<section class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Platform Comparison</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Do AI Platforms Recommend the Same Businesses?</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Comparing recommendation behaviour across major AI platforms.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
+<div class="flex flex-wrap gap-3 justify-center mb-8">
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300">ChatGPT</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300">Gemini</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300">Claude</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300">Perplexity</span>
+<span class="inline-flex items-center rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300">Microsoft Copilot</span>
+</div>
+<p class="text-center text-zinc-400 text-sm">Research data will be published following completion of the study.</p>
+<div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+<div class="border border-zinc-800 rounded-lg p-4"><p class="text-xs text-zinc-500">Businesses tested</p><p class="text-lg font-bold text-white mt-1">—</p></div>
+<div class="border border-zinc-800 rounded-lg p-4"><p class="text-xs text-zinc-500">Queries tested</p><p class="text-lg font-bold text-white mt-1">—</p></div>
+<div class="border border-zinc-800 rounded-lg p-4"><p class="text-xs text-zinc-500">Recommendation rate</p><p class="text-lg font-bold text-white mt-1">—</p></div>
+<div class="border border-zinc-800 rounded-lg p-4"><p class="text-xs text-zinc-500">Cross-platform agreement</p><p class="text-lg font-bold text-white mt-1">—</p></div>
+<div class="border border-zinc-800 rounded-lg p-4"><p class="text-xs text-zinc-500">Recommendation volatility</p><p class="text-lg font-bold text-white mt-1">—</p></div>
+</div>
+</div>
+<div class="section-cta">
+<a href="/obs-methodology" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:border-amber-400">UNDERSTAND OUR TESTING METHODOLOGY →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section id="industries" class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Industry Intelligence</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">How AI Recommendations Differ by Industry</h2>
+<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Research into how AI recommendation behaviour varies across industries.</p>
+</div>
+<div class="flex flex-wrap gap-3 justify-center">
+<a href="/obs-industry-accounting" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Accounting</a>
+<a href="/obs-industry-legal-services" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Legal</a>
+<a href="/obs-industry-healthcare" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Healthcare</a>
+<a href="/obs-industry-dentistry" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Dentistry</a>
+<a href="/obs-industry-recruitment" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Recruitment</a>
+<a href="/obs-industry-real-estate" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Real Estate</a>
+<a href="/obs-industry-financial-services" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Financial Services</a>
+<a href="/obs-industry-marketing" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Marketing</a>
+<a href="/obs-industry-hospitality" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Hospitality</a>
+<a href="/obs-industry-home-services" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Home Services</a>
+<a href="/obs-industry-professional-services" class="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2 text-sm text-zinc-300 hover:border-amber-400 hover:text-amber-400 transition">Professional Services</a>
+</div>
+<div class="section-cta">
+<a href="/obs-industry-accounting" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">EXPLORE YOUR INDUSTRY'S AI RECOMMENDATION LANDSCAPE →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== METHODOLOGY ===== -->
+<section class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl mb-14">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Methodology</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">How We Research AI Recommendations</h2>
+<p class="mt-6 text-zinc-400 leading-relaxed">AI recommendation research is different from traditional search measurement. AI outputs can change according to the prompt, context, location, model, date and information available to the system. A single AI response therefore should not be treated as definitive evidence. Our research uses systematic testing wherever possible.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">STANDARDISED PROMPTS</h3><p class="text-sm text-zinc-500 mt-2">Use consistent prompts when comparing businesses.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">REPEATABLE TESTING</h3><p class="text-sm text-zinc-500 mt-2">Repeat tests where appropriate.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">MULTI-PLATFORM TESTING</h3><p class="text-sm text-zinc-500 mt-2">Compare multiple AI platforms.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">MULTI-QUERY TESTING</h3><p class="text-sm text-zinc-500 mt-2">Test multiple customer intents.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">TIME-STAMPED RESULTS</h3><p class="text-sm text-zinc-500 mt-2">Record when tests were conducted.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">COMPETITIVE COMPARISON</h3><p class="text-sm text-zinc-500 mt-2">Measure businesses against relevant competitors.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">TRANSPARENT SAMPLE SIZES</h3><p class="text-sm text-zinc-500 mt-2">Always disclose businesses and prompts tested.</p></div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5"><h3 class="font-bold text-white text-sm">DOCUMENTED LIMITATIONS</h3><p class="text-sm text-zinc-500 mt-2">Clearly state limitations.</p></div>
+</div>
+<div class="mt-6 flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg><span class="text-sm text-zinc-400">Replication: where practical, findings are replicated before being treated as stronger evidence.</span></div>
+<div class="section-cta">
+<a href="/obs-methodology" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">READ OUR FULL RESEARCH METHODOLOGY →</a>
+</div>
+</div>
+</section>
+
+<!-- ===== QUARTERLY RESEARCH SIGNUP ===== -->
+<section class="py-20 sm:py-28 bg-zinc-950">
+<div class="max-w-3xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Quarterly Research</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">The State of AI Recommendations</h2>
+<p class="mt-4 text-zinc-400">Every quarter, we publish our latest findings on how AI is recommending businesses.</p>
+<div class="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900 p-8 text-left">
+<form action="https://ai-recommendable.com/subscribe-research" method="POST">
+<p class="text-sm font-semibold text-white mb-4">Subscribe for research updates</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div><label class="text-xs text-zinc-500 block mb-1">First Name</label><input type="text" class="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400" placeholder="Your first name"></div>
+<div><label class="text-xs text-zinc-500 block mb-1">Email</label><input type="email" class="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400" placeholder="you@company.com"></div>
+<div><label class="text-xs text-zinc-500 block mb-1">Company</label><input type="text" class="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400" placeholder="Company name"></div>
+</div>
+<label class="flex items-center gap-2 mt-4 text-sm text-zinc-400"><input type="checkbox" class="rounded border-zinc-700"><span>I'd like to receive AI Recommendation research and insights.</span></label>
+
+</div>
+</form>
+</div>
+</section>
+
+<!-- ===== COMMERCIAL CTA ===== -->
+<section class="py-20 sm:py-28 bg-zinc-900">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="rounded-2xl bg-gradient-to-br from-purple-900 via-purple-800 to-black p-10 sm:p-14">
+<h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white">Want to Know How AI Sees Your Business?</h2>
+<p class="mt-4 text-purple-100/80 text-lg">Our research helps explain the AI Recommendation landscape. Our AI Visibility Assessment shows where your own business currently stands.</p>
+<div class="mt-8 flex flex-wrap gap-4 justify-center">
+<a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">GET YOUR AI VISIBILITY REPORT →</a>
+<a href="/ai-readiness" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">CHECK YOUR AI READINESS</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FINAL BRAND MESSAGE ===== -->
+<section class="py-20 sm:py-28 bg-zinc-950 text-center">
+<div class="max-w-3xl mx-auto px-6">
+<p class="text-sm font-semibold uppercase tracking-widest text-amber-400">Our Mission</p>
+<p class="mt-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">AI-Recommendable isn't simply talking about AI recommendations.<br>We're building a body of research to understand them.</p>
+<p class="mt-8 text-lg text-zinc-400 font-semibold uppercase tracking-widest">The AI Recommendation Economy is emerging.<br><span class="text-white">We're building the research to understand it.</span></p>
+<div class="mt-10 flex flex-wrap gap-4 justify-center">
+<a href="#research" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">EXPLORE THE AI RECOMMENDATION OBSERVATORY™</a>
+<a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">Get Your FREE AI Visibility Report</a>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER with Useful Links + strapline + copyright ===== -->
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Visibility Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-sm font-semibold tracking-wider text-amber-400">Know Your Visibility. Build Your Readiness.</p><p class="text-xs mt-3">&copy; 2025 AI-Recommendable. All rights reserved.</p></div></div></footer>
+<script>
+try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
+function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+</script>
+</body>
+</html>
+<script>
+try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
+function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+</script>
+</body>
+</html>
+<script>
+try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
+function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+</script>
+</body>
+</html>
+<script>
+try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
+function toggleMobileMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+document.addEventListener("click",function(e){const menu=document.getElementById("mobile-menu");const btn=document.getElementById("menu-btn");if(!menu||!btn)return;if(!menu.contains(e.target)&&!btn.contains(e.target)){menu.classList.add("hidden")}})
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"AI Recommendation Observatory","description":"Original research, benchmarks and experiments exploring how AI platforms discover, evaluate and recommend businesses.","publisher":{"@type":"Organization","name":"AI-Recommendable","url":"https://ai-recommendable.com"}}
+</script>
+<script>
+// Analytics tracking for Observatory
+function track(event, label) {
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', event, { 'event_label': label, 'event_category': 'AI Recommendation Observatory' });
+    }
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', event, { label: label });
+    }
+  } catch(e) {}
+}
+// Track page view
+document.addEventListener('DOMContentLoaded', function() {
+  track('observatory_view', 'AI Recommendation Observatory');
+});
+</script>
+</body>
+</html>
