@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schema & Structured Data — AI Trust Optimisation | AI-Recommendable</title>
+<meta name="description" content="Schema markup and structured data implementation to help AI systems understand and recommend your business. JSON-LD, Organisation, LocalBusiness schemas.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in-view{opacity:1;transform:none}
+</style>
+</head>
+<body class="antialiased bg-zinc-950 text-white">
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+<div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+<a href="/" class="flex items-center gap-3 text-white">
+<span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-500/30 ring-2 ring-amber-400/50">AI-R</span>
+<div>
+<div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</div>
+</div>
+</a>
+<button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+</div>
+<div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
+<a href="/" class="block text-white transition py-2 font-semibold">Home</a>
+<a href="/v2-how-it-works.html" class="block text-zinc-400 hover:text-white transition py-2">How It Works</a>
+<a href="/v2-pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
+<a href="/v2-observatory.html" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
+<a href="/v2-blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
+<a href="/v2-about.html" class="block text-zinc-400 hover:text-white transition py-2">About</a>
+<a href="/v2-contact.html" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
+<a href="/ai-discoverability-scan.html" class="block text-center rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-400 mt-2">Scan Your Site →</a>
+</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)">
+<div class="absolute inset-0 opacity-[0.04]" style="background-image:url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 0L60 30L30 60L0 30Z" fill="none" stroke="%23fbbf24" stroke-width="0.5"/%3E%3C/svg%3E');background-size:60px 60px"></div>
+<div class="relative max-w-4xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Our Service</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">Schema & <span class="text-amber-400">Structured Data</span></h1>
+<p class="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto">The machine-readable language that tells AI systems who you are, what you do, and why you matter.</p>
+<div class="mt-8 flex flex-wrap gap-4 justify-center">
+<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-orange-400">Get Your Free Scan →</a>
+<a href="/v2-pricing.html" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-8 py-4 text-base font-medium text-zinc-300 transition hover:bg-zinc-800">View Pricing</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== WHAT IT IS ===== -->
+<section class="py-16 sm:py-20 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">What It Is</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Make Your Business <span class="text-amber-400">Readable by AI</span></h2>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8 space-y-4">
+<p class="text-zinc-300 text-base">Schema markup is structured data added to your website that helps AI systems understand exactly what your business is, what you offer, and how to reference you correctly.</p>
+<p class="text-zinc-300 text-base">Without it, AI systems have to guess — and they often get it wrong. With proper schema, you give AI a clear, unambiguous description of your business.</p>
+<p class="text-zinc-400 text-sm">Every business we work with receives a full schema audit, implementation, and validation against Google's Rich Results Test.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== WHAT WE IMPLEMENT ===== -->
+<section class="py-16 sm:py-20 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">What We Implement</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Schema Types We <span class="text-amber-400">Deploy</span></h2>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">Organisation</h3>
+<p class="text-xs text-zinc-400 mt-1">Business name, logo, contact details, social profiles</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">LocalBusiness</h3>
+<p class="text-xs text-zinc-400 mt-1">Address, opening hours, geo-location, service area</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">FAQ</h3>
+<p class="text-xs text-zinc-400 mt-1">Question-answer pairs for AI extraction</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">Article</h3>
+<p class="text-xs text-zinc-400 mt-1">Blog posts, news, educational content</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">BreadcrumbList</h3>
+<p class="text-xs text-zinc-400 mt-1">Site navigation structure for AI</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+<h3 class="font-bold text-white text-sm">Service</h3>
+<p class="text-xs text-zinc-400 mt-1">Service offerings with descriptions and pricing</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== WHY IT MATTERS ===== -->
+<section class="py-16 sm:py-20 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Why It Matters</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Without Schema, AI Is <span class="text-amber-400">Guessing</span></h2>
+</div>
+<div class="space-y-4">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-red-900/30 text-red-400 flex items-center justify-center text-lg shrink-0">✗</div>
+<div><p class="text-white font-medium text-sm">No schema markup</p><p class="text-xs text-zinc-400 mt-1">AI systems have to infer your business type, location and services from unstructured text — often getting it wrong or skipping you entirely.</p></div>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-lg shrink-0">✓</div>
+<div><p class="text-white font-medium text-sm">With schema markup</p><p class="text-xs text-zinc-400 mt-1">AI systems receive a clear, machine-readable definition of your business — increasing the likelihood of accurate understanding and recommendation.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-16 sm:py-20" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Get Started</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Check Your Current Schema Status</h2>
+<p class="mt-4 text-zinc-400 text-lg">Free AI Discoverability Scan includes full schema analysis.</p>
+<div class="mt-8">
+<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-orange-400">Scan Your Site Now →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<p class="font-semibold text-white text-sm mb-4">Services</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/ai-trust-signal-assessment.html" class="text-zinc-400 hover:text-amber-400 transition">AI Trust Signal Assessment™</a></li>
+<li><a href="/schema-structured-data.html" class="text-zinc-400 hover:text-amber-400 transition">Schema & Structured Data</a></li>
+<li><a href="/trust-signal-engineering.html" class="text-zinc-400 hover:text-amber-400 transition">Trust Signal Engineering</a></li>
+<li><a href="/content-strategy.html" class="text-zinc-400 hover:text-amber-400 transition">Content Strategy</a></li>
+<li><a href="/v2-ai-readiness.html" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Consulting</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Company</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li>
+<li><a href="/v2-how-it-works.html" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li>
+<li><a href="/v2-pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li>
+<li><a href="/v2-blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li>
+<li><a href="/v2-contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Resources</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/v2-observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li>
+<li><a href="/v2-research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Contact</p>
+<ul class="space-y-2 text-sm text-zinc-400">
+<li>📞 <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li>
+<li>📱 <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li>
+<li>✉️ <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li>
+<li>📍 London</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+<p class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</p>
+<p class="text-xs mt-3">&copy; 2025 AI-Recommendable. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+var menuTimer = null;
+try {
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      if (menuTimer) clearTimeout(menuTimer);
+      if (!mobileMenu.classList.contains('hidden')) {
+        menuTimer = setTimeout(function() { mobileMenu.classList.add('hidden'); }, 5000);
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (!mobileMenu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        if (menuTimer) clearTimeout(menuTimer);
+      }
+    });
+  }
+} catch(e) {}
+try {
+  document.querySelectorAll('section').forEach(function(el) { el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+} catch(e) {}
+</script>
+</body>
+</html>
