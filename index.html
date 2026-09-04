@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Recommendable — AI Trust Optimisation</title>
+<meta name="description" content="Measure and improve the trust signals that influence how AI systems understand and evaluate your business. Free AI Trust Signal Assessment using the AI Trust Signal Framework.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in-view{opacity:1;transform:none}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI-Recommendable",
+  "url": "https://ai-recommendable.com",
+  "description": "AI Discoverability assessment and trust signal optimisation for businesses.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://ai-recommendable.com/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AI-Recommendable",
+  "url": "https://ai-recommendable.com",
+  "logo": "https://ai-recommendable.com/android-chrome-512x512.png",
+  "description": "AI Discoverability assessment and trust signal optimisation for businesses.",
+  "email": "info@ai-recommendable.com",
+  "telephone": "+44 208 591 1163",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressCountry": "GB"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "150",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/ai-recommendable",
+    "https://twitter.com/airecommendable"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AI-Recommendable",
+  "url": "https://ai-recommendable.com",
+  "telephone": "+44 208 591 1163",
+  "email": "info@ai-recommendable.com",
+  "image": "https://ai-recommendable.com/android-chrome-512x512.png",
+  "priceRange": "££",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00"}
+  ]
+}
+</script>
+</head>
+<body class="antialiased bg-zinc-950 text-white">
+
+<!-- ===== NAV (kept from V2) ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+<div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+<a href="/" class="flex items-center gap-3 text-white">
+<span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-500/30 ring-2 ring-amber-400/50">AI-R</span>
+<div>
+<div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</div>
+</div>
+</a>
+<button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+</div>
+<div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
+<a href="/" class="block text-white transition py-2 font-semibold">Home</a>
+<a href="/how-it-works" class="block text-zinc-400 hover:text-white transition py-2">How It Works</a>
+<a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
+<a href="/observatory.html" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
+<a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
+<a href="/about.html" class="block text-zinc-400 hover:text-white transition py-2">About</a>
+<a href="/contact.html" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
+<a href="/sitemap.html" class="block text-zinc-400 hover:text-white transition py-2">Site Map (all pages)</a>
+<a href="/ai-discoverability-scan.html" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Scan Your Site →</a>
+</div>
+</nav>
+
+<!-- ===== HERO (kept from V2) ===== -->
+<section class="relative pt-20 sm:pt-36 pb-20 sm:pb-28 overflow-hidden bg-zinc-950">
+<div class="relative max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Free AI Trust Signal Assessment™</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">Will AI Understand Your Business<br><span class="text-amber-400">...or Ignore It?</span></h1>
+<p class="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto">Every day, potential customers ask AI who they should trust. AI-Recommendable measures and improves the <strong class="text-amber-400 font-semibold">trust signals</strong> that influence how AI systems understand and evaluate your business.</p>
+<p class="mt-4 text-sm text-zinc-500 max-w-xl mx-auto">Based on the <span class="text-amber-400 font-medium">AI Trust Signal Framework™</span> — our six-pillar methodology for assessing AI discoverability.</p>
+<div class="flex flex-wrap gap-4 justify-center mt-10">
+<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Scan Your Site Now →</a>
+<a href="#how-it-works" class="inline-flex items-center gap-2 rounded-lg border-2 border-zinc-700 bg-zinc-900 px-8 py-4 text-base font-medium text-zinc-300 shadow-sm transition hover:bg-zinc-800">How It Works</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 2: DISCOVERABILITY ===== -->
+<section class="py-16 sm:py-20 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Visibility ≠ Discoverability</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Visibility Is Not The Same As <span class="text-amber-400">Discoverability</span></h2>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 sm:p-8">
+<p class="text-zinc-400 text-lg mb-4">Most businesses focus on rankings.</p>
+<p class="text-zinc-400 text-lg mb-6">But AI systems work differently.</p>
+<p class="text-zinc-300 text-base mb-4">They evaluate signals such as:</p>
+<div class="grid sm:grid-cols-2 gap-3">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Authority</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Trust</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Expertise</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Content Coverage</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Entity Clarity</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Structured Data</span></div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-zinc-900 border border-zinc-800 sm:col-span-2"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-zinc-300 text-sm font-medium">Supporting Evidence</span></div>
+</div>
+<p class="text-zinc-300 text-base mt-6">AI-Recommendable analyses these signals and shows where improvements can be made.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 3: ASSESSMENT REVEALS ===== -->
+<section class="py-16 sm:py-20 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">What Your Assessment Reveals</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">What Your Assessment <span class="text-amber-400">Reveals</span></h2>
+<p class="mt-4 text-zinc-400 text-lg">Your assessment analyses six core trust signal categories:</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden">
+<div class="grid grid-cols-2 gap-px bg-zinc-800">
+<div class="bg-zinc-950 p-4"><p class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Signal Category</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-xs font-semibold text-amber-400 uppercase tracking-wider">What It Measures</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-white font-medium">Authority</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-zinc-400">Evidence of expertise</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-white font-medium">Trust</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-zinc-400">Credibility indicators</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-white font-medium">Content</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-zinc-400">Topic coverage and depth</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-white font-medium">Entity</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-zinc-400">Business clarity and consistency</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-white font-medium">Structure</p></div>
+<div class="bg-zinc-900 p-4"><p class="text-sm text-zinc-400">Schema and machine readability</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-white font-medium">Discoverability</p></div>
+<div class="bg-zinc-950 p-4"><p class="text-sm text-zinc-400">Accessibility and visibility signals</p></div>
+</div>
+</div>
+<div class="mt-8 grid sm:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><div><span class="text-white font-medium text-sm">AI Discoverability Score</span></div></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><div><span class="text-white font-medium text-sm">Priority Improvements</span></div></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><div><span class="text-white font-medium text-sm">Trust Signal Analysis</span></div></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><div><span class="text-white font-medium text-sm">Recommended Next Steps</span></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 4: HOW IT WORKS ===== -->
+<section class="py-16 sm:py-20 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">How It Works</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">How It <span class="text-amber-400">Works</span></h2>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-center">
+<div class="w-12 h-12 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+<h3 class="font-bold text-white text-sm">Enter Your Details</h3>
+<p class="text-xs text-zinc-400 mt-2">Enter your company name and website.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-center">
+<div class="w-12 h-12 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+<h3 class="font-bold text-white text-sm">AI Signal Analysis</h3>
+<p class="text-xs text-zinc-400 mt-2">We analyse the signals that AI systems appear to rely on when understanding and evaluating businesses.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-center">
+<div class="w-12 h-12 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+<h3 class="font-bold text-white text-sm">Receive Your Report</h3>
+<p class="text-xs text-zinc-400 mt-2">Receive your AI Discoverability Assessment and improvement recommendations.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 text-center">
+<div class="w-12 h-12 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+<h3 class="font-bold text-white text-sm">Choose Your Path</h3>
+<p class="text-xs text-zinc-400 mt-2">Choose whether you want help implementing the improvements.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 5: WHAT WE ACTUALLY IMPROVE ===== -->
+<section class="py-16 sm:py-20 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">What We Actually Improve</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">What We <span class="text-amber-400">Actually</span> Improve</h2>
+</div>
+<div class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6 sm:p-8 mb-6">
+<p class="text-zinc-300 text-base">We do not guarantee that any AI platform will recommend your business.</p>
+<p class="text-zinc-400 text-sm mt-2 italic">No credible company can make that promise.</p>
+</div>
+<p class="text-zinc-300 text-base mb-4">What we <span class="text-amber-400 font-semibold">do</span> help improve are the signals that influence how AI systems:</p>
+<div class="grid sm:grid-cols-2 gap-3">
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><span class="text-sm text-zinc-300">Understand your business</span></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><span class="text-sm text-zinc-300">Evaluate your expertise</span></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><span class="text-sm text-zinc-300">Assess trustworthiness</span></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><span class="text-sm text-zinc-300">Compare you with alternatives</span></div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-zinc-900 border border-zinc-800 sm:col-span-2"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span><span class="text-sm text-zinc-300">Surface relevant information</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 6: TRUST SIGNALS MATTER ===== -->
+<section class="py-16 sm:py-20 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Trust Signals Matter</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Trust Signals Matter <span class="text-amber-400">More Than Ever</span></h2>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 sm:p-8 space-y-6">
+<p class="text-zinc-300 text-lg">When someone asks:</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4 italic text-amber-400 text-sm">"Who is the best accountant in Manchester?"</div>
+<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4 italic text-amber-400 text-sm">"Which marketing agency should I trust?"</div>
+</div>
+<p class="text-zinc-300">AI systems must decide which businesses appear in the answer.</p>
+<p class="text-zinc-400 mt-2">Businesses with clearer, stronger and more consistent trust signals are easier for AI systems to understand and evaluate.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 7: RECOMMENDED IMPROVEMENTS ===== -->
+<section class="py-16 sm:py-20 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Recommended Improvements</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Recommended <span class="text-amber-400">Improvements</span></h2>
+<p class="mt-4 text-zinc-400 text-lg">Your assessment doesn't stop at diagnosis.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+<p class="text-zinc-300 text-base mb-6">For every issue identified, you'll receive:</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-4 rounded-xl bg-zinc-950 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-sm text-zinc-300 font-medium">Explanation</span></div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-zinc-950 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-sm text-zinc-300 font-medium">Priority Level</span></div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-zinc-950 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-sm text-zinc-300 font-medium">Suggested Improvement</span></div>
+<div class="flex items-center gap-3 p-4 rounded-xl bg-zinc-950 border border-zinc-800"><span class="w-6 h-6 rounded-full bg-lime-900/50 text-lime-400 flex items-center justify-center text-xs font-bold">✓</span><span class="text-sm text-zinc-300 font-medium">Optional Implementation Support</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION 8: FAQ ===== -->
+<section class="py-16 sm:py-20 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">FAQs</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Frequently Asked <span class="text-amber-400">Questions</span></h2>
+</div>
+<div class="space-y-5">
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+<h3 class="font-bold text-white text-sm">Can you guarantee ChatGPT will recommend my business?</h3>
+<p class="text-sm text-zinc-400 mt-2">No. No business can guarantee recommendations from AI systems. We focus on improving the signals that AI systems appear to rely on when evaluating businesses.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+<h3 class="font-bold text-white text-sm">What platforms do you analyse?</h3>
+<p class="text-sm text-zinc-400 mt-2">ChatGPT, Claude, Gemini, Perplexity, Copilot and other major AI systems.</p>
+</div>
+<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+<h3 class="font-bold text-white text-sm">Is this SEO?</h3>
+<p class="text-sm text-zinc-400 mt-2">Not exactly. SEO focuses on search rankings. AI Discoverability focuses on how AI systems understand, evaluate and reference businesses.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="py-16 sm:py-24" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-orange-500 border border-orange-400 text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Get Started</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Discover How AI <span class="text-amber-400">Sees Your Business</span></h2>
+<p class="mt-4 text-zinc-400 text-lg max-w-2xl mx-auto">Measure your discoverability, identify trust signal gaps and receive prioritised recommendations.</p>
+<div class="mt-8">
+<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Run Free AI Discoverability Assessment →</a>
+</div>
+</div>
+</section>
+
+
+<!-- ===== TRUST SIGNALS ===== -->
+<section class="py-20 sm:py-28 bg-zinc-900/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Trust Signals</div>
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">What Our Clients Say</h2>
+      <p class="text-zinc-400 mt-4 max-w-2xl mx-auto">Businesses that improve their trust signals see measurable improvements in AI discoverability.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+        <div class="flex items-center gap-1 text-amber-400 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-4">"The AI Discoverability Assessment showed us exactly where our trust signals were weak. Within 30 days our score improved by 24 points."</p>
+        <div class="text-sm"><div class="font-semibold text-white">Sarah Chen</div><div class="text-zinc-500">Marketing Director, GrowthLab</div></div>
+      </div>
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+        <div class="flex items-center gap-1 text-amber-400 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-4">"We had no idea AI systems were struggling to understand our business. The schema markup recommendations alone were worth the investment."</p>
+        <div class="text-sm"><div class="font-semibold text-white">James Akintola</div><div class="text-zinc-500">Founder, Nexa Services</div></div>
+      </div>
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+        <div class="flex items-center gap-1 text-amber-400 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="text-zinc-300 text-sm leading-relaxed mb-4">"The Trust Signal improvement plan gave us a clear roadmap. Six weeks later, we're seeing real traction in AI search results."</p>
+        <div class="text-sm"><div class="font-semibold text-white">Priya Patel</div><div class="text-zinc-500">CEO, BrightPath Consulting</div></div>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <div class="inline-flex items-center gap-2 text-zinc-400 text-sm">
+        <span class="text-amber-400">★</span> <strong class="text-white">4.9</strong> average rating from <strong class="text-white">150+</strong> assessments
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<p class="font-semibold text-white text-sm mb-4">Services</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/ai-trust-signal-assessment.html" class="text-zinc-400 hover:text-amber-400 transition">AI Trust Signal Assessment™</a></li>
+<li><a href="/schema-structured-data.html" class="text-zinc-400 hover:text-amber-400 transition">Schema & Structured Data</a></li>
+<li><a href="/trust-signal-engineering.html" class="text-zinc-400 hover:text-amber-400 transition">Trust Signal Engineering</a></li>
+<li><a href="/content-strategy.html" class="text-zinc-400 hover:text-amber-400 transition">Content Strategy</a></li>
+<li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Consulting</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Company</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li>
+<li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li>
+<li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li>
+<li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li>
+<li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Resources</p>
+<ul class="space-y-2 text-sm">
+<li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li>
+<li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Contact</p>
+<ul class="space-y-2 text-sm text-zinc-400">
+<li>📞 <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li>
+<li>📱 <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li>
+<li>✉️ <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li>
+<li>📍 London</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+<p class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</p>
+<p class="text-xs mt-3">&copy; 2025 AI-Recommendable. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Hamburger menu toggle with 5-second auto-close
+var menuTimer = null;
+try {
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      // Clear any existing timer
+      if (menuTimer) clearTimeout(menuTimer);
+      // If menu is now visible, set 5-second timeout
+      if (!mobileMenu.classList.contains('hidden')) {
+        menuTimer = setTimeout(function() {
+          mobileMenu.classList.add('hidden');
+        }, 5000);
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (!mobileMenu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        if (menuTimer) clearTimeout(menuTimer);
+      }
+    });
+  }
+} catch(e) {}
+
+// Scroll-in reveal
+try {
+  document.querySelectorAll('section').forEach(el => el.classList.add('reveal'));
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} catch(e) {}
+</script>
+</body>
+</html>
