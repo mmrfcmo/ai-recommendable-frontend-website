@@ -27,8 +27,8 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <a href="/" class="flex items-center gap-3 text-white">
 <span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-500/30 ring-2 ring-amber-400/50">AI-R</span>
 <div>
-<div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable</span></div>
-<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</div>
+<div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div>
 </div>
 </a>
 <!-- Removed New Scan button -->
@@ -233,9 +233,9 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
   var scores = { authority: 0, trust: 0, content: 0, entity: 0, schema: 0, rep: 0 };
   var passedCount = 0;
   try {
-    var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/visibility/report', {
+    var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'scan@internal.local' })
+      body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'scan@internal.com' })
     }).catch(function(){ return null; });
     if (apiRes && apiRes.ok) {
       var apiData = await apiRes.json();
