@@ -13,22 +13,26 @@
 <style>html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}.reveal.in-view{opacity:1;transform:none}</style>
 </head>
 <body class="antialiased bg-zinc-950 text-white">
-<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-500/30 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable</span></div><div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
 <a href="/" class="block text-white transition py-2 font-semibold">Home</a>
 <a href="/how-it-works" class="block text-zinc-400 hover:text-white transition py-2">How It Works</a>
-<a href="/pricing" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
+<a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
 <a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a>
-<a href="/blog" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
+<a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
 <a href="/ai-readiness" class="block text-zinc-400 hover:text-white transition py-2">AI Readiness</a>
-<a href="/observatory" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
-<a href="/research" class="block text-zinc-400 hover:text-white transition py-2">Research</a>
-<a href="/contact" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
+<a href="/observatory.html" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
+<a href="/research.html" class="block text-zinc-400 hover:text-white transition py-2">Research</a>
+<a href="/contact.html" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
+<a href="/services.html" class="block text-zinc-400 hover:text-white transition py-2">Services &amp; Client Outcomes</a>
+<a href="/benchmarks.html" class="block text-zinc-400 hover:text-white transition py-2">Industry Benchmarks</a>
+<a href="/trust-signals.html" class="block text-zinc-400 hover:text-white transition py-2">The 6 Trust Signals</a>
 <a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Get Your FREE AI Discoverability Report →</a>
 </div></nav>
 
-<div class="max-w-6xl mx-auto px-6 pt-24"><a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-amber-400 transition">← Back to Home</a></div>
+<div class="max-w-6xl mx-auto px-6 pt-24"><a href="/" class="inline-flex items-center gap-2 text-sm text-white hover:text-amber-400 transition">← Back to Home</a></div>
 <section class="relative pt-20 sm:pt-36 pb-20 sm:pb-20 overflow-hidden" class="bg-zinc-950">
 <div class="relative max-w-4xl mx-auto px-6 text-center">
 <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Pricing</div>
@@ -39,47 +43,61 @@
 
 <section class="py-20 sm:py-28 bg-zinc-950">
 <div class="max-w-6xl mx-auto px-6">
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
 
 <!-- Card 1: Free Report -->
-<div class="rounded-2xl border border-amber-400/30 bg-zinc-900 p-8 flex flex-col relative">
-<div class="inline-flex items-center gap-2 rounded-full bg-amber-400/10 text-amber-400 text-xs font-bold px-3 py-1 mb-4 self-start">Free — Limited Time</div>
-<h2 class="text-xl font-bold text-white">AI Discoverability Report</h2>
-<p class="text-3xl font-extrabold text-white mt-4">£0</p>
-<p class="text-sm text-zinc-500 line-through mt-1">Usually £299</p>
-<p class="text-sm text-zinc-400 mt-4">A comprehensive audit of your business across 6 AI trust signals. Shows you exactly where your AI discoverability stands and what needs to improve.</p>
-<ul class="mt-6 space-y-3 text-sm text-zinc-400 flex-1">
+<div class="rounded-2xl border border-amber-400/30 bg-zinc-900 p-6 flex flex-col relative">
+<div class="h-[46px] mb-4 self-start"><div class="inline-flex items-center gap-2 rounded-full bg-amber-400/10 text-amber-400 text-xs font-bold px-3 py-1">Free — Limited Time</div></div>
+<div class="min-h-[56px]"><h2 class="text-xl font-bold text-white leading-tight">AI Discoverability Report</h2></div>
+<p class="text-3xl font-extrabold text-amber-400 mt-4">£0</p>
+<p class="text-sm text-white line-through mt-1">Usually £299</p>
+<p class="text-sm text-white mt-4">A comprehensive audit of your business across 6 AI trust signals. Shows you exactly where your AI discoverability stands and what needs to improve.</p>
+<ul class="mt-6 space-y-3 text-sm text-white flex-1">
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> 6 trust signal audit</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Personalised PDF report</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> 20-minute review call</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> No obligation</li>
 </ul>
-<div class="mt-8"><a href="/how-it-works" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 w-full justify-center">Get Your FREE Report →</a></div>
+<div class="mt-8"><a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 w-full justify-center">Get Your FREE Report →</a></div>
 </div>
 
 <!-- Card 2: £995 Improvement Programme -->
-<div class="rounded-2xl border border-amber-500/50 bg-zinc-900 p-8 flex flex-col relative scale-105 shadow-xl shadow-amber-500/10 z-10">
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full bg-amber-500 text-zinc-900 text-xs font-bold px-4 py-1">Recommended — Best Value</div>
-<h2 class="text-xl font-bold text-white mt-4">AI Discoverability Improvement Programme</h2>
-<p class="text-3xl font-extrabold text-white mt-4">£995</p>
-<p class="text-sm text-zinc-500 mt-1">One payment, no monthly fees</p>
-<p class="text-sm text-zinc-400 mt-4">We audit your business across 6 trust signals, fix the key issues, and deliver a measurable improvement in your AI discoverability — all within 7 days.</p>
-<ul class="mt-6 space-y-3 text-sm text-zinc-400 flex-1">
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Full discoverability audit</strong> — 6-signal analysis with score</li>
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Schema.org markup</strong> — JSON-LD structured data implementation</li>
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Content gap analysis</strong> — AI-ready page improvements</li>
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Trust signal strengthening</strong> — citations, NAP, reviews</li>
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Delivery report</strong> — before/after score with recommendations</li>
+<div class="rounded-2xl border border-amber-500/60 bg-zinc-900 p-6 flex flex-col relative shadow-xl shadow-amber-500/20 z-10">
+<div class="h-[46px] mb-4 self-start"><div class="inline-flex items-center gap-2 rounded-full bg-amber-500 text-zinc-900 text-xs font-bold px-3 py-1 self-start">Best Value — 4 Core Edits</div></div><div class="min-h-[56px]"><h2 class="text-xl font-bold text-white leading-tight">AI Discoverability Improvement Programme</h2></div>
+<p class="text-3xl font-extrabold text-amber-400 mt-4">£995</p>
+<p class="text-sm text-white mt-1">One payment, no monthly fees</p>
+<p class="text-sm text-white mt-4">Fixes the <strong class="text-white">4 most impactful, AI-executable issues</strong> from your scan — schema, entity clarity (incl. NAP report), content gaps and technical SEO — delivered within 7 days.</p>
+<ul class="mt-6 space-y-3 text-sm text-white flex-1">
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Schema.org markup</strong> — JSON-LD implemented</li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Content gap analysis</strong> — AI-ready pages</li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Entity clarity & NAP report</strong> — inconsistencies identified</li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Technical SEO</strong> — meta, mobile, HTTPS</li>
 </ul>
-<div class="mt-8"><a href="#" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 w-full justify-center">Buy Now — £995 →</a></div>
-</div><!-- Card 3: Ongoing Optimisation -->
-<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-8 flex flex-col">
-<h2 class="text-xl font-bold text-white">Ongoing Optimisation</h2>
-<p class="text-3xl font-extrabold text-white mt-4">£799 – £995</p>
-<p class="text-sm text-zinc-500 mt-1">Per month</p>
-<p class="text-sm text-zinc-400 mt-4">Monthly AI discoverability monitoring, content updates and ongoing optimisation. Ideal for businesses that want to stay ahead.</p>
-<ul class="mt-6 space-y-3 text-sm text-zinc-400 flex-1">
-<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Everything in One-Time Fix</li>
+<div class="mt-8"><a href="https://www.paypal.com/ncp/payment/T924BR4SVLSWN" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 w-full justify-center">Buy Now — £995 →</a></div>
+</div>
+
+<!-- Card 3: £1,495 Complete -->
+<div class="rounded-2xl border border-purple-500/60 bg-zinc-900 p-6 flex flex-col relative shadow-xl shadow-purple-500/20 z-10">
+<div class="h-[46px] mb-4 self-start"><div class="inline-flex items-center gap-2 rounded-full bg-purple-600 text-white text-xs font-bold px-3 py-1 self-start">All 6 Signals — Full Transformation</div></div><div class="min-h-[56px]"><h2 class="text-xl font-bold text-white leading-tight">AI Discoverability Complete</h2></div>
+<p class="text-3xl font-extrabold text-amber-400 mt-4">£1,495</p>
+<p class="text-sm text-white mt-1">One payment, no monthly fees</p>
+<p class="text-sm text-white mt-4">Everything in Improvement <strong class="text-white">plus the trust-building work that makes AI and customers trust you long-term</strong> — delivered within 10 days.</p>
+<ul class="mt-6 space-y-3 text-sm text-white flex-1">
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Everything in Improvement</strong></li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Trust signals</strong> — reviews, testimonials, citations</li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Full content depth overhaul</strong> — FAQs, guides</li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Multi-page schema deployment</strong></li>
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> <strong class="text-white">Delivery report</strong> — before/after</li>
+</ul>
+<div class="mt-8"><a href="https://www.paypal.com/ncp/payment/TCH63955Q49R8" class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-purple-500 w-full justify-center">Buy Now — £1,495 →</a></div>
+</div><!-- Card 4: Ongoing Optimisation -->
+<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
+<div class="h-[46px] mb-4 self-start"><span class="inline-block"></span></div><div class="min-h-[56px]"><h2 class="text-xl font-bold text-white leading-tight">Ongoing Optimisation</h2></div>
+<p class="text-3xl font-extrabold text-amber-400 mt-4">£799 – £995</p>
+<p class="text-sm text-white mt-1">Per month</p>
+<p class="text-sm text-white mt-4">Monthly AI discoverability monitoring, content updates and ongoing optimisation. Ideal for businesses that want to stay ahead.</p>
+<ul class="mt-6 space-y-3 text-sm text-white flex-1">
+<li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Everything in Improvement or Complete</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Monthly AI discoverability monitoring</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Quarterly report updates</li>
 <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Ongoing content optimisation</li>
@@ -91,13 +109,13 @@
 </div>
 
 <div class="mt-12 text-center">
-<p class="text-sm text-zinc-400">Not sure what you need? <a href="/how-it-works" class="text-amber-400 hover:text-amber-300 font-semibold transition">Start with a free report</a> and we'll help you figure it out.</p>
+<p class="text-sm text-white">Not sure what you need? <a href="/how-it-works" class="text-amber-400 hover:text-amber-300 font-semibold transition">Start with a free report</a> and we'll help you figure it out.</p>
 </div>
 
 <div class="text-center mt-20 mb-10">
 <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">AI Readiness Services</div>
 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Strategic AI Support</h2>
-<p class="mt-4 text-zinc-400 max-w-xl mx-auto">Beyond visibility. Tailored services to build your business's AI readiness across strategy, people, processes and more.</p>
+<p class="mt-4 text-white max-w-xl mx-auto">Beyond discoverability. Tailored services to build your business's AI readiness across strategy, people, processes and more.</p>
 </div>
 
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -105,78 +123,81 @@
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">🎯</div>
 <h3 class="font-bold text-white">AI Strategy Roadmap</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">A clear plan covering priorities, timeline, quick wins and AI alignment with your business goals.</p>
-<p class="text-sm font-bold text-white mt-4">£1,497</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">A clear plan covering priorities, timeline, quick wins and AI alignment with your business goals.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">£1,497</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">👥</div>
 <h3 class="font-bold text-white">Team AI Training</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">Practical sessions to upskill your team — AI awareness, prompting, automation and day-to-day tool use.</p>
-<p class="text-sm font-bold text-white mt-4">From £997</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">Practical sessions to upskill your team — AI awareness, prompting, automation and day-to-day tool use.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">From £997</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">⚙️</div>
 <h3 class="font-bold text-white">AI Workflow Automation</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">Identify and build automations for repetitive tasks — AI Calling, AI Sales Assistant, lead follow-up and more.</p>
-<p class="text-sm font-bold text-white mt-4">From £497</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">Identify and build automations for repetitive tasks — AI Calling, AI Sales Assistant, lead follow-up and more.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">From £497</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">📊</div>
 <h3 class="font-bold text-white">Data Readiness Audit</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">Review your data quality, organisation and structure so AI tools can actually work with it effectively.</p>
-<p class="text-sm font-bold text-white mt-4">£997</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">Review your data quality, organisation and structure so AI tools can actually work with it effectively.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">£997</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">🛡️</div>
 <h3 class="font-bold text-white">AI Governance Policy</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">Written policies covering data privacy, staff AI usage guidelines and compliance for responsible AI use.</p>
-<p class="text-sm font-bold text-white mt-4">£997</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">Written policies covering data privacy, staff AI usage guidelines and compliance for responsible AI use.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">£997</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col">
 <div class="text-2xl mb-3">🏆</div>
 <h3 class="font-bold text-white">Leadership AI Briefing</h3>
-<p class="text-sm text-zinc-400 mt-2 flex-1">A focused session with your leadership team covering AI risks, opportunities and how to align the organisation.</p>
-<p class="text-sm font-bold text-white mt-4">£997</p>
-<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a>
+<p class="text-sm text-white mt-2 flex-1">A focused session with your leadership team covering AI risks, opportunities and how to align the organisation.</p>
+<div class="mt-auto pt-6"><p class="text-sm font-bold text-white">£997</p>
+<a href="https://social.prospectrocket.com/AR/AIVisibilityReviewMeeting" class="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-white transition hover:border-amber-400 w-full justify-center">Enquire →</a></div>
 </div>
 
 </div>
 
 <div class="mt-12 text-center">
-<p class="text-sm text-zinc-400">Not sure what you need? <a href="/ai-readiness-assessment" class="text-purple-400 hover:text-purple-300 font-semibold transition">Take the free AI Readiness Assessment</a> and we'll help you figure it out.</p>
+<p class="text-sm text-white">Not sure what you need? <a href="/ai-readiness-assessment" class="text-purple-400 hover:text-purple-300 font-semibold transition">Take the free AI Readiness Assessment</a> and we'll help you figure it out.</p>
 </div>
 
 </div>
 </section>
 
 <!-- ===== BOTTOM CTA ===== -->
-<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Signals. Build Your Discoverability.</p><p class="text-xs mt-3">&copy; 2025 AI-Recommendable. All rights reserved.</p></div></div></footer>
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
+<li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
+<li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
+</ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs mt-3"><p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">AI-Recommendable Trust Signal Framework™</span> — Authority, Trust, Content, Entity Clarity, Structured Data, Reputation</p>
+<p class="text-xs text-zinc-500 mt-1">&copy; 2025 AI-Recommendable. All rights reserved.</p></p></div></div></footer>
+
+
+
+
 <script>
-try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
-function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+function toggleMobileMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
 </script>
+
 </body>
 </html>
-<script>
-try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
-function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
-</script>
+
 </body>
 </html>
-<script>
-try { document.querySelectorAll('section').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
-function toggleMobileMenu(){const m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
-</script>
+
 </body>
 </html>
 <script>
