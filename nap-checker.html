@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAP Inconsistency Checker — AI-Recommendable</title>
+<meta name="description" content="Check a business's Name, Address and Phone (NAP) across Google, Yelp, Bing, Yell and more. Free NAP inconsistency checker from AI-Recommendable.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='20'%3E%F0%9F%94%8D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in-view{opacity:1;transform:none}
+</style>
+</head>
+<body class="antialiased bg-zinc-950 text-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-amber-500/30 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div></div></a><a href="/" class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800">← Back to Home</a></div></nav>
+
+<!-- HERO -->
+<section class="relative pt-32 sm:pt-40 pb-16 overflow-hidden bg-zinc-950">
+<div class="relative max-w-4xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Free NAP Checker</div>
+<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Is Your Business' Name, Address &<br>Phone Number Consistent Everywhere?</h1>
+<p class="mt-5 text-lg text-white max-w-2xl mx-auto">Inconsistent NAP data confuses AI systems and costs you customers.<br>Enter a business name or website and we'll check how it appears across the web.</p>
+
+<!-- SEARCH BOX -->
+<div class="mt-10 max-w-2xl mx-auto">
+<form id="napForm" onsubmit="return false;" class="flex flex-col sm:flex-row gap-3">
+  <input id="searchInput" type="text" placeholder="Enter full business name or website URL for best results" class="flex-1 rounded-lg bg-zinc-900 border-2 border-amber-400 px-5 py-4 text-sm text-white placeholder-white focus:outline-none focus:border-amber-300 transition shadow-lg shadow-amber-400/30" />
+  <select id="countrySelect" class="rounded-lg bg-zinc-900 border-2 border-amber-400 px-3 py-4 text-sm text-white focus:outline-none focus:border-amber-300 shadow-lg shadow-amber-400/30 w-24">
+    <option value="UK" selected>&#x1F1EC;&#x1F1E7; UK</option>
+    <option value="US">&#x1F1FA;&#x1F1F8; US</option>
+    <option value="CA">&#x1F1E8;&#x1F1E6; CA</option>
+    <option value="AU">&#x1F1E6;&#x1F1FA; AU</option>
+    <option value="DE">&#x1F1E9;&#x1F1EA; DE</option>
+    <option value="FR">&#x1F1EB;&#x1F1F7; FR</option>
+    <option value="IE">&#x1F1EE;&#x1F1EA; IE</option>
+    <option value="NZ">&#x1F1F3;&#x1F1FF; NZ</option>
+    <option value="ZA">&#x1F1FF;&#x1F1E6; ZA</option>
+    <option value="IN">&#x1F1EE;&#x1F1F3; IN</option>
+  </select>
+  <button type="button" onclick="searchNAP()" class="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Check NAP →</button>
+</form>
+
+</div>
+</div>
+</section>
+
+<!-- LOADING + RESULT -->
+<section class="py-10 bg-zinc-950">
+<div class="max-w-5xl mx-auto px-6">
+  <!-- Loading -->
+  <div id="loading" class="hidden text-center py-10">
+    <div class="inline-block w-12 h-12 border-4 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+    <p class="text-white mt-4">Scanning directories & extracting NAP data...</p>
+  </div>
+
+  <!-- Error -->
+  <div id="error" class="hidden rounded-2xl border border-red-500/40 bg-red-500/5 p-6 text-center">
+    <p class="text-red-400 font-semibold" id="errorMsg">An error occurred.</p>
+  </div>
+
+  <!-- Site NAP -->
+  <div id="siteNAP" class="hidden mb-8 rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+    <h2 class="text-lg font-bold text-white mb-4">⤴ Extracted from Website</h2>
+    <div id="siteNAPContent" class="grid sm:grid-cols-3 gap-4 text-sm"></div>
+  </div>
+
+  <!-- Directory results -->
+  <div id="results" class="hidden">
+    <h2 class="text-xl font-bold text-white mb-2">Directory Cross-Check</h2>
+    <p class="text-white text-sm mb-6">How the business appears across major directories, compared against the reference NAP.</p>
+    <div id="resultsList" class="space-y-4"></div>
+    <div id="summary" class="mt-8 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6"></div>
+  </div>
+
+  <!-- API key note -->
+  <div id="demoNote" class="hidden mt-8 rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-center"></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
+<li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
+<li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
+</ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs mt-3"><p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">AI-Recommendable Trust Signal Framework™</span> — Authority, Trust, Content, Entity Clarity, Structured Data, Reputation</p>
+<p class="text-xs text-zinc-500 mt-1">&copy; 2025 AI-Recommendable. All rights reserved.</p></p></div></div></footer>
+
+
+
+<script>
+// Token-gate for API access (server needs to provide; for demo we load client-side demo data)
+var DEMO_ENABLED = true; // When no backend, use demo data so the page is usable
+
+// ===== Extract NAP from a website URL =====
+// We use a public CORS proxy or fetch the page via a JSON API. 
+// For a self-hosted demo without keys, we simulate site extraction for known examples,
+// and for arbitrary sites we try a lightweight fetch (may be blocked).
+
+function tryExtractFromUrl(url) {
+  // Normalise URL
+  var clean = url.trim();
+  if (!clean.startsWith('http')) clean = 'https://' + clean;
+  try {
+    var host = new URL(clean).hostname.replace('www.','');
+    return { hostname: host, url: clean };
+  } catch(e) { return null; }
+}
+
+// Demo data for known example so the page is functional
+var DEMO_DATA = {
+  'handcraftedchiropractic.co.uk': {
+    site: {
+      name: 'Handcrafted Chiropractic',
+      address: 'Handcrafted Chiropractic, 5 Walkers Lane, Lymm, WA13 0AB',
+      phone: '01925 756 693',
+      url: 'https://handcraftedchiropractic.co.uk'
+    },
+    napReference: {
+      name: 'Handcrafted Chiropractic',
+      postcode: 'WA13 0AB',
+      phone: '01925 756 693'
+    },
+    directories: [
+      { source: 'Google Business Profile', status: 'Match', score: 92, name: 'Handcrafted Chiropractic', address: '5 Walkers Lane, Lymm WA13 0AB', phone: '01925 756693', issues: [], note: 'Lowest price tier (basic profile matches)' },
+      { source: 'Bing Places', status: 'Match', score: 88, name: 'Handcrafted Chiropractic', address: 'Walkers Lane, Lymm, Cheshire', phone: '01925 756693', issues: ['Address formatted differently'], note: 'Same details, address formatting varies' },
+      { source: 'Yell', status: 'Inconsistent', score: 61, name: 'Handcrafted Chiropractic', address: 'Walkers Lane, Lymm', phone: '01925 - 756 - 693', issues: ['Phone formatting differs', 'Address abbreviated'], note: 'Phone and address formatting inconsistent' },
+      { source: 'Cylex', status: 'Problem', score: 42, name: 'Handcrafted Chiropractic Clinic', address: '5 Walker Lane, Lymm', phone: '', issues: ['Name has extra word', 'Address missing postcode', 'Phone not listed'], note: 'Multiple inconsistencies found' },
+      { source: 'Hotfrog', status: 'Match', score: 90, name: 'Handcrafted Chiropractic', address: 'Walkers Ln, Lymm', phone: '01925 756693', issues: ['Street abbreviated'], note: 'Main details consistent' },
+      { source: 'Thomson Local', status: 'Not Found', score: 0, name: null, address: null, phone: null, issues: ['No listing found'], note: 'Business may be missing from this directory' },
+      { source: 'Facebook Business', status: 'Inconsistent', score: 66, name: 'Handcrafted Chiropractic', address: 'Lymm', phone: '01925 756 693', issues: ['Full address not provided'], note: 'Incomplete address on Facebook page' },
+    ]
+  }
+};
+
+// ===== Rendering =====
+function renderBadge(status) {
+  var cls = 'bg-zinc-700/30 text-zinc-300';
+  if (status === 'Match') cls = 'bg-lime-900/40 text-lime-400';
+  else if (status === 'Inconsistent') cls = 'bg-amber-900/40 text-amber-400';
+  else if (status === 'Problem') cls = 'bg-red-900/40 text-red-400';
+  else if (status === 'Not Found') cls = 'bg-zinc-700/30 text-zinc-400';
+  return '<span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold ' + cls + '">' + status + '</span>';
+}
+
+function renderResults(data) {
+  // Site NAP
+  var siteEl = document.getElementById('siteNAP');
+  if (data.site) {
+    var content = '';
+    content += '<div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800"><p class="text-xs text-white uppercase tracking-wider">Name</p><p class="font-semibold text-white mt-1">' + (data.site.name || '-') + '</p></div>';
+    content += '<div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800"><p class="text-xs text-white uppercase tracking-wider">Address</p><p class="text-white mt-1 text-sm">' + (data.site.address || '-') + '</p></div>';
+    content += '<div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800"><p class="text-xs text-white uppercase tracking-wider">Phone</p><p class="font-semibold text-white mt-1">' + (data.site.phone || '-') + '</p></div>';
+    document.getElementById('siteNAPContent').innerHTML = content;
+    siteEl.classList.remove('hidden');
+  }
+
+  // Directories
+  var list = document.getElementById('resultsList');
+  var html = '';
+  (data.directories || []).forEach(function(d) {
+    html += '<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5">';
+    html += '<div class="flex items-center justify-between mb-2">';
+    html += '<div class="flex items-center gap-3"><span class="text-white font-semibold">' + d.source + '</span>' + renderBadge(d.status) + '</div>';
+    if (d.score > 0) html += '<span class="text-sm font-bold ' + (d.score >= 85 ? 'text-lime-400' : d.score >= 50 ? 'text-amber-400' : 'text-red-400') + '">' + d.score + '/100</span>';
+    html += '</div>';
+    if (d.name) html += '<p class="text-sm text-white"><span class="text-zinc-400">Name:</span> ' + d.name + '</p>';
+    if (d.address) html += '<p class="text-sm text-white"><span class="text-zinc-400">Address:</span> ' + d.address + '</p>';
+    if (d.phone) html += '<p class="text-sm text-white"><span class="text-zinc-400">Phone:</span> ' + d.phone + '</p>';
+    if (d.mentions_summary) {
+      html += '<div class="mt-2 pt-2 border-t border-zinc-800">';
+      html += '<p class="text-xs text-white font-medium mb-1">Found on:</p>';
+      d.mentions_summary.split('\n').forEach(function(line) {
+        html += '<p class="text-xs text-zinc-400">' + line + '</p>';
+      });
+      html += '</div>';
+    }
+    if (d.issues && d.issues.length) {
+      html += '<div class="mt-2 pt-2 border-t border-zinc-800">';
+      d.issues.forEach(function(i){ html += '<p class="text-xs text-red-400 mt-1">⚠ ' + i + '</p>'; });
+      html += '</div>';
+    }
+    if (d.note) html += '<p class="text-xs text-zinc-500 mt-2">' + d.note + '</p>';
+    html += '</div>';
+  });
+  list.innerHTML = html;
+
+  // Summary
+  var matches = (data.directories || []).filter(function(d){ return d.status === 'Match'; }).length;
+  var inconsistent = (data.directories || []).filter(function(d){ return d.status === 'Inconsistent'; }).length;
+  var problems = (data.directories || []).filter(function(d){ return d.status === 'Problem'; }).length;
+  var notFound = (data.directories || []).filter(function(d){ return d.status === 'Not Found'; }).length;
+
+  var summary = document.getElementById('summary');
+  summary.innerHTML = '<h3 class="font-bold text-amber-400 mb-3">Report Summary</h3>' +
+    '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">' +
+    '<div class="rounded-xl bg-zinc-900 p-3"><p class="text-2xl font-extrabold text-lime-400">' + matches + '</p><p class="text-xs text-white">Consistent</p></div>' +
+    '<div class="rounded-xl bg-zinc-900 p-3"><p class="text-2xl font-extrabold text-amber-400">' + inconsistent + '</p><p class="text-xs text-white">Inconsistent</p></div>' +
+    '<div class="rounded-xl bg-zinc-900 p-3"><p class="text-2xl font-extrabold text-red-400">' + problems + '</p><p class="text-xs text-white">Problems</p></div>' +
+    '<div class="rounded-xl bg-zinc-900 p-3"><p class="text-2xl font-extrabold text-zinc-400">' + notFound + '</p><p class="text-xs text-white">Not Found</p></div>' +
+    '</div>';
+}
+
+// ===== Main handler =====
+function searchNAP() {
+  var query = decodeURIComponent(document.getElementById('searchInput').value.trim());
+  if (!query) return;
+
+  document.getElementById('loading').classList.remove('hidden');
+  document.getElementById('results').classList.add('hidden');
+  document.getElementById('siteNAP').classList.add('hidden');
+  document.getElementById('error').classList.add('hidden');
+  document.getElementById('demoNote').classList.add('hidden');
+
+  // Parse business name from URL if needed
+  var host = tryExtractFromUrl(query);
+  var businessName = host ? decodeURIComponent(host.hostname)
+    .replace(/\.(co|com|uk|org|net|io)\.?[a-z]*/g, '')
+    .replace(/\.(gov|edu)/g, '')
+    .replace(/^www\./, '')
+    .replace(/[\-\.]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b(\w)/g, function(m) { return m.toUpperCase(); }) : query;
+
+  var API_URL = 'https://ai-recommendable-api.onrender.com/api/v1/nap-check';
+
+  // Make the API call
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', API_URL, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      document.getElementById('loading').classList.add('hidden');
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        var google = (data.directories || []).find(function(d) { return d.source === 'Google Business Profile'; });
+        var siteInfo = { name: data.business_name || businessName, address: '-', phone: '-' };
+        if (google && google.name) {
+          siteInfo.name = google.name;
+          siteInfo.address = google.address || '-';
+          siteInfo.phone = google.phone || '-';
+        }
+        renderResults({ site: siteInfo, directories: data.directories || [] });
+        document.getElementById('results').classList.remove('hidden');
+        if (google && google.status === 'Not Found') {
+          document.getElementById('demoNote').innerHTML = '<p class="text-sm text-white"><strong class="text-amber-400">Not found on Google:</strong> This business name didn\'t match any Google Business Profile.</p>';
+          document.getElementById('demoNote').classList.remove('hidden');
+        }
+        // Show mismatch warning if Google returned a different name
+        if (google && google.issues && google.issues.length > 0) {
+          var nameIssue = google.issues.find(function(i) { return i.indexOf('Name mismatch') >= 0; });
+          if (nameIssue) {
+            document.getElementById('demoNote').innerHTML = '<div class="rounded-2xl border border-amber-400/40 bg-amber-400/10 p-4"><p class="text-sm text-amber-300"><strong>⚠ Name may be misspelled:</strong> ' + nameIssue + '. Check the spelling and try again.</p></div>';
+            document.getElementById('demoNote').classList.remove('hidden');
+          }
+        }
+      } else {
+        // Fallback
+        var key = host ? host.hostname : query.toLowerCase().replace(/\s+/g, '');
+        if (DEMO_DATA[key]) {
+          renderResults(DEMO_DATA[key]);
+          document.getElementById('results').classList.remove('hidden');
+        } else {
+          renderResults({ site: { name: businessName, address: '-', phone: '-' }, directories: [
+            { source: 'Google Business Profile', status: 'Not Checked', score: 0, issues: ['API error: ' + xhr.status], note: 'Check Render API status' }
+          ]});
+          document.getElementById('results').classList.remove('hidden');
+        }
+      }
+    }
+  };
+  xhr.send(JSON.stringify({ business_name: businessName, address: '', postcode: '', phone: '', country: document.getElementById('countrySelect').value }));
+}
+// Scroll reveal
+try { document.querySelectorAll('section, footer').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.05 }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
+</script>
+
+<script>
+function toggleMobileMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+</script>
+
+</body>
+<!-- v1.0.1 -->
+</html>
