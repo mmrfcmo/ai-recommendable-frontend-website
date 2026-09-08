@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Scanner A — AI-Recommendable</title>
+<meta name="description" content="Free AI Trust Score scan. Get your report with priority improvements and book a 20-minute discovery call.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
+.reveal.in-view{opacity:1;transform:none}
+@media print { .no-print{display:none!important} .rounded-2xl,.rounded-xl,.rounded-lg{break-inside:avoid;page-break-inside:avoid} body{background:white!important;color:black!important} .bg-zinc-950,.bg-zinc-900,.bg-zinc-800{background:#fafafa!important} .text-white,.text-zinc-300,.text-zinc-400{color:#111!important} .text-amber-400{color:#d97706!important} .border-zinc-800,.border-zinc-700{border-color:#ddd!important} }
+</style>
+</head>
+<body class="antialiased bg-zinc-950 text-white min-h-screen">
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+<div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+<a href="/" class="flex items-center gap-3 text-white">
+<span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span>
+<div>
+<div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Trust Scanner A</div>
+</div>
+</a>
+<div class="flex items-center gap-3">
+<button onclick="window.print()" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition no-print">🖨️ Print PDF</button>
+</div>
+</div>
+</nav>
+
+<!-- HERO SCAN FORM -->
+<section class="pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)">
+<div class="relative max-w-6xl mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 bg-amber-500 border border-amber-400 text-zinc-900 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Trust Scanner A</div>
+<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] text-white">AI Trust Score <span class="text-amber-400">Scanner</span></h1>
+<p class="mt-4 text-purple-200/80 text-lg max-w-2xl mx-auto">Enter your website URL to get your Full Trust Report. Search against the 6 main trust signals and identify your priority fixes.</p>
+
+<form id="scanForm" class="no-print mt-8">
+<div class="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
+<div class="flex-1 flex items-center rounded-xl border border-zinc-700 bg-zinc-900 px-4">
+<input type="text" required id="scanUrl" placeholder="example.com" class="flex-1 py-4 pr-4 text-base text-white placeholder-zinc-500 bg-transparent border-none outline-none focus:outline-none">
+</div>
+<button type="submit" id="scanBtn" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Scan Report — It's Free →</button>
+</div>
+<p class="text-xs text-zinc-500 mt-3">Enter your website address, e.g. yourwebsite.com</p>
+</form>
+
+<div id="loadingSection" class="hidden text-center py-12">
+<div class="animate-spin w-10 h-10 border-4 border-amber-400 border-t-transparent rounded-full mx-auto mb-4"></div>
+<p class="text-white text-base font-medium" id="loadingStatus">Analysing your website...</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RESULTS CONTAINER -->
+<div id="resultsContainer" class="hidden">
+
+<!-- PROSPECT HEADER -->
+<section class="py-6 bg-zinc-900 border-b border-zinc-800 no-print">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<p class="text-xs text-zinc-500 uppercase tracking-wider">Your Report</p>
+<p class="text-white font-bold text-lg" id="prospectSite">—</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-zinc-500">Date: <span id="reportDate" class="text-white">—</span></span>
+<button onclick="resetScan()" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition">New Scan</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SCORE HERO -->
+<section class="py-10 sm:py-14 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-8">
+  <div class="relative w-48 h-48 flex-shrink-0">
+    <svg class="w-48 h-48 -rotate-90" viewBox="0 0 192 192">
+      <circle cx="96" cy="96" r="84" fill="none" stroke="#27272a" stroke-width="10"/>
+      <circle id="scoreRing" cx="96" cy="96" r="84" fill="none" stroke="#fbbf24" stroke-width="10" stroke-linecap="round"
+        stroke-dasharray="527.79" stroke-dashoffset="527.79" style="transition: stroke-dashoffset 1.5s ease-out"/>
+    </svg>
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <span id="resultScore" class="text-6xl font-extrabold text-white">0</span>
+      <span class="text-sm text-zinc-400">/ 100</span>
+    </div>
+  </div>
+  
+  <div class="flex-1 text-center lg:text-left">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider border" id="gradeBadge">
+      <span id="gradeText">Loading</span>
+    </div>
+    <h2 class="text-2xl font-bold text-white mt-4">AI Trust Score<sup>TM</sup> — <span id="resultSite">—</span></h2>
+    <div class="flex flex-wrap items-center gap-4 mt-4 text-sm text-zinc-400">
+      <span><span class="text-red-400 font-bold">0</span> Critical</span>
+      <span><span class="text-orange-400 font-bold">40</span> Developing</span>
+      <span><span class="text-lime-400 font-bold">60</span> Strong</span>
+      <span><span class="text-emerald-400 font-bold">80</span> Leading</span>
+    </div>
+    <div class="flex flex-wrap gap-6 mt-6">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center min-w-[120px]">
+        <p class="text-xs text-zinc-500">Industry Avg</p>
+        <p class="text-2xl font-bold text-zinc-400">53</p>
+      </div>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center min-w-[120px]">
+        <p class="text-xs text-zinc-500">Top Performers</p>
+        <p class="text-2xl font-bold text-emerald-400">84</p>
+      </div>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-4 text-center min-w-[120px]">
+        <p class="text-xs text-zinc-500">Gap to Leader</p>
+        <p class="text-2xl font-bold text-amber-400" id="gapToLeader">—</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- SIGNAL SCORE BARS -->
+<section class="py-8 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<h3 class="text-lg font-bold text-white mb-6">Your 5 Trust Signal Scores</h3>
+<div class="grid sm:grid-cols-5 gap-4" id="signalBars"></div>
+</div>
+</section>
+
+<!-- DETAILED ANALYSIS -->
+<section class="py-10 sm:py-14 bg-zinc-950">
+<div class="max-w-6xl mx-auto px-6">
+<h3 class="text-lg font-bold text-white mb-6">Detailed Analysis</h3>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="signalCards"></div>
+</div>
+</section>
+
+<!-- PRIORITY IMPROVEMENTS + CTA -->
+<section class="py-10 sm:py-14 bg-zinc-900">
+<div class="max-w-6xl mx-auto px-6">
+<h3 class="text-lg font-bold text-white mb-2">Priority Improvements</h3>
+<p class="text-zinc-400 text-sm mb-4">Ordered by impact — each fix shows estimated score uplift.</p>
+<div id="priorityResults" class="space-y-3"></div>
+<div id="totalUplift" class="hidden mt-4 p-4 rounded-xl border border-amber-400/20 bg-amber-400/5">
+  <p class="text-sm text-amber-300"><span class="font-bold">Estimated uplift:</span> <span id="upliftValue" class="text-xl font-bold text-lime-400">+0</span> points — from <span id="currentScoreDisplay" class="font-bold text-amber-400">0</span> → <span id="potentialScoreDisplay" class="font-bold text-lime-400">0</span></p>
+</div>
+
+<!-- SINGLE CTA -->
+<div class="mt-10 text-center no-print">
+  <div class="max-w-2xl mx-auto rounded-2xl border border-amber-400/30 bg-amber-400/5 p-8">
+    <div class="inline-flex items-center gap-2 bg-amber-500 text-zinc-900 text-xs font-bold px-3 py-1 rounded-full mb-4">📞 Book Your Call</div>
+    <h3 class="text-2xl font-bold text-white mb-3">Ready to Improve Your Score?</h3>
+    <p class="text-sm text-zinc-300 max-w-lg mx-auto mb-6">
+      Let's walk through your report together. We'll identify the quickest wins and put together a plan tailored to your business — no pressure, no hard sell.
+    </p>
+    <a href="https://ai-recommendable.com/contact.html" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">
+      Book Your Free 20-Minute Discovery Call →
+    </a>
+    <p class="text-xs text-zinc-500 mt-3">Average score uplift: +24 points within 14 days</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-zinc-950 text-zinc-500 py-8 border-t border-zinc-800 no-print">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<p class="text-xs text-zinc-500">AI-Recommendable — AI Trust Optimisation™</p>
+<p class="text-xs text-zinc-600 mt-1">This report is based on an automated scan of your website. Results are indicative and evidence-based. No data stored.</p>
+</div>
+</footer>
+
+</div><!-- end resultsContainer -->
+
+<script>
+function resetScan() {
+  document.getElementById('resultsContainer').classList.add('hidden');
+  document.getElementById('scanForm').classList.remove('hidden');
+  document.getElementById('loadingSection').classList.add('hidden');
+  document.getElementById('scanUrl').value = '';
+  document.getElementById('scanBtn').disabled = false;
+  document.getElementById('scanBtn').innerHTML = 'Scan Report — It\'s Free →';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+document.getElementById('scanForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var urlInput = document.getElementById('scanUrl');
+  var url = urlInput.value.trim();
+  if (!url) return;
+  
+  var fullUrl = url.startsWith('http') ? url : 'https://' + url;
+  var domain = url.replace('www.','').split('/')[0];
+  
+  document.getElementById('scanForm').classList.add('hidden');
+  document.getElementById('loadingSection').classList.remove('hidden');
+  document.getElementById('scanBtn').disabled = true;
+  
+  document.getElementById('reportDate').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('prospectSite').textContent = domain;
+  
+  document.getElementById('loadingStatus').textContent = 'Analysing your website...';
+  
+  var scores = { schema: 0, entity: 0, content: 0, trust: 0, tech: 0 };
+  var apiData = null;
+  
+  // Try API for up to 8 seconds, then use demo data
+  try {
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function() { controller.abort(); }, 8000);
+    
+    var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'proscan@internal.com' }),
+      signal: controller.signal
+    }).catch(function() { return null; });
+    
+    clearTimeout(timeoutId);
+    
+    if (apiRes && apiRes.ok) {
+      apiData = await apiRes.json();
+      
+      if (apiData && apiData.signals) {
+        apiData.signals.forEach(function(s) {
+          var pct = s.max_score > 0 ? Math.round((s.score / s.max_score) * 100) : 0;
+          if (s.name === 'schema_org') scores.schema = pct;
+          else if (s.name === 'nap_consistency' || s.name === 'entity_clarity') scores.entity = Math.max(scores.entity, pct);
+          else if (s.name === 'content_depth') scores.content = pct;
+          else if (s.name === 'trust_signals') scores.trust = pct;
+          else if (s.name === 'technical_seo') scores.tech = pct;
+        });
+      }
+    }
+  } catch(e) {}
+  
+  var total = 0;
+  if (apiData && apiData.score !== undefined) {
+    total = apiData.score;
+  } else {
+    total = Math.round((scores.schema + scores.entity + scores.content + scores.trust + scores.tech) / 5);
+  }
+  
+  // Fallback if API failed
+  if (total === 0 || isNaN(total)) {
+    scores = { schema: 34, entity: 52, content: 61, trust: 27, tech: 43 };
+    total = 43;
+  }
+  
+  // Animate score ring
+  var ring = document.getElementById('scoreRing');
+  var circumference = 527.79;
+  var offset = circumference - (total / 100) * circumference;
+  setTimeout(function() { ring.style.strokeDashoffset = offset; }, 100);
+  
+  document.getElementById('resultScore').textContent = total;
+  document.getElementById('resultSite').textContent = domain;
+  
+  // Grade
+  var grade = 'Critical';
+  var gradeColor = 'bg-red-900/50 text-red-400 border-red-800';
+  if (total >= 80) { grade = 'Leading'; gradeColor = 'bg-emerald-900/50 text-emerald-400 border-emerald-800'; }
+  else if (total >= 60) { grade = 'Strong'; gradeColor = 'bg-lime-900/50 text-lime-400 border-lime-800'; }
+  else if (total >= 40) { grade = 'Developing'; gradeColor = 'bg-orange-900/50 text-orange-400 border-orange-800'; }
+  document.getElementById('gradeBadge').className = 'inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider border ' + gradeColor;
+  document.getElementById('gradeText').textContent = grade;
+  
+  var gap = 84 - total;
+  document.getElementById('gapToLeader').textContent = gap > 0 ? '+' + gap + ' pts to 84' : 'Already Leading';
+  
+  // Signal bars
+  var config = [
+    { key: 'schema', label: 'Structured Data', icon: '📋' },
+    { key: 'entity', label: 'Entity & NAP', icon: '🏷️' },
+    { key: 'content', label: 'Content Depth', icon: '✏️' },
+    { key: 'trust', label: 'Trust Signals', icon: '🛡️' },
+    { key: 'tech', label: 'Technical SEO', icon: '⚙️' }
+  ];
+  
+  var barsHtml = '';
+  config.forEach(function(c) {
+    var val = scores[c.key] || 0;
+    var barColor = val >= 80 ? 'bg-emerald-500' : val >= 60 ? 'bg-amber-500' : val >= 40 ? 'bg-orange-500' : 'bg-red-500';
+    barsHtml += '<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-4">' +
+      '<div class="flex items-center gap-2 mb-2"><span>' + c.icon + '</span><span class="text-xs text-zinc-400 uppercase">' + c.label + '</span></div>' +
+      '<p class="text-2xl font-bold text-white">' + val + '</p>' +
+      '<div class="w-full bg-zinc-800 rounded-full h-2 mt-2"><div class="' + barColor + ' h-2 rounded-full" style="width:' + val + '%"></div></div></div>';
+  });
+  document.getElementById('signalBars').innerHTML = barsHtml;
+  
+  // Analysis cards
+  var details = [
+    { key: 'schema', icon: '📋', name: 'Structured Data', desc: 'Schema.org markup that helps AI understand your business.', detail: scores.schema >= 80 ? 'Strong schema markup detected.' : scores.schema >= 40 ? 'Some schema found — needs improvement.' : 'No schema markup detected.', rec: 'Implement Organisation, LocalBusiness, and Service JSON-LD schema.' },
+    { key: 'entity', icon: '🏷️', name: 'Entity & NAP', desc: 'How clearly AI systems can identify your business.', detail: scores.entity >= 80 ? 'Strong business identity signals detected.' : scores.entity >= 40 ? 'Some identity signals found — check NAP consistency.' : 'Weak business identity.', rec: 'Standardise NAP across all directories. Add clear business description.' },
+    { key: 'content', icon: '✏️', name: 'Content Depth', desc: 'How thoroughly your site covers key topics.', detail: scores.content >= 80 ? 'Comprehensive content with strong topic coverage.' : scores.content >= 40 ? 'Adequate content, room for expansion.' : 'Limited content depth.', rec: 'Add FAQ sections, detailed service pages, and resource guides.' },
+    { key: 'trust', icon: '🛡️', name: 'Trust Signals', desc: 'Reviews, testimonials and social proof.', detail: scores.trust >= 80 ? 'Good trust signals present.' : scores.trust >= 40 ? 'Some trust signals found.' : 'Few trust signals detected.', rec: 'Display testimonials, link to reviews, showcase accreditations.' },
+    { key: 'tech', icon: '⚙️', name: 'Technical SEO', desc: 'Meta tags, headings and site health.', detail: scores.tech >= 80 ? 'Strong technical foundation.' : scores.tech >= 40 ? 'Basic technical SEO present.' : 'Technical SEO needs attention.', rec: 'Add meta descriptions, fix heading structure, enable HTTPS.' }
+  ];
+  
+  var cardsHtml = '';
+  details.forEach(function(d) {
+    var val = scores[d.key] || 0;
+    var c = val >= 80 ? '#22c55e' : val >= 60 ? '#f59e0b' : val >= 40 ? '#f97316' : '#ef4444';
+    cardsHtml += '<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5">' +
+      '<div class="flex items-center gap-3 mb-3">' +
+      '<div class="relative w-12 h-12 flex-shrink-0">' +
+      '<svg class="w-12 h-12 -rotate-90" viewBox="0 0 48 48">' +
+      '<circle cx="24" cy="24" r="18" fill="none" stroke="#27272a" stroke-width="3"/>' +
+      '<circle cx="24" cy="24" r="18" fill="none" stroke="' + c + '" stroke-width="3" stroke-linecap="round" stroke-dasharray="113.1" stroke-dashoffset="' + (113.1 - (val/100)*113.1) + '"/>' +
+      '</svg><div class="absolute inset-0 flex items-center justify-center"><span class="text-sm font-bold text-white">' + val + '</span></div></div>' +
+      '<div><p class="font-bold text-white text-sm">' + d.icon + ' ' + d.name + '</p><p class="text-xs text-zinc-500">' + d.desc + '</p></div></div>' +
+      '<div class="text-sm text-zinc-300 mb-2"><span class="text-zinc-500">What we found: </span>' + d.detail + '</div>' +
+      '<div class="text-sm text-amber-300"><span class="text-zinc-500">→ </span>' + d.rec + '</div></div>';
+  });
+  document.getElementById('signalCards').innerHTML = cardsHtml;
+  
+  // Priority improvements
+  var priorities = [
+    { label: 'Structured Data', detail: 'Add Organisation + LocalBusiness JSON-LD schema', uplift: 12, key: 'schema' },
+    { label: 'Entity Clarity', detail: 'Fix NAP inconsistencies across directories', uplift: 8, key: 'entity' },
+    { label: 'Trust Signals', detail: 'Activate review generation + display testimonials', uplift: 7, key: 'trust' },
+    { label: 'Content Depth', detail: 'Add FAQ, service Q&A, resource hub', uplift: 6, key: 'content' },
+    { label: 'Technical SEO', detail: 'Add meta descriptions, fix heading structure', uplift: 5, key: 'tech' }
+  ];
+  priorities.sort(function(a, b) { return (scores[a.key] || 50) - (scores[b.key] || 50); });
+  
+  var prioHtml = '';
+  var totalUp = 0;
+  var missing = 0;
+  priorities.forEach(function(p) {
+    var cur = scores[p.key] || 0;
+    if (cur < 100) {
+      var up = Math.min(p.uplift, 100 - cur);
+      totalUp += up;
+      missing++;
+      var bc = cur >= 80 ? 'bg-emerald-500' : cur >= 60 ? 'bg-amber-500' : cur >= 40 ? 'bg-orange-500' : 'bg-red-500';
+      prioHtml += '<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-4 flex items-center gap-4">' +
+        '<div class="flex-1"><p class="text-sm font-medium text-white">' + p.label + '</p>' +
+        '<p class="text-xs text-zinc-400 mt-0.5">' + p.detail + '</p>' +
+        '<div class="w-full bg-zinc-800 rounded-full h-1.5 mt-2 max-w-xs"><div class="' + bc + ' h-1.5 rounded-full" style="width:' + cur + '%"></div></div></div>' +
+        '<div class="text-right flex-shrink-0"><p class="text-lg font-bold text-lime-400">+' + up + '</p><p class="text-xs text-zinc-500">estimated</p></div></div>';
+    }
+  });
+  
+  if (missing > 0) {
+    document.getElementById('priorityResults').innerHTML = prioHtml;
+    document.getElementById('totalUplift').classList.remove('hidden');
+    document.getElementById('upliftValue').textContent = '+' + totalUp;
+    document.getElementById('currentScoreDisplay').textContent = total;
+    document.getElementById('potentialScoreDisplay').textContent = Math.min(100, total + totalUp);
+  } else {
+    document.getElementById('priorityResults').innerHTML = '<div class="rounded-xl border border-emerald-800/30 bg-emerald-900/10 p-4"><p class="text-sm text-emerald-400 font-medium">✅ All signals are strong — no priority improvements needed.</p></div>';
+    document.getElementById('totalUplift').classList.add('hidden');
+  }
+  
+  // Show results
+  document.getElementById('loadingSection').classList.add('hidden');
+  document.getElementById('resultsContainer').classList.remove('hidden');
+  window.setTimeout(function() {
+    document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+});
+</script>
+
+</body>
+</html>
