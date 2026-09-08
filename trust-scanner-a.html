@@ -213,15 +213,6 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
   var scores = { schema: 0, entity: 0, content: 0, trust: 0, tech: 0 };
   var apiData = null;
   
-  // Generate a seed from the domain so results vary per website
-  var seed = 0;
-  for (var i = 0; i < domain.length; i++) { seed += domain.charCodeAt(i); }
-  function seededRandom(max, min) {
-    seed = (seed * 9301 + 49297) % 233280;
-    var r = seed / 233280;
-    return Math.round(min + r * (max - min));
-  }
-  
   // Show realistic scanning steps with delays
   var steps = [
     { msg: '🔍 Resolving DNS and connecting to server...', delay: 1800 },
@@ -238,16 +229,172 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
     await new Promise(function(r) { setTimeout(r, steps[s].delay); });
   }
   
-  // Generate varied results based on domain seed
-  scores = {
-    schema: seededRandom(65, 10),
-    entity: seededRandom(75, 25),
-    content: seededRandom(80, 35),
-    trust: seededRandom(60, 5),
-    tech: seededRandom(70, 15)
+  // Get page content via CORS proxy and analyse it
+  var pageHtml = '';
+  var scores = { schema: 0, entity: 0, content: 0, trust: 0, tech: 0 };
+  var details = {
+    schema: '', entity: '', content: '', trust: '', tech: ''
+  };
+  var recs = {
+    schema: 'Implement Organisation, LocalBusiness, and Service JSON-LD schema.',
+    entity: 'Standardise NAP across all directories. Add clear business description.',
+    content: 'Add FAQ sections, detailed service pages, and resource guides.',
+    trust: 'Display testimonials, link to reviews, showcase accreditations.',
+    tech: 'Add meta descriptions, fix heading structure, enable HTTPS.'
   };
   
-  var total = Math.round((scores.schema + scores.entity + scores.content + scores.trust + scores.tech) / 5);
+  try {
+    var proxyRes = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(fullUrl), {
+      signal: AbortSignal.timeout(10000)
+    }).catch(function() { return null; });
+    
+    if (proxyRes && proxyRes.ok) {
+      pageHtml = await proxyRes.text();
+    }
+  } catch(e) {}
+  
+  // If proxy failed, try render.com API
+  if (!pageHtml) {
+    try {
+      var controller = new AbortController();
+      var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
+      
+      var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'scanner@internal.com' })
+      }).catch(function() { return null; });
+      
+      clearTimeout(timeoutId);
+      
+      if (apiRes && apiRes.ok) {
+        var apiData = await apiRes.json();
+        if (apiData && apiData.signals) {
+          apiData.signals.forEach(function(s) {
+            var pct = s.max_score > 0 ? Math.round((s.score / s.max_score) * 100) : 0;
+            if (s.name === 'schema_org') scores.schema = pct;
+            else if (s.name === 'nap_consistency' || s.name === 'entity_clarity') scores.entity = Math.max(scores.entity, pct);
+            else if (s.name === 'content_depth') scores.content = pct;
+            else if (s.name === 'trust_signals') scores.trust = pct;
+            else if (s.name === 'technical_seo') scores.tech = pct;
+          });
+        }
+        if (apiData && apiData.score !== undefined) {
+          total = apiData.score;
+        }
+      }
+    } catch(e) {}
+  }
+  
+  // If we got page HTML, analyse it in-browser
+  if (pageHtml) {
+    var lower = pageHtml.toLowerCase();
+    
+    // 1. Schema.org markup check
+    var schemaCount = (pageHtml.match(/application\/ld\+json/g) || []).length;
+    var hasLocalBusiness = lower.indexOf('"localbusiness"') > -1 || lower.indexOf("'localbusiness'") > -1;
+    var hasOrganisation = lower.indexOf('"organization"') > -1 || lower.indexOf("'organization'") > -1;
+    var hasService = lower.indexOf('"service"') > -1 || lower.indexOf("'service'") > -1;
+    var schemaScore = 0;
+    if (schemaCount >= 3) { schemaScore = 85; details.schema = 'Multiple schema blocks found. Strong structured data.'; }
+    else if (schemaCount >= 2) { schemaScore = 65; details.schema = '2 schema blocks found. Could add more types.'; recs.schema = 'Add LocalBusiness and Service schema for better coverage.'; }
+    else if (schemaCount >= 1) { schemaScore = 40; details.schema = '1 schema block found. Needs more structured data.'; recs.schema = 'Add Organisation, LocalBusiness, and Service JSON-LD schema.'; }
+    else { schemaScore = 10; details.schema = 'No schema markup detected.'; recs.schema = 'Implement Organisation, LocalBusiness, and Service JSON-LD schema.'; }
+    if (hasLocalBusiness) schemaScore = Math.min(100, schemaScore + 10);
+    if (hasOrganisation) schemaScore = Math.min(100, schemaScore + 5);
+    scores.schema = schemaScore;
+    
+    // 2. Entity & NAP check
+    var hasPhone = lower.match(/0[0-9\s\-]{7,15}/g);
+    var hasEmail = lower.indexOf('@') > -1 && (lower.indexOf('mailto:') > -1 || lower.indexOf('email') > -1);
+    var hasAddress = lower.indexOf('streetaddress') > -1 || lower.indexOf('addresslocality') > -1 || lower.indexOf('postalcode') > -1;
+    var entityScore = 30;
+    if (hasPhone) entityScore += 20;
+    if (hasEmail) entityScore += 20;
+    if (hasAddress) entityScore += 15;
+    if (hasLocalBusiness) entityScore += 15;
+    entityScore = Math.min(100, entityScore);
+    scores.entity = entityScore;
+    if (entityScore >= 80) details.entity = 'Strong business identity with NAP consistency.';
+    else if (entityScore >= 50) details.entity = 'Some identity signals found — check NAP consistency across directories.';
+    else details.entity = 'Weak business identity. Add structured NAP data.';
+    
+    // 3. Content Depth check
+    var wordCount = pageHtml.replace(/<[^>]*>/g,'').split(/\s+/).length;
+    var hasFAQ = lower.indexOf('faq') > -1 || lower.indexOf('frequently asked') > -1;
+    var hasBlog = lower.indexOf('blog') > -1 || lower.indexOf('article') > -1;
+    var hasServices = lower.indexOf('service') > -1 || lower.indexOf('treatment') > -1 || lower.indexOf('product') > -1;
+    var contentScore = 25;
+    if (wordCount > 500) contentScore += 15;
+    if (wordCount > 2000) contentScore += 15;
+    if (wordCount > 5000) contentScore += 15;
+    if (hasFAQ) contentScore += 10;
+    if (hasBlog) contentScore += 10;
+    if (hasServices) contentScore += 10;
+    contentScore = Math.min(100, contentScore);
+    scores.content = contentScore;
+    if (contentScore >= 80) details.content = 'Comprehensive content with strong topic coverage.';
+    else if (contentScore >= 50) details.content = 'Adequate content, room for expansion.';
+    else details.content = 'Limited content depth.';
+    
+    // 4. Trust Signals check
+    var hasReviews = lower.indexOf('review') > -1 || lower.indexOf('testimonial') > -1 || lower.indexOf('rating') > -1;
+    var hasAwards = lower.indexOf('award') > -1 || lower.indexOf('certified') > -1 || lower.indexOf('accredit') > -1;
+    var hasSocial = lower.indexOf('facebook') > -1 || lower.indexOf('instagram') > -1 || lower.indexOf('linkedin') > -1 || lower.indexOf('twitter') > -1;
+    var hasTrustBadges = lower.indexOf('trustpilot') > -1 || lower.indexOf('google review') > -1 || lower.indexOf('star') > -1;
+    var trustScore = 20;
+    if (hasReviews) trustScore += 20;
+    if (hasAwards) trustScore += 15;
+    if (hasSocial) trustScore += 15;
+    if (hasTrustBadges) trustScore += 15;
+    if (schemaCount > 0 && hasReviews) trustScore += 15;
+    trustScore = Math.min(100, trustScore);
+    scores.trust = trustScore;
+    if (trustScore >= 80) details.trust = 'Good trust signals present.';
+    else if (trustScore >= 50) details.trust = 'Some trust signals found.';
+    else details.trust = 'Few trust signals detected.';
+    
+    // 5. Technical SEO check
+    var hasTitle = lower.indexOf('<title>') > -1;
+    var hasMetaDesc = lower.indexOf('meta name="description"') > -1 || lower.indexOf("meta name='description'") > -1;
+    var hasH1 = lower.indexOf('<h1') > -1;
+    var hasH2 = lower.indexOf('<h2') > -1;
+    var hasViewport = lower.indexOf('viewport') > -1;
+    var hasHTTPS = fullUrl.indexOf('https://') === 0;
+    var techScore = 15;
+    if (hasTitle) techScore += 15;
+    if (hasMetaDesc) techScore += 15;
+    if (hasH1) techScore += 10;
+    if (hasH2) techScore += 10;
+    if (hasViewport) techScore += 10;
+    if (hasHTTPS) techScore += 10;
+    if (lower.indexOf('canonical') > -1) techScore += 5;
+    if (lower.indexOf('hreflang') > -1) techScore += 5;
+    if (lower.indexOf('og:title') > -1) techScore += 5;
+    techScore = Math.min(100, techScore);
+    scores.tech = techScore;
+    if (techScore >= 80) details.tech = 'Strong technical foundation.';
+    else if (techScore >= 50) details.tech = 'Basic technical SEO present.';
+    else details.tech = 'Technical SEO needs attention.';
+    
+    // Generate priority recommendations
+    if (scores.schema < 50) recs.schema = 'Implement Organisation, LocalBusiness, and Service JSON-LD schema markup.';
+    if (scores.entity < 50) recs.entity = 'Add consistent NAP (Name, Address, Phone) across your site with structured data.';
+    if (scores.content < 50) recs.content = 'Add FAQ sections, detailed service pages, and resource guides to improve content depth.';
+    if (scores.trust < 50) recs.trust = 'Display testimonials, link to review platforms, and showcase awards or accreditations.';
+    if (scores.tech < 50) recs.tech = 'Add meta descriptions, fix heading structure, ensure proper viewport and canonical tags.';
+  }
+  
+  // If nothing worked, show a notice
+  var total = 0;
+  if (scores.schema === 0 && scores.entity === 0 && scores.content === 0 && scores.trust === 0 && scores.tech === 0) {
+    document.getElementById('loadingStatus').textContent = '⚠️ Unable to scan — site may be blocking access. Showing estimated scores.';
+    await new Promise(function(r) { setTimeout(r, 1500); });
+    scores = { schema: 34, entity: 48, content: 55, trust: 30, tech: 40 };
+    details = { schema: 'Estimated', entity: 'Estimated', content: 'Estimated', trust: 'Estimated', tech: 'Estimated' };
+  }
+  
+  total = Math.round((scores.schema + scores.entity + scores.content + scores.trust + scores.tech) / 5);
   
   // Animate score ring
   var ring = document.getElementById('scoreRing');
@@ -290,19 +437,20 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
   });
   document.getElementById('signalBars').innerHTML = barsHtml;
   
-  // Analysis cards
-  var details = [
-    { key: 'schema', icon: '📋', name: 'Structured Data', desc: 'Schema.org markup that helps AI understand your business.', detail: scores.schema >= 80 ? 'Strong schema markup detected.' : scores.schema >= 40 ? 'Some schema found — needs improvement.' : 'No schema markup detected.', rec: 'Implement Organisation, LocalBusiness, and Service JSON-LD schema.' },
-    { key: 'entity', icon: '🏷️', name: 'Entity & NAP', desc: 'How clearly AI systems can identify your business.', detail: scores.entity >= 80 ? 'Strong business identity signals detected.' : scores.entity >= 40 ? 'Some identity signals found — check NAP consistency.' : 'Weak business identity.', rec: 'Standardise NAP across all directories. Add clear business description.' },
-    { key: 'content', icon: '✏️', name: 'Content Depth', desc: 'How thoroughly your site covers key topics.', detail: scores.content >= 80 ? 'Comprehensive content with strong topic coverage.' : scores.content >= 40 ? 'Adequate content, room for expansion.' : 'Limited content depth.', rec: 'Add FAQ sections, detailed service pages, and resource guides.' },
-    { key: 'trust', icon: '🛡️', name: 'Trust Signals', desc: 'Reviews, testimonials and social proof.', detail: scores.trust >= 80 ? 'Good trust signals present.' : scores.trust >= 40 ? 'Some trust signals found.' : 'Few trust signals detected.', rec: 'Display testimonials, link to reviews, showcase accreditations.' },
-    { key: 'tech', icon: '⚙️', name: 'Technical SEO', desc: 'Meta tags, headings and site health.', detail: scores.tech >= 80 ? 'Strong technical foundation.' : scores.tech >= 40 ? 'Basic technical SEO present.' : 'Technical SEO needs attention.', rec: 'Add meta descriptions, fix heading structure, enable HTTPS.' }
-  ];
-  
+  // Analysis cards using real data
   var cardsHtml = '';
-  details.forEach(function(d) {
-    var val = scores[d.key] || 0;
+  var signalKeys = ['schema', 'entity', 'content', 'trust', 'tech'];
+  var signalNames = {
+    schema: { icon: '📋', name: 'Structured Data', desc: 'Schema.org markup that helps AI understand your business.' },
+    entity: { icon: '🏷️', name: 'Entity & NAP', desc: 'How clearly AI systems can identify your business.' },
+    content: { icon: '✏️', name: 'Content Depth', desc: 'How thoroughly your site covers key topics.' },
+    trust: { icon: '🛡️', name: 'Trust Signals', desc: 'Reviews, testimonials and social proof.' },
+    tech: { icon: '⚙️', name: 'Technical SEO', desc: 'Meta tags, headings and site health.' }
+  };
+  signalKeys.forEach(function(k) {
+    var val = scores[k] || 0;
     var c = val >= 80 ? '#22c55e' : val >= 60 ? '#f59e0b' : val >= 40 ? '#f97316' : '#ef4444';
+    var n = signalNames[k];
     cardsHtml += '<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5">' +
       '<div class="flex items-center gap-3 mb-3">' +
       '<div class="relative w-12 h-12 flex-shrink-0">' +
@@ -310,9 +458,9 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
       '<circle cx="24" cy="24" r="18" fill="none" stroke="#27272a" stroke-width="3"/>' +
       '<circle cx="24" cy="24" r="18" fill="none" stroke="' + c + '" stroke-width="3" stroke-linecap="round" stroke-dasharray="113.1" stroke-dashoffset="' + (113.1 - (val/100)*113.1) + '"/>' +
       '</svg><div class="absolute inset-0 flex items-center justify-center"><span class="text-sm font-bold text-white">' + val + '</span></div></div>' +
-      '<div><p class="font-bold text-white text-sm">' + d.icon + ' ' + d.name + '</p><p class="text-xs text-zinc-500">' + d.desc + '</p></div></div>' +
-      '<div class="text-sm text-zinc-300 mb-2"><span class="text-zinc-500">What we found: </span>' + d.detail + '</div>' +
-      '<div class="text-sm text-amber-300"><span class="text-zinc-500">→ </span>' + d.rec + '</div></div>';
+      '<div><p class="font-bold text-white text-sm">' + n.icon + ' ' + n.name + '</p><p class="text-xs text-zinc-500">' + n.desc + '</p></div></div>' +
+      '<div class="text-sm text-zinc-300 mb-2"><span class="text-zinc-500">What we found: </span>' + (details[k] || 'Analysed') + '</div>' +
+      '<div class="text-sm text-amber-300"><span class="text-zinc-500">→ </span>' + (recs[k] || 'Review and improve.') + '</div></div>';
   });
   document.getElementById('signalCards').innerHTML = cardsHtml;
   
