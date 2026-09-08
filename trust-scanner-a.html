@@ -243,48 +243,45 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
     tech: 'Add meta descriptions, fix heading structure, enable HTTPS.'
   };
   
+  // Try the real API first (it works!)
   try {
-    var proxyRes = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(fullUrl), {
-      signal: AbortSignal.timeout(10000)
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
+    
+    var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'scanner@internal.com' })
     }).catch(function() { return null; });
     
-    if (proxyRes && proxyRes.ok) {
-      pageHtml = await proxyRes.text();
+    clearTimeout(timeoutId);
+    
+    if (apiRes && apiRes.ok) {
+      var apiData = await apiRes.json();
+      if (apiData && apiData.signals) {
+        apiData.signals.forEach(function(s) {
+          var pct = s.max_score > 0 ? Math.round((s.score / s.max_score) * 100) : 0;
+          if (s.name === 'schema_org') { scores.schema = pct; details.schema = s.details || ''; }
+          else if (s.name === 'nap_consistency' || s.name === 'entity_clarity') { scores.entity = Math.max(scores.entity, pct); details.entity = (details.entity || '') + (s.details || ''); }
+          else if (s.name === 'content_depth') { scores.content = pct; details.content = s.details || ''; }
+          else if (s.name === 'trust_signals') { scores.trust = pct; details.trust = s.details || ''; }
+          else if (s.name === 'technical_seo') { scores.tech = pct; details.tech = s.details || ''; }
+        });
+      }
+      if (apiData && apiData.score !== undefined) {
+        total = apiData.score;
+      }
     }
   } catch(e) {}
   
-  // If proxy failed, try render.com API
-  if (!pageHtml) {
+  // If API didn't return real scores, try fetching page via CORS proxy for in-browser analysis
+  if (scores.schema === 0 && scores.entity === 0) {
     try {
-      var controller = new AbortController();
-      var timeoutId = setTimeout(function() { controller.abort(); }, 12000);
-      
-      var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'scanner@internal.com' })
-      }).catch(function() { return null; });
-      
-      clearTimeout(timeoutId);
-      
-      if (apiRes && apiRes.ok) {
-        var apiData = await apiRes.json();
-        if (apiData && apiData.signals) {
-          apiData.signals.forEach(function(s) {
-            var pct = s.max_score > 0 ? Math.round((s.score / s.max_score) * 100) : 0;
-            if (s.name === 'schema_org') scores.schema = pct;
-            else if (s.name === 'nap_consistency' || s.name === 'entity_clarity') scores.entity = Math.max(scores.entity, pct);
-            else if (s.name === 'content_depth') scores.content = pct;
-            else if (s.name === 'trust_signals') scores.trust = pct;
-            else if (s.name === 'technical_seo') scores.tech = pct;
-          });
-        }
-        if (apiData && apiData.score !== undefined) {
-          total = apiData.score;
-        }
+      var proxyRes = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(fullUrl)).catch(function() { return null; });
+      if (proxyRes && proxyRes.ok) {
+        pageHtml = await proxyRes.text();
       }
     } catch(e) {}
-  }
   
   // If we got page HTML, analyse it in-browser
   if (pageHtml) {
