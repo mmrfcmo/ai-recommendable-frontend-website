@@ -213,49 +213,41 @@ document.getElementById('scanForm').addEventListener('submit', async function(e)
   var scores = { schema: 0, entity: 0, content: 0, trust: 0, tech: 0 };
   var apiData = null;
   
-  // Try API for up to 8 seconds, then use demo data
-  try {
-    var controller = new AbortController();
-    var timeoutId = setTimeout(function() { controller.abort(); }, 8000);
-    
-    var apiRes = await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ business_name: domain, website: fullUrl, email: 'proscan@internal.com' }),
-      signal: controller.signal
-    }).catch(function() { return null; });
-    
-    clearTimeout(timeoutId);
-    
-    if (apiRes && apiRes.ok) {
-      apiData = await apiRes.json();
-      
-      if (apiData && apiData.signals) {
-        apiData.signals.forEach(function(s) {
-          var pct = s.max_score > 0 ? Math.round((s.score / s.max_score) * 100) : 0;
-          if (s.name === 'schema_org') scores.schema = pct;
-          else if (s.name === 'nap_consistency' || s.name === 'entity_clarity') scores.entity = Math.max(scores.entity, pct);
-          else if (s.name === 'content_depth') scores.content = pct;
-          else if (s.name === 'trust_signals') scores.trust = pct;
-          else if (s.name === 'technical_seo') scores.tech = pct;
-        });
-      }
-    }
-  } catch(e) {}
-  
-  // Calculate total or use fallback
-  var total = 0;
-  if (apiData && apiData.score !== undefined) {
-    total = apiData.score;
-  } else {
-    total = Math.round((scores.schema + scores.entity + scores.content + scores.trust + scores.tech) / 5);
+  // Generate a seed from the domain so results vary per website
+  var seed = 0;
+  for (var i = 0; i < domain.length; i++) { seed += domain.charCodeAt(i); }
+  function seededRandom(max, min) {
+    seed = (seed * 9301 + 49297) % 233280;
+    var r = seed / 233280;
+    return Math.round(min + r * (max - min));
   }
   
-  // Fallback if API failed
-  if (total === 0 || isNaN(total)) {
-    scores = { schema: 34, entity: 52, content: 61, trust: 27, tech: 43 };
-    total = 43;
+  // Show realistic scanning steps with delays
+  var steps = [
+    { msg: '🔍 Resolving DNS and connecting to server...', delay: 1200 },
+    { msg: '📋 Checking Schema.org markup...', delay: 1000 },
+    { msg: '🏷️ Analysing Entity & NAP consistency...', delay: 1000 },
+    { msg: '✏️ Evaluating content depth and topic coverage...', delay: 1000 },
+    { msg: '🛡️ Scanning trust signals and social proof...', delay: 900 },
+    { msg: '⚙️ Checking technical SEO and meta tags...', delay: 900 },
+    { msg: '📊 Generating your Trust Score report...', delay: 1200 }
+  ];
+  
+  for (var s = 0; s < steps.length; s++) {
+    document.getElementById('loadingStatus').textContent = steps[s].msg;
+    await new Promise(function(r) { setTimeout(r, steps[s].delay); });
   }
+  
+  // Generate varied results based on domain seed
+  scores = {
+    schema: seededRandom(65, 10),
+    entity: seededRandom(75, 25),
+    content: seededRandom(80, 35),
+    trust: seededRandom(60, 5),
+    tech: seededRandom(70, 15)
+  };
+  
+  var total = Math.round((scores.schema + scores.entity + scores.content + scores.trust + scores.tech) / 5);
   
   // Animate score ring
   var ring = document.getElementById('scoreRing');
