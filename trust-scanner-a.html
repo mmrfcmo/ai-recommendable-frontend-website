@@ -58,7 +58,7 @@ var txt='',scores={schema:0,entity:0,content:0,trust:0,tech:0},details={schema:'
 
 // Fetch page via jina.ai reader (free CORS-friendly proxy)
 try{
-  var r=await fetch('https://r.jina.ai/http://'+d,{headers:{'Accept':'text/plain'}}).catch(function(e){console.log("jina error",e);return null});
+  var r=await fetch('https://ai-recommendable-api.onrender.com/api/v1/discoverability/report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({business_name:d,website:fu,email:'scanner@internal.com'})}).catch(function(e){console.log("API error",e);return null})
   if(r&&r.ok){txt=await r.text();document.getElementById('loadingStatus').textContent='✅ Page fetched. Analysing signals...';await new Promise(function(r){setTimeout(r,800)})}
 }catch(e){}
 
