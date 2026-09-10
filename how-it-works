@@ -25,7 +25,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 </div>
 <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
 <a href="/" class="block text-white transition py-2 font-semibold">Home</a>
-<a href="/ai-discoverability-scan.html" class="block text-zinc-400 hover:text-white transition py-2">AI Trust Score Scanner</a>
+<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="block text-zinc-400 hover:text-white transition py-2">AI Trust Score Scanner</a>
 <a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
 <a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a>
 <a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
@@ -61,7 +61,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>You receive a clear score and actionable recommendations</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>No credit card required. No sales pressure.</span></li>
 </ul>
-<a href="/ai-discoverability-scan.html" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">Get Your FREE Report →</a>
+<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">Get Your FREE Report →</a>
 </div>
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-8 text-center">
 <div class="text-5xl mb-4">🔍</div>
@@ -123,7 +123,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>We explain what's working and what's not</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>If it's not a fit, we'll tell you honestly</span></li>
 </ul>
-<a href="/ai-discoverability-scan.html" class="mt-6 inline-flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 px-6 py-3 text-sm font-bold text-amber-400 shadow-sm transition hover:bg-amber-400 hover:text-zinc-900">Start with Your FREE Report →</a>
+<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="mt-6 inline-flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 px-6 py-3 text-sm font-bold text-amber-400 shadow-sm transition hover:bg-amber-400 hover:text-zinc-900">Start with Your FREE Report →</a>
 </div>
 </div>
 </div>
@@ -211,14 +211,14 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Ready to Find Out Where You Stand?</h2>
 <p class="mt-4 text-white text-lg">Start with a free AI Discoverability Report. No credit card. No obligation.</p>
 <div class="mt-8 flex flex-wrap gap-4 justify-center">
-<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
+<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
 <a href="/ai-readiness-assessment" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">Take the AI Readiness Assessment →</a>
 </div>
 </div>
 </section>
 
 <footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
-<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/ai-discoverability-scan.html" class="text-zinc-400 hover:text-amber-400 transition">AI Trust Score Scanner</a></li>
+<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="text-zinc-400 hover:text-amber-400 transition">AI Trust Score Scanner</a></li>
 <li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
 <li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
 <li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
