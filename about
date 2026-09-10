@@ -136,7 +136,7 @@
 <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white">Ready to Find Out Where You Stand?</h2>
 <p class="mt-4 text-zinc-400 text-lg">Two free starting points. Pick the one that fits.</p>
 <div class="mt-8 flex flex-wrap gap-4 justify-center">
-<a href="/ai-discoverability-scan.html" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
+<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
 <a href="/ai-readiness-assessment" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">Take the AI Readiness Assessment →</a>
 </div>
 </div>
