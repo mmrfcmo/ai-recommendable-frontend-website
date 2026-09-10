@@ -66,7 +66,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-8 text-center">
 <div class="text-5xl mb-4">🔍</div>
 <h3 class="font-bold text-white text-lg">What You'll Get</h3>
-<div class="mt-4 grid grid-cols-2 gap-3 text-left">
+<div class="mt-4 grid grid-cols-3 gap-3 text-left">
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
 <div class="text-sm font-semibold text-amber-400">Schema Markup</div>
 <div class="text-xs text-zinc-400 mt-1">Is your site structured for AI?</div>
@@ -74,6 +74,10 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
 <div class="text-sm font-semibold text-amber-400">Entity Clarity</div>
 <div class="text-xs text-zinc-400 mt-1">Does AI know who you are?</div>
+</div>
+<div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
+<div class="text-sm font-semibold text-amber-400">NAP Consistency</div>
+<div class="text-xs text-zinc-400 mt-1">Is your business info consistent?</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
 <div class="text-sm font-semibold text-amber-400">Content Quality</div>
