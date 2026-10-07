@@ -1,0 +1,64 @@
+name: RbAI Scanner Frontend QA
+
+on:
+  push:
+    branches:
+      - rbai-trust-signals-scanner-integration
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  scanner-static-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate scanner integration
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          basic = Path("trust-signals-scanner.html").read_text(encoding="utf-8")
+          assert Path("trust-signals-scanner").exists()
+          assert Path("trust-signals-deep-scanner").exists()
+          deep = Path("trust-signals-deep-scanner.html").read_text(encoding="utf-8")
+          site_files = [
+              Path("index.html"),
+              Path("services.html"),
+              Path("ai-trust-signal-assessment.html"),
+              Path("trust-signals.html"),
+          ]
+
+          labels = [
+              "Entity Clarity",
+              "Knowledge Completeness",
+              "Trust Evidence",
+              "Technical Accessibility",
+              "Narrative Consistency",
+              "External Validation",
+          ]
+
+          assert "Trust Signals Scanner" in basic
+          assert "mode:'basic'" in basic or 'mode:"basic"' in basic
+          assert "https://ai-recommendable-api.onrender.com/api/v2/trust-assessment/scan" in basic
+          assert "getElementById('tu')" not in basic
+          assert "trust-scanner-b" not in basic
+          assert "ai-discoverability-scan.html" not in basic
+
+          assert "Trust Signals Deep Scanner" in deep
+          assert Path("trust-signals-deep-scanner").read_text(encoding="utf-8") == deep
+          assert "mode:'deep'" in deep or 'mode:"deep"' in deep
+          assert "https://ai-recommendable-api.onrender.com/api/v2/trust-assessment/scan" in deep
+          assert "Recommended Treatment Plan" in deep
+
+          combined = "\n".join(p.read_text(encoding="utf-8") for p in site_files)
+          assert "trust-scanner-b" not in combined
+          assert "ai-discoverability-scan.html" not in combined
+          assert "/trust-signals-scanner" in combined
+
+          for page in (basic, deep):
+              assert "does not guarantee discovery, recommendation, ranking, citation, inclusion or visibility" in page
+
+          print("RbAI scanner frontend static QA passed.")
+          PY
