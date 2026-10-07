@@ -1,146 +1,264 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — AI-Recommendable</title>
-<meta name="description" content="Expert insights on AI visibility, readiness and recommendation for UK businesses.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Blog &amp; Insights — Recommendable by AI</title>
+<meta content="Practical, evidence-led insights on the six Trust Signals that shape how clearly and consistently a business is represented online. Explore Entity Clarity, Knowledge Completeness, Trust Evidence and more." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://recommendablebyai.com/blog.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Blog &amp; Insights — Recommendable by AI" property="og:title"/>
+<meta content="Practical insight into digital representation, the six Trust Signals and useful guidance for business owners. " property="og:description"/>
+<meta content="https://recommendablebyai.com/blog.html" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}.reveal.in-view{opacity:1;transform:none}</style>
+<style>html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}</style>
 </head>
-<body class="antialiased bg-zinc-950 text-white">
-<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
-<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<body class="bg-zinc-950 text-zinc-100 antialiased">
+<header class="border-b border-zinc-800 bg-zinc-950 text-white">
+<div class="mx-auto flex max-w-6xl items-center justify-between px-6 h-20">
+<a class="flex items-center gap-3 text-white" href="/">
+<span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-lg font-extrabold text-white shadow-lg shadow-purple-700/30">RbAI</span>
+<div>
+<div class="font-bold text-xl tracking-tight leading-tight text-white">Recommendable by AI.</div>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Assess Your Trust Signals. Strengthen Your Digital Representation.</div>
 </div>
-<div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
-<a href="/" class="block text-white transition py-2 font-semibold">Home</a>
-<a href="/how-it-works" class="block text-zinc-400 hover:text-white transition py-2">How It Works</a>
-<a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
-<a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a>
-<a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
-<a href="/ai-readiness" class="block text-zinc-400 hover:text-white transition py-2">AI Readiness</a>
-<a href="/observatory.html" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a>
-<a href="/research.html" class="block text-zinc-400 hover:text-white transition py-2">Research</a>
-<a href="/contact.html" class="block text-zinc-400 hover:text-white transition py-2">Contact</a>
-<a href="/services.html" class="block text-zinc-400 hover:text-white transition py-2">Services &amp; Client Outcomes</a>
-<a href="/benchmarks.html" class="block text-zinc-400 hover:text-white transition py-2">Industry Benchmarks</a>
-<a href="/trust-signals.html" class="block text-zinc-400 hover:text-white transition py-2">The 6 Trust Signals</a>
-<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE AI Discoverability Report →</a>
-</div></nav>
-<div class="max-w-6xl mx-auto px-6 pt-24"><a href="/" class="inline-flex items-center gap-2 text-sm text-white hover:text-amber-400 transition">← Back to Home</a></div>
-<section class="relative pt-20 sm:pt-36 pb-20 sm:pb-20 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 30%,#2d1b69 60%,#0f0a2e)">
+</a>
+<button aria-label="Open menu" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" id="menu-btn">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+</div>
+<div class="hidden absolute left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 text-sm font-medium z-50" id="mobile-menu">
+<div class="max-w-6xl mx-auto space-y-1">
+<a class="block text-white transition py-2 font-semibold" href="/">Home</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/how-it-works">How It Works</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/pricing.html">Pricing</a>
+<a class="block text-amber-400 font-semibold transition py-2" href="/blog.html">Blog</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/about">About</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/contact.html">Contact</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/services.html">Services &amp; Client Outcomes</a>
+<a class="block text-zinc-400 hover:text-white transition py-2" href="/trust-signals.html">The 6 Trust Signals</a>
+<a class="block text-center rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-400 mt-3" href="https://ai-recommendable-api.onrender.com/trust-scanner-b">Scan Your Site →</a>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-6 pt-8"><a class="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-amber-400 transition" href="/">← Back to Home</a></div>
+<section class="relative pt-16 pb-20 overflow-hidden bg-zinc-950">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(109,40,217,.18),transparent_55%)]"></div>
 <div class="relative max-w-4xl mx-auto px-6 text-center">
-<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Blog & Resources</div>
-<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white max-w-3xl mx-auto">Expert Insights on <span class="text-amber-400">AI for Business</span></h1>
-<p class="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto">Practical, no-hype articles on AI discoverability, readiness, strategy and tools — written for UK SMEs and business decision-makers.</p>
+<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Blog &amp; Insights</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white max-w-4xl mx-auto">Practical insight into <span class="text-amber-400">digital representation</span></h1>
+<p class="mt-6 text-lg text-zinc-400 max-w-3xl mx-auto leading-8">Useful, no-hype guidance on the six Trust Signals and the wider factors that shape how clearly, completely, consistently and credibly a business is represented online.</p>
 </div>
 </section>
-<section class="py-20 sm:py-28 bg-zinc-950">
+<section class="py-16 sm:py-24 bg-zinc-950">
 <div class="max-w-6xl mx-auto px-6">
-<p class="text-sm font-semibold uppercase tracking-widest text-purple-400 text-center">Browse by Topic</p>
-<h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-white text-center">10 Categories of AI Insight</h2>
-<p class="mt-4 text-zinc-400 text-center max-w-2xl mx-auto">Each topic contains multiple articles designed to build your understanding step by step.</p>
-<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-<a href="/blog/ai-in-business-strategy" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">🎯</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI in Business Strategy</h3>
-<p class="mt-2 text-sm text-zinc-400">How to think strategically about AI adoption, build roadmaps, and align AI with business goals without getting caught in the hype.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-for-customer-experience" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">🤝</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI for Customer Experience</h3>
-<p class="mt-2 text-sm text-zinc-400">How AI is reshaping customer expectations, communication, and service delivery — and what businesses need to do to keep up.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-and-productivity" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">⚡</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI and Productivity</h3>
-<p class="mt-2 text-sm text-zinc-400">Practical ways AI tools can save time, reduce busywork, and help teams focus on higher-value work.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-for-sales-and-marketing" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">📈</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI for Sales & Marketing</h3>
-<p class="mt-2 text-sm text-zinc-400">How AI is transforming lead generation, content creation, email campaigns, and how businesses attract and convert customers.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-and-data" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">📊</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI and Data</h3>
-<p class="mt-2 text-sm text-zinc-400">Why data quality matters for AI success, how to prepare your data, and how to use customer information responsibly.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-for-operations" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">⚙️</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI for Operations</h3>
-<p class="mt-2 text-sm text-zinc-400">Streamlining workflows, automating processes, and using AI to run your business more efficiently day to day.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-and-leadership" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">🏆</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI and Leadership</h3>
-<p class="mt-2 text-sm text-zinc-400">What leaders need to understand about AI, how to build AI-ready teams, and how to lead through technological change.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-ethics-and-governance" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">🛡️</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI Ethics & Governance</h3>
-<p class="mt-2 text-sm text-zinc-400">Creating responsible AI guidelines, protecting privacy, and ensuring AI is used safely and transparently in your business.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/ai-tools-and-platforms" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">💻</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">AI Tools & Platforms</h3>
-<p class="mt-2 text-sm text-zinc-400">Reviews, comparisons and practical guidance on choosing and using AI tools — from chatbots to automation platforms.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
-<a href="/blog/future-of-ai-for-business" class="block rounded-xl border border-zinc-800 bg-zinc-900 p-6 hover:border-purple-600 transition group">
-<div class="text-2xl mb-3">🔮</div>
-<h3 class="font-bold text-white group-hover:text-purple-400 transition">Future of AI for Business</h3>
-<p class="mt-2 text-sm text-zinc-400">What UK SMEs need to prepare for as AI continues to evolve — trends, predictions, and long-term strategy.</p>
-<div class="mt-3 text-xs text-purple-400 font-medium">5 articles →</div>
-</a>
-
+<div class="text-center">
+<p class="text-sm font-semibold uppercase tracking-widest text-purple-400">Browse by topic</p>
+<h2 class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-white">10 areas of insight</h2>
+<p class="mt-4 text-zinc-400 max-w-3xl mx-auto leading-7">Choose a subject, read the articles directly or open the category hub for the full collection.</p>
 </div>
+<div class="mt-12 grid lg:grid-cols-2 gap-6"><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="entity-clarity">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">01</span>
+<div>
+<h2 class="text-xl font-bold text-white">Entity Clarity</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">How clearly a business identifies itself, explains what it does, and creates a coherent picture of the organisation across its digital environment.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/entity-clarity/articles/what-is-entity-clarity/">What Is Entity Clarity — and Why Does It Matter?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/entity-clarity/articles/how-clearly-does-your-website-explain-who-you-are/">How Clearly Does Your Website Explain Who You Are?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/entity-clarity/articles/business-name-vs-clear-digital-entity/">The Difference Between a Business Name and a Clear Digital Entity</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/entity-clarity/articles/how-inconsistent-business-details-create-confusion/">How Inconsistent Business Details Create Confusion</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/entity-clarity/articles/entity-clarity-practical-checklist-uk-businesses/">Entity Clarity: A Practical Checklist for UK Businesses</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/entity-clarity/">Explore Entity Clarity →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="knowledge-completeness">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">02</span>
+<div>
+<h2 class="text-xl font-bold text-white">Knowledge Completeness</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">Whether the important information needed to understand the business is actually present, useful, specific and easy to find.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/knowledge-completeness/articles/what-information-is-missing-from-your-digital-record/">What Information Is Missing From Your Digital Record?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/knowledge-completeness/articles/knowledge-completeness-test/">The Knowledge Completeness Test: Can Someone Understand Your Business?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/knowledge-completeness/articles/why-useful-pages-matter-more-than-more-pages/">Why Useful Pages Matter More Than More Pages</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/knowledge-completeness/articles/service-location-and-expertise-information-customers-need/">Service, Location and Expertise: The Information Customers Need</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/knowledge-completeness/articles/how-to-find-gaps-in-published-information/">How to Find Gaps in the Information You Publish</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/knowledge-completeness/">Explore Knowledge Completeness →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="trust-evidence">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">03</span>
+<div>
+<h2 class="text-xl font-bold text-white">Trust Evidence</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">The evidence behind business claims — including reviews, case studies, credentials, outcomes and other proof that helps claims become credible.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/trust-evidence/articles/what-counts-as-evidence-of-a-business-claim/">What Counts as Evidence of a Business Claim?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/trust-evidence/articles/reviews-case-studies-credentials-build-trust/">Reviews, Case Studies and Credentials: What Actually Builds Trust?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/trust-evidence/articles/how-to-turn-customer-proof-into-evidence/">How to Turn Customer Proof Into Useful Evidence</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/trust-evidence/articles/claim-vs-supported-claim/">The Difference Between a Claim and a Supported Claim</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/trust-evidence/articles/trust-evidence-checklist-uk-businesses/">Trust Evidence Checklist for UK Businesses</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/trust-evidence/">Explore Trust Evidence →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="technical-accessibility">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">04</span>
+<div>
+<h2 class="text-xl font-bold text-white">Technical Accessibility</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">Whether important business information is technically accessible, discoverable and usable across the digital environment.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/technical-accessibility/articles/what-does-technical-accessibility-mean/">What Does Technical Accessibility Mean for a Business Website?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/technical-accessibility/articles/search-friendly-website-structure/">How Search-Friendly Website Structure Supports Better Digital Representation</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/technical-accessibility/articles/structured-data-page-structure-technical-clarity/">Structured Data, Page Structure and the Technical Side of Clarity</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/technical-accessibility/articles/technical-checks-every-business-website-should-pass/">The Technical Checks Every Business Website Should Pass</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/technical-accessibility/articles/when-good-content-becomes-hard-to-access/">When Good Content Becomes Hard to Access</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/technical-accessibility/">Explore Technical Accessibility →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="narrative-consistency">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">05</span>
+<div>
+<h2 class="text-xl font-bold text-white">Narrative Consistency</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">How consistently the business describes itself, its services, expertise, audience and proposition across the digital environment.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/narrative-consistency/articles/what-is-narrative-consistency/">What Is Narrative Consistency in Digital Marketing?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/narrative-consistency/articles/homepage-about-service-pages-should-agree/">Why Your Homepage, About Page and Service Pages Should Agree</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/narrative-consistency/articles/changing-positioning-creates-confusion/">How Changing Your Positioning Too Often Creates Confusion</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/narrative-consistency/articles/brand-language-service-descriptions-mixed-messages/">Brand Language, Service Descriptions and the Problem of Mixed Messages</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/narrative-consistency/articles/narrative-consistency-practical-website-review/">Narrative Consistency: A Practical Website Review</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/narrative-consistency/">Explore Narrative Consistency →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="external-validation">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">06</span>
+<div>
+<h2 class="text-xl font-bold text-white">External Validation</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">The independent signals around a business that can support identity, reputation, expertise and credibility beyond its own website.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/external-validation/articles/what-is-external-validation/">What Is External Validation and Why Does It Matter?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/external-validation/articles/directories-associations-publications-which-references-matter/">Directories, Associations and Publications: Which References Matter?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/external-validation/articles/reviews-third-party-profiles-reinforce-business-identity/">How Reviews and Third-Party Profiles Reinforce Business Identity</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/external-validation/articles/credentials-memberships-awards-trust-signals/">Credentials, Memberships and Awards as Trust Signals</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/external-validation/articles/external-validation-checklist-uk-businesses/">External Validation Checklist for UK Businesses</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/external-validation/">Explore External Validation →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="digital-representation">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">07</span>
+<div>
+<h2 class="text-xl font-bold text-white">Digital Representation</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">The bigger picture: how identity, knowledge, evidence, technical access, narrative and external validation combine into one digital representation.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/digital-representation/articles/what-does-digital-representation-mean/">What Does Digital Representation Mean for a Business?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/digital-representation/articles/website-only-part-of-digital-identity/">Why Your Website Is Only Part of Your Digital Identity</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/digital-representation/articles/six-trust-signals-how-they-fit-together/">The Six Trust Signals: How the Pieces Fit Together</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/digital-representation/articles/practical-digital-representation-audit-smes/">A Practical Digital Representation Audit for SMEs</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/digital-representation/articles/make-business-easier-to-understand-online/">How to Make Your Business Easier to Understand Online</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/digital-representation/">Explore Digital Representation →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="industry-intelligence">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">08</span>
+<div>
+<h2 class="text-xl font-bold text-white">Industry Intelligence</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">Industry-specific insight into the information, evidence and digital signals that can matter most in different sectors and competitive environments.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/industry-intelligence/articles/digital-representation-professional-services/">What Digital Representation Looks Like in Professional Services</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/industry-intelligence/articles/digital-representation-local-trade-businesses/">The Digital Representation Challenges Facing Local Trade Businesses</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/industry-intelligence/articles/digital-representation-healthcare-trust-intensive-sectors/">Digital Representation in Healthcare and Other Trust-Intensive Sectors</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/industry-intelligence/articles/what-different-industries-need-to-prove-online/">What Different Industries Need to Prove Online</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/industry-intelligence/articles/sector-by-sector-prioritise-trust-signals/">A Sector-by-Sector Way to Prioritise Trust Signals</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/industry-intelligence/">Explore Industry Intelligence →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="practical-guides">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">09</span>
+<div>
+<h2 class="text-xl font-bold text-white">Practical Guides</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">Step-by-step guidance for business owners and marketing teams who want to improve how their organisation is represented online.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/practical-guides/articles/review-business-website-in-30-minutes/">How to Review Your Business Website in 30 Minutes</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/practical-guides/articles/build-trust-signal-improvement-plan/">How to Build a Trust Signal Improvement Plan</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/practical-guides/articles/simple-content-audit-business-owners/">A Simple Content Audit for Business Owners</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/practical-guides/articles/create-digital-evidence-library/">How to Create a Digital Evidence Library</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/practical-guides/articles/monthly-trust-signal-maintenance-checklist/">The Monthly Trust Signal Maintenance Checklist</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/practical-guides/">Explore Practical Guides →</a>
+</article><article class="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-7 hover:border-purple-600/70 transition" id="research-evidence">
+<div class="flex items-start gap-4">
+<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-700/20 text-purple-300 font-extrabold">10</span>
+<div>
+<h2 class="text-xl font-bold text-white">Research &amp; Evidence</h2>
+<p class="mt-2 text-sm leading-6 text-zinc-400">Careful, transparent thinking about evidence, claims, digital representation and what can — and cannot — reasonably be concluded from available information.</p>
+</div>
+</div>
+<div class="mt-5 border-t border-zinc-800 pt-5">
+<p class="text-xs font-semibold uppercase tracking-widest text-purple-400">Read the following articles</p>
+<ol class="mt-3 space-y-2 text-sm text-zinc-300 list-decimal pl-5"><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/research-evidence/articles/read-digital-visibility-evidence-without-hype/">How to Read Evidence About Digital Visibility Without Falling for Hype</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/research-evidence/articles/what-makes-a-business-claim-credible/">What Makes a Business Claim Credible?</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/research-evidence/articles/separate-original-research-from-commentary/">How to Separate Original Research From Commentary</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/research-evidence/articles/evaluate-digital-representation-research/">A Practical Framework for Evaluating Digital Representation Research</a></li><li><a class="text-zinc-300 hover:text-amber-400 transition underline-offset-4 hover:underline font-semibold" href="/blog/research-evidence/articles/what-we-know-what-we-dont-know/">What We Know, What We Do Not Know, and What Should Be Tested</a></li></ol>
+</div>
+<a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition" href="/blog/research-evidence/">Explore Research &amp; Evidence →</a>
+</article></div>
 </div>
 </section>
-<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
-<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
-<li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
-<li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
-</ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs mt-3"><p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">AI-Recommendable Trust Signal Framework™</span> — Authority, Trust, Content, Entity Clarity, Structured Data, Reputation</p>
-<p class="text-xs text-zinc-500 mt-1">&copy; 2025 AI-Recommendable. All rights reserved.</p></p></div></div></footer>
-
-
-
-
+<section class="py-10 sm:py-14 bg-zinc-900/60 border-y border-zinc-800">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-purple-300">Ready to see where your business stands?</p>
+<h2 class="mt-3 text-2xl sm:text-3xl font-extrabold text-white">Run Your Free Trust Signal Assessment</h2>
+<p class="mt-3 text-zinc-400 leading-7">See how clearly and consistently your business is represented across the six Trust Signals, then identify the areas that may be worth strengthening.</p>
+<a class="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-orange-950/30 transition hover:bg-orange-400" href="https://ai-recommendable-api.onrender.com/trust-scanner-b">Run Your Free Trust Signal Assessment →</a>
+</div>
+</section>
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<p class="font-semibold text-white text-sm mb-4">Explore</p>
+<ul class="space-y-2 text-sm">
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/">Home</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/how-it-works">How It Works</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/about">About</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/blog.html">Blog</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/contact.html">Contact</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/services.html">Services &amp; Client Outcomes</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Resources</p>
+<ul class="space-y-2 text-sm">
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/blog.html">Blog</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="/trust-signals.html">The 6 Trust Signals</a></li>
+<li><a class="text-zinc-400 hover:text-amber-400 transition" href="https://ai-recommendable-api.onrender.com/trust-scanner-b">Scan Your Site →</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Legal &amp; Contact</p>
+<ul class="space-y-2 text-sm text-zinc-400">
+<li><a class="hover:text-amber-400 transition" href="/assessment-disclaimer.html">Assessment Disclaimer</a></li>
+<li><a class="hover:text-amber-400 transition" href="/terms.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-amber-400 transition" href="/contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<p class="font-semibold text-white text-sm mb-4">Trust Signal Framework™</p>
+<p class="text-sm leading-6 text-zinc-500">We assess and strengthen the signals that shape how clearly and consistently a business is represented online.</p>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+<p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">Trust Signal Framework™</span> — six signals that shape digital representation.</p>
+<p class="text-xs text-zinc-500 mt-1">© 2026 Recommendable by AI. All rights reserved.</p>
+<p class="text-xs text-zinc-600 mt-3 max-w-3xl mx-auto">We assess and strengthen the signals that shape how clearly and consistently a business is represented online. We do not guarantee discovery, recommendation, ranking, citation, inclusion or visibility by any AI system, search engine or third-party service.</p>
+</div>
+</div>
+</footer>
 <script>
-function toggleMobileMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+const menuBtn=document.getElementById('menu-btn');
+const mobileMenu=document.getElementById('mobile-menu');
+if(menuBtn&&mobileMenu){
+  let menuTimer;
+  menuBtn.addEventListener('click',()=>{
+    mobileMenu.classList.toggle('hidden');
+    clearTimeout(menuTimer);
+    if(!mobileMenu.classList.contains('hidden'))menuTimer=setTimeout(()=>mobileMenu.classList.add('hidden'),7000);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    clearTimeout(menuTimer);mobileMenu.classList.add('hidden');
+  }));
+}
 </script>
-
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
+</body></html>

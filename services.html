@@ -1,183 +1,588 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Services & Client Outcomes — Recommendable by AI</title>
-<meta name="description" content="Our Trust Signal services assess and strengthen how clearly and consistently a business is represented online. Explore the six Trust Signals, what they reveal, and the outcomes they can support.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='20'%3E%F0%9F%93%8C%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Understand how Recommendable by AI assesses and strengthens the six Trust Signals that shape how clearly and consistently a business is represented online.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://recommendablebyai.com/services.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}.reveal.in-view{opacity:1;transform:none}</style>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}
+body{-webkit-font-smoothing:antialiased}
+@media(max-width:640px){
+ h1{font-size:2.25rem!important;line-height:1.08!important}
+ .mobile-h2{font-size:1.45rem!important;line-height:1.2!important}
+ .body-copy{font-size:1rem!important;line-height:1.72!important}
+}
+
+/* Services page V5 — restrained service-site hierarchy */
+:root{
+  --text:#f4f4f5;
+  --muted:#a1a1aa;
+  --border:#27272a;
+  --accent:#fbbf24;
+  --panel:#111113;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#09090b;color:var(--text)}
+
+.container{
+  width:100%;
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 28px;
+}
+.container.narrow{max-width:980px}
+
+/* Intro: deliberately compact — this is a services page, not a magazine cover */
+.page-intro{
+  padding:72px 0 58px;
+  border-bottom:1px solid var(--border);
+}
+.page-intro .eyebrow,
+.section-heading .eyebrow,
+.distinction-box .eyebrow,
+.cta-inner .eyebrow{color:var(--accent)}
+.page-intro h1{
+  max-width:850px;
+  margin:12px 0 20px;
+  font-size:3rem;
+  line-height:1.12;
+  letter-spacing:-.025em;
+  font-weight:750;
+}
+.page-intro .lead{
+  max-width:790px;
+  margin:0 0 12px;
+  color:#d4d4d8;
+  font-size:1.08rem;
+  line-height:1.7;
+}
+.page-intro p:not(.lead){
+  max-width:760px;
+  margin:0;
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.7;
+}
+
+.section{padding:68px 0}
+.section-heading{
+  max-width:760px;
+  margin-bottom:34px;
+}
+.section-heading h2{
+  margin:9px 0 12px;
+  font-size:2.15rem;
+  line-height:1.18;
+  letter-spacing:-.018em;
+  font-weight:700;
+}
+.section-heading p{
+  margin:0;
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.7;
+}
+.eyebrow{
+  font-size:.68rem;
+  line-height:1;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+/* How we work */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.process-card{
+  min-width:0;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:var(--panel);
+}
+.process-card .step{
+  margin-bottom:34px;
+  color:var(--accent);
+  font-size:.72rem;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.process-card h3{
+  margin:0 0 8px;
+  font-size:1.08rem;
+  line-height:1.25;
+  font-weight:700;
+}
+.process-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.62;
+}
+
+/* Services */
+.services{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.018);
+}
+.service-list{display:grid;gap:14px}
+.service-card{
+  display:grid;
+  grid-template-columns:72px minmax(0,1fr);
+  gap:24px;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:var(--panel);
+}
+.service-number{
+  color:var(--accent);
+  font-size:1.55rem;
+  line-height:1;
+  font-weight:750;
+}
+.service-kicker{
+  margin-bottom:6px;
+  color:#71717a;
+  font-size:.66rem;
+  line-height:1.2;
+  letter-spacing:.12em;
+  font-weight:700;
+}
+.service-copy h3{
+  margin:0 0 9px;
+  font-size:1.38rem;
+  line-height:1.25;
+  font-weight:700;
+}
+.service-copy p{
+  max-width:850px;
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.68;
+}
+.service-copy .outcome{
+  margin-top:17px;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+  color:#e4e4e7;
+}
+.service-copy .outcome strong{color:var(--accent)}
+
+/* Trust signals */
+.signals{border-bottom:1px solid var(--border)}
+.signal-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.signal-card{
+  display:block;
+  min-width:0;
+  padding:23px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.018);
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.signal-card:hover{
+  transform:translateY(-2px);
+  border-color:#3f3f46;
+}
+.signal-card span{
+  color:var(--accent);
+  font-size:.7rem;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.09em;
+}
+.signal-card h3{
+  margin:9px 0 5px;
+  color:var(--text);
+  font-size:1rem;
+  line-height:1.3;
+  font-weight:700;
+}
+.signal-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.58;
+}
+
+/* Important distinction — intentionally the visual focal point */
+.distinction{padding:60px 0 52px}
+.distinction-box{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
+  gap:48px;
+  padding:40px;
+  border:1px solid rgba(251,191,36,.25);
+  border-radius:21px;
+  background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(255,255,255,.018));
+}
+.distinction-box h2{
+  margin:9px 0 0;
+  font-size:2rem;
+  line-height:1.18;
+  letter-spacing:-.018em;
+  font-weight:700;
+}
+.distinction-copy p{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.72;
+}
+.distinction-copy p:last-child{
+  margin-bottom:0;
+  color:#e4e4e7;
+}
+
+/* Final CTA */
+.cta-section{padding:28px 0 84px}
+.cta-inner{text-align:center}
+.cta-inner h2{
+  margin:9px 0 12px;
+  font-size:2.15rem;
+  line-height:1.18;
+  letter-spacing:-.018em;
+  font-weight:700;
+}
+.cta-inner p{
+  max-width:620px;
+  margin:0 auto 25px;
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.7;
+}
+.cta-inner .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:46px;
+  padding:12px 19px;
+  border-radius:9px;
+  background:#f97316;
+  color:#fff;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:700;
+}
+.cta-inner .btn:hover{background:#fb923c}
+
+/* Tablet */
+@media (max-width:1024px){
+  .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .signal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Mobile */
+@media (max-width:700px){
+  .container{padding:0 20px}
+  .page-intro{padding:52px 0 44px}
+  .page-intro h1{
+    max-width:620px;
+    margin:10px 0 16px;
+    font-size:2rem;
+    line-height:1.16;
+    letter-spacing:-.018em;
+  }
+  .page-intro .lead{
+    font-size:1rem;
+    line-height:1.65;
+  }
+  .page-intro p:not(.lead){font-size:.93rem}
+  .section{padding:54px 0}
+  .section-heading{margin-bottom:27px}
+  .section-heading h2{
+    font-size:1.72rem;
+    line-height:1.2;
+  }
+  .section-heading p{font-size:.94rem}
+  .process-grid,.signal-grid{grid-template-columns:1fr}
+  .process-card{padding:22px}
+  .process-card .step{margin-bottom:25px}
+  .process-card h3{font-size:1.04rem}
+  .process-card p{font-size:.9rem}
+  .service-card{
+    grid-template-columns:1fr;
+    gap:13px;
+    padding:23px;
+    border-radius:16px;
+  }
+  .service-number{font-size:1.3rem}
+  .service-copy h3{font-size:1.25rem}
+  .service-copy p{font-size:.91rem;line-height:1.65}
+  .signal-card{padding:21px}
+  .distinction{padding:48px 0 40px}
+  .distinction-box{
+    grid-template-columns:1fr;
+    gap:23px;
+    padding:25px 22px;
+    border-radius:18px;
+  }
+  .distinction-box h2{
+    font-size:1.72rem;
+    line-height:1.2;
+  }
+  .distinction-copy p{font-size:.91rem;line-height:1.67}
+  .cta-section{padding:22px 0 64px}
+  .cta-inner h2{font-size:1.72rem}
+  .cta-inner p{font-size:.92rem}
+  .cta-inner .btn{width:100%;min-height:48px}
+}
+
+@media (max-width:390px){
+  .container{padding:0 17px}
+  .page-intro h1{font-size:1.85rem}
+  .section-heading h2,.cta-inner h2{font-size:1.62rem}
+  .service-card,.process-card,.signal-card{padding:20px}
+  .distinction-box{padding:22px 19px}
+}
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Services & Client Outcomes — Recommendable by AI","url":"https://recommendablebyai.com/services.html","description":"Services for assessing and strengthening the six Trust Signals that shape how clearly and consistently a business is represented online."}
+</script>
 </head>
-<body class="antialiased bg-zinc-950 text-white">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div><div class="text-sm font-semibold tracking-wider text-amber-400">Assess Your Trust Signals. Strengthen Your Digital Representation.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div><div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50"><a href="/" class="block text-white transition py-2 font-semibold">Home</a><a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a><a href="/observatory.html" class="block text-zinc-400 hover:text-white transition py-2">Observatory</a><a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a><a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a><a href="/contact.html" class="block text-zinc-400 hover:text-white transition py-2">Contact</a><a href="/nap-checker.html" class="block text-zinc-400 hover:text-white transition py-2">NAP Checker</a><a href="/trust-signals-scanner" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Scan Your Site →</a></div></nav>
+<body class="bg-zinc-950 text-zinc-100 antialiased">
 
-<div class="max-w-6xl mx-auto px-6 pt-24 flex justify-end"><a href="/" class="inline-flex items-center gap-2 text-sm text-white hover:text-amber-400 transition">← Back to Home</a></div>
+<header class="border-b border-zinc-800 bg-zinc-950 text-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 h-20">
+    <a href="/" class="flex items-center gap-3 text-white">
+      <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 text-lg font-extrabold text-white shadow-lg shadow-purple-700/30">RbAI</span>
+      <div>
+        <div class="font-bold text-xl tracking-tight leading-tight">Recommendable by AI.</div>
+        <div class="text-sm font-semibold tracking-wider text-amber-400">Assess Your Trust Signals. Strengthen Your Digital Representation.</div>
+      </div>
+    </a>
+    <button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden absolute left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 text-sm font-medium z-50">
+    <div class="max-w-6xl mx-auto space-y-1">
+      <a href="/" class="block text-white py-2 font-semibold">Home</a>
+      <a href="/how-it-works" class="block text-zinc-400 hover:text-white py-2">How It Works</a>
+      <a href="/pricing.html" class="block text-zinc-400 hover:text-white py-2">Pricing</a>
+      <a href="/blog.html" class="block text-zinc-400 hover:text-white py-2">Blog</a>
+      <a href="/about" class="block text-zinc-400 hover:text-white py-2">About</a>
+      <a href="/contact.html" class="block text-zinc-400 hover:text-white py-2">Contact</a>
+      <a href="/services.html" class="block text-amber-400 font-semibold py-2">Services &amp; Client Outcomes</a>
+      <a href="/trust-signals.html" class="block text-zinc-400 hover:text-white py-2">The 6 Trust Signals</a>
+      <a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="block text-center rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-bold text-white mt-3">Scan Your Site →</a>
+    </div>
+  </div>
+</header>
 
-<section class="relative pt-12 sm:pt-20 pb-12 text-center">
-<div class="max-w-4xl mx-auto px-6">
-<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Our Services</div>
-<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Services &amp; <span class="text-amber-400">Client Outcomes</span></h1>
-<p class="mt-5 text-lg text-white max-w-2xl mx-auto">Every business has a digital footprint. AI systems use six key trust signals to decide whether to recommend you. Here is what each signal means, why it matters, and what happens when you fix it.</p>
-</div>
-</section>
 
-<!-- ===== SERVICE 1: Schema.org Markup ===== -->
-<section class="py-14 sm:py-20 bg-zinc-900">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 1 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Schema.org Markup</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">Structured Data Implementation</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Schema.org markup is code added to your website that helps AI systems understand exactly what your business is, what you offer, and how you operate. It tells search engines and AI platforms: "This is a business, here is our address, here are our services, here are our reviews."</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> Without schema, AI systems have to guess what your business does. With schema, they know. Businesses with properly implemented schema markup are significantly more likely to appear in AI-generated answers, rich snippets, and voice search results.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> AI systems can instantly identify your business type, location, services, operating hours, reviews, and pricing. Your discoverability score typically increases by 12-20 points.</p>
-</div>
-<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">A regional law firm with four offices across the Midlands had no schema markup on their website. AI systems could not determine whether they were a solicitors' practice, a consultancy, or a legal directory. After implementing Organisation, LocalBusiness, and Service schema across all pages, their visibility in AI search results improved noticeably. Within three weeks, the firm reported a measurable increase in direct enquiries originating from AI-powered search tools. The fix took under two hours to implement.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 0/20 → 18/20 | Timeline: 1 day</p></div>
-</div>
-</div>
-</div>
-</section>
+<main>
+  <section class="page-intro">
+    <div class="container narrow">
+      <div class="eyebrow">SERVICES &amp; CLIENT OUTCOMES</div>
+      <h1>How we help strengthen your digital representation.</h1>
+      <p class="lead">The starting point is understanding what your business currently communicates online — what is clear, what is missing, what is inconsistent, and where the supporting evidence is strongest or weakest.</p>
+      <p>From there, we can identify what is worth improving and help you work through those priorities in a structured way.</p>
+    </div>
+  </section>
 
-<!-- ===== SERVICE 2: Entity Clarity & NAP ===== -->
-<section class="py-14 sm:py-20 bg-zinc-950">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div class="order-2 lg:order-1">
-<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">A family-run plumbing business in Surrey had been trading for over 35 years. Their website mentioned "established 1988" but their Google Business Profile showed "established 2010". Their address was listed as "Guildford" on one directory and "Godalming" on another. Their phone number appeared in three different formats across the web. After standardising their NAP to a single authoritative version and updating 12 directories, the business saw a significant improvement in local AI search visibility. Their Google Business Profile impressions increased meaningfully within two weeks.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 3/15 → 13/15 | Timeline: 3 days</p></div>
-</div>
-</div>
-<div class="order-1 lg:order-2">
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 2 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Entity Clarity & NAP Consistency</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">Name, Address, Phone Alignment</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Entity clarity means AI systems can form a clear, coherent picture of who your business is. NAP (Name, Address, Phone) consistency means the same information appears everywhere your business is listed — on your website, Google, Yell, Facebook, and every other directory.</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> AI systems cross-reference your business information across multiple sources. If they find inconsistencies — different phone numbers, slightly different business names, conflicting addresses — they lose confidence in your entity. This directly reduces the likelihood of being recommended.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> AI systems can confidently identify your business across all platforms. Inconsistent data is eliminated, and your business appears as a single, trustworthy entity. Typical score improvement of 8-12 points.</p>
-</div>
-</div>
-</div>
-</section>
+  <section class="principle section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">HOW WE WORK</div>
+        <h2>Start with evidence. Then decide what is worth improving.</h2>
+        <p>We don't begin with a list of things you should change. We begin by understanding the representation that already exists.</p>
+      </div>
 
-<!-- ===== SERVICE 3: Content Depth ===== -->
-<section class="py-14 sm:py-20 bg-zinc-900">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 3 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Content Depth</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">Topic Coverage & Authority Building</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Content depth measures how thoroughly your website covers the topics your customers care about. AI systems look for FAQs, guides, service pages, and structured content that demonstrates expertise in your field.</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> When a potential customer asks AI a question about your industry, the AI searches for the most authoritative, comprehensive answer. Businesses with shallow content get skipped. Businesses with deep, well-structured content get recommended.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> Your website becomes a reference source that AI systems trust. Each new piece of relevant content strengthens your authority. Typical score improvement of 10-16 points.</p>
-</div>
-<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">An independent estate agency in Kent had a website with only five pages and no FAQ section. AI systems had very little content to reference when evaluating their expertise. We added a comprehensive FAQ section covering the home-buying process, a guide to selling property, an area guide for the local market, and a buying vs renting comparison page. The agency's content depth score improved substantially. Within a month, their website was being referenced by AI platforms as a source for local property market information.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 4/20 → 16/20 | Timeline: 5 days</p></div>
-</div>
-</div>
-</div>
-</section>
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="step">01</div>
+          <h3>Assess</h3>
+          <p>Establish how clearly and consistently your business is represented across the six Trust Signals.</p>
+        </article>
+        <article class="process-card">
+          <div class="step">02</div>
+          <h3>Prioritise</h3>
+          <p>Identify the gaps, inconsistencies and weaknesses that are most useful to address first.</p>
+        </article>
+        <article class="process-card">
+          <div class="step">03</div>
+          <h3>Strengthen</h3>
+          <p>Improve the underlying evidence, information and consistency where there is a clear reason to do so.</p>
+        </article>
+        <article class="process-card">
+          <div class="step">04</div>
+          <h3>Review</h3>
+          <p>Check the resulting representation and identify what should be maintained, refined or addressed next.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- ===== SERVICE 4: Trust Signals ===== -->
-<section class="py-14 sm:py-20 bg-zinc-950">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div class="order-2 lg:order-1">
-<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">A digital marketing agency in Manchester had excellent case studies and client testimonials but none of them were displayed on their website. They had a Trustpilot profile with a 4.7 rating but no link to it from their site. They had been featured in two industry publications but never mentioned it. We restructured their homepage to include a testimonials section, added a client logos bar, linked their Trustpilot profile, and created a dedicated case studies page. The agency's trust signal score improved significantly, and they reported that new clients began mentioning their Trustpilot rating as a factor in choosing them.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 3/15 → 14/15 | Timeline: 3 days</p></div>
-</div>
-</div>
-<div class="order-1 lg:order-2">
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 4 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Trust Signals</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">Reviews, Testimonials & Social Proof</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Trust signals are the visible indicators that your business is credible and reputable. Reviews, testimonials, case studies, awards, accreditations, client logos, and media mentions all contribute to how AI systems evaluate your trustworthiness.</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> AI systems prioritise businesses with verifiable trust signals. A business with 50 positive reviews, a strong Trustpilot rating, and published case studies is far more likely to be recommended than a business with no visible social proof — even if their services are identical.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> AI systems can immediately verify your credibility. Your business stands out from competitors who lack visible trust signals. Typical score improvement of 8-12 points.</p>
-</div>
-</div>
-</div>
-</section>
+  <section class="services section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">OUR SERVICES</div>
+        <h2>Four stages. One straightforward process.</h2>
+        <p>Our services can be used independently or as part of a wider programme, depending on what the assessment shows.</p>
+      </div>
 
-<!-- ===== SERVICE 5: Technical SEO ===== -->
-<section class="py-14 sm:py-20 bg-zinc-900">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 5 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Technical SEO</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">Meta Tags, Mobile Optimisation & Site Health</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Technical SEO covers the foundational elements that make your website accessible and understandable to both AI systems and users. Meta descriptions, viewport settings, heading structures, HTTPS security, and mobile responsiveness all play a role.</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> If AI systems cannot properly crawl and interpret your website, they cannot recommend it. Missing meta descriptions, broken heading structures, and poor mobile optimisation all reduce your chances of being discovered and recommended.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> Your website becomes fully accessible to AI crawlers. Every page is properly structured, indexed, and understood. Typical score improvement of 8-12 points.</p>
-</div>
-<div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">A boutique hotel in the Lake District had a beautiful website that was nearly invisible to AI systems. The site had no meta descriptions on any page, no viewport tag (making it appear broken on mobile devices), and the heading structure was a flat list of generic divs rather than proper H1-H3 hierarchy. After a technical SEO audit, we added meta descriptions to all 14 pages, implemented a proper heading hierarchy, fixed the viewport issue, and ensured HTTPS was enforced. The hotel's technical SEO score improved dramatically, and they began appearing in AI-generated travel recommendations for the first time.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 2/15 → 14/15 | Timeline: 2 days</p></div>
-</div>
-</div>
-</div>
-</section>
+      <div class="service-list">
+        <article class="service-card">
+          <div class="service-number">01</div>
+          <div class="service-copy">
+            <div class="service-kicker">START HERE</div>
+            <h3>Trust Signal Assessment</h3>
+            <p>We assess the six Trust Signals to establish how clearly, completely and consistently your business is represented online.</p>
+            <p class="outcome"><strong>Outcome:</strong> A clearer picture of your current position, including the areas that deserve attention and the areas that are already working well.</p>
+          </div>
+        </article>
 
-<!-- ===== SERVICE 6: Content Strategy ===== -->
-<section class="py-14 sm:py-20 bg-zinc-950">
-<div class="max-w-5xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div class="order-2 lg:order-1">
-<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-<h3 class="font-bold text-amber-400 text-sm mb-3">Case Study</h3>
-<p class="text-white text-sm leading-relaxed">A financial advisory firm in Bristol had a single-page website with a brief description of services and a contact form. They had no blog, no guides, no FAQ section, and no resources. AI systems had nothing to reference when evaluating their expertise. We developed a content strategy that included a 12-article pillar content plan, an FAQ section covering the 20 most common questions about financial planning, and a downloadable guide to retirement planning. Over three months, the firm's content depth score improved from 2/20 to 17/20. They began appearing in AI-generated responses to financial planning queries and reported an increase in qualified leads.</p>
-<div class="mt-4 pt-4 border-t border-zinc-800"><p class="text-xs text-zinc-400">Score uplift: 2/20 → 17/20 | Timeline: 10 days</p></div>
-</div>
-</div>
-<div class="order-1 lg:order-2">
-<div class="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4">Service 6 of 6</div>
-<h2 class="text-2xl sm:text-3xl font-bold text-white">Content Strategy</h2>
-<p class="text-amber-400 font-semibold text-sm mt-1">AI-Ready Content Planning & Creation</p>
-<p class="text-white mt-4"><strong>What it is:</strong> Content strategy goes beyond adding pages — it is a structured approach to creating the content that AI systems need to understand, evaluate, and recommend your business. This includes pillar content, topic clusters, FAQ schemas, and authority-building resources.</p>
-<p class="text-white mt-4"><strong>Why it matters:</strong> AI systems rank content by relevance, depth, and authority. A scattered approach to content creation leaves gaps in your topic coverage. A strategic approach ensures that every piece of content serves a purpose and strengthens your overall discoverability.</p>
-<p class="text-white mt-4"><strong>Impact when fixed:</strong> Your website becomes a comprehensive resource that AI systems reference with confidence. Topic coverage is complete, content is structured for AI consumption, and your authority in your field is clearly established. Typical score improvement of 12-18 points.</p>
-</div>
-</div>
-</div>
-</section>
+        <article class="service-card">
+          <div class="service-number">02</div>
+          <div class="service-copy">
+            <div class="service-kicker">PRIORITY IMPROVEMENT</div>
+            <h3>Trust Signal Optimisation</h3>
+            <p>Once priorities are understood, we help strengthen the underlying signals where information is incomplete, inconsistent, unclear or insufficiently supported.</p>
+            <p class="outcome"><strong>Outcome:</strong> A stronger and more coherent set of signals supporting the way your business is represented online.</p>
+          </div>
+        </article>
 
-<!-- CTA Section -->
-<section class="py-16 sm:py-24 bg-zinc-900">
-<div class="max-w-3xl mx-auto px-6 text-center">
-<div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Ready to Start?</div>
-<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Not Sure Which Services You Need?</h2>
-<p class="mt-4 text-white text-lg max-w-xl mx-auto">Start with a free Trust Signals Scanner. We'll assess your website across the six Trust Signals and use the findings to identify the right priorities for your business.</p>
-<div class="mt-8 flex flex-wrap gap-4 justify-center">
-<a href="/trust-signals-scanner" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Scan Your Site Now →</a>
-<a href="/pricing.html" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-8 py-4 text-base font-medium text-white transition hover:bg-zinc-800">View Pricing →</a>
-</div>
-</div>
-</section>
+        <article class="service-card">
+          <div class="service-number">03</div>
+          <div class="service-copy">
+            <div class="service-kicker">IMPLEMENTATION</div>
+            <h3>Digital Representation Improvement</h3>
+            <p>We help translate the findings into practical improvements across the places where your business is represented — from core business information and website content to supporting evidence and consistency.</p>
+            <p class="outcome"><strong>Outcome:</strong> A clearer, more complete and more consistent digital representation.</p>
+          </div>
+        </article>
 
-<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Trust Signals Assessment</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/trust-signals-scanner" class="text-zinc-400 hover:text-amber-400 transition">Trust Signals Scanner</a></li>
-<li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
-<li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs text-white">Powered by the AI-Recommendable Trust Signal Framework™ — Schema, Entity & NAP, Content Depth, Reputation & Trust, Technical SEO + Authority All rights reserved.</p></div></div></footer>
+        <article class="service-card">
+          <div class="service-number">04</div>
+          <div class="service-copy">
+            <div class="service-kicker">ONGOING</div>
+            <h3>Ongoing Trust Signal Support</h3>
+            <p>Your digital representation changes over time. We can provide ongoing review and support to help identify new gaps, inconsistencies or areas that need attention.</p>
+            <p class="outcome"><strong>Outcome:</strong> Greater confidence that the representation you have built remains accurate, consistent and supported.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="signals section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">THE SIX TRUST SIGNALS</div>
+        <h2>The areas we examine.</h2>
+        <p>The assessment is built around six distinct signals. Each looks at a different part of the evidence and information surrounding a business.</p>
+      </div>
+
+      <div class="signal-grid">
+        <a class="signal-card" href="/blog/entity-clarity/"><span>01</span><h3>Entity Clarity</h3><p>Is it clear who the business is and what it does?</p></a>
+        <a class="signal-card" href="/blog/knowledge-completeness/"><span>02</span><h3>Knowledge Completeness</h3><p>Is the important information about the business sufficiently complete?</p></a>
+        <a class="signal-card" href="/blog/trust-evidence/"><span>03</span><h3>Trust Evidence</h3><p>Is there credible evidence supporting the claims being made?</p></a>
+        <a class="signal-card" href="/blog/technical-accessibility/"><span>04</span><h3>Technical Accessibility</h3><p>Can important information be accessed and understood technically?</p></a>
+        <a class="signal-card" href="/blog/narrative-consistency/"><span>05</span><h3>Narrative Consistency</h3><p>Does the business tell a consistent story across its digital presence?</p></a>
+        <a class="signal-card" href="/blog/external-validation/"><span>06</span><h3>External Validation</h3><p>Is the business supported by relevant evidence beyond its own website?</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="distinction section">
+    <div class="container">
+      <div class="distinction-box">
+        <div>
+          <div class="eyebrow">AN IMPORTANT DISTINCTION</div>
+          <h2>We improve the signals. We don't promise the outcome.</h2>
+        </div>
+        <div class="distinction-copy">
+          <p>There is an important difference between strengthening the information and evidence surrounding a business and claiming that this will make an AI system, search engine or third-party platform recommend or surface that business.</p>
+          <p>Our work focuses on what can be assessed and improved: the clarity, completeness, consistency, accessibility and supporting evidence of your digital representation.</p>
+          <p>We do not guarantee discovery, recommendation, ranking, citation, inclusion or visibility by any AI system, search engine or third-party service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section">
+    <div class="container narrow cta-inner">
+      <div class="eyebrow">START WITH UNDERSTANDING</div>
+      <h2>Find out where your Trust Signals stand.</h2>
+      <p>Our Free Trust Signal Assessment gives you a practical starting point — before you decide whether any further work is necessary.</p>
+      <a class="btn btn-primary" href="https://ai-recommendable-api.onrender.com/trust-scanner-b">Run Your Free Trust Signal Assessment <span>→</span></a>
+    </div>
+  </section>
+</main>
+
+
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div><p class="font-semibold text-white text-sm mb-4">Explore</p><ul class="space-y-2 text-sm">
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/">Home</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/how-it-works">How It Works</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/blog.html">Blog</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/about">About</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/contact.html">Contact</a></li>
+      </ul></div>
+      <div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm">
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/trust-signals.html">The 6 Trust Signals</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/blog.html">Blog &amp; Insights</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/pricing.html">Pricing</a></li>
+      </ul></div>
+      <div><p class="font-semibold text-white text-sm mb-4">Legal &amp; Contact</p><ul class="space-y-2 text-sm">
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/assessment-disclaimer.html">Assessment Disclaimer</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/terms.html">Terms &amp; Conditions</a></li>
+        <li><a class="text-zinc-400 hover:text-amber-400" href="/contact.html">Contact Us</a></li>
+      </ul></div>
+      <div><p class="font-semibold text-white text-sm mb-4">Trust Signal Framework™</p>
+        <p class="text-sm leading-6 text-zinc-500">We assess and strengthen the signals that shape how clearly and consistently a business is represented online.</p>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+      <p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">Trust Signal Framework™</span> — six signals that shape digital representation.</p>
+      <p class="text-xs text-zinc-500 mt-1">© 2026 Recommendable by AI. All rights reserved.</p>
+      <p class="text-xs text-zinc-600 mt-3 max-w-3xl mx-auto">We assess and strengthen the signals that shape how clearly and consistently a business is represented online. We do not guarantee discovery, recommendation, ranking, citation, inclusion or visibility by any AI system, search engine or third-party service.</p>
+    </div>
+  </div>
+</footer>
 
 <script>
-try { document.querySelectorAll('section, footer').forEach(el => el.classList.add('reveal')); const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); }); }, { threshold: 0.05 }); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); } catch(e) {}
-function toggleMobileMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");if(!m.classList.contains("hidden")){setTimeout(function(){m.classList.add("hidden");},3000);}}
+const menuBtn=document.getElementById('menu-btn');
+const mobileMenu=document.getElementById('mobile-menu');
+if(menuBtn&&mobileMenu){
+ let menuTimer;
+ menuBtn.addEventListener('click',()=>{
+   mobileMenu.classList.toggle('hidden');
+   clearTimeout(menuTimer);
+   if(!mobileMenu.classList.contains('hidden'))menuTimer=setTimeout(()=>mobileMenu.classList.add('hidden'),7000);
+ });
+ mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+   clearTimeout(menuTimer);mobileMenu.classList.add('hidden');
+ }));
+}
 </script>
 </body>
 </html>
