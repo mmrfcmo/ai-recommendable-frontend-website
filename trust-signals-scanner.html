@@ -52,7 +52,7 @@ function rs(){document.getElementById('rc').classList.add('hidden');document.get
 document.getElementById('sf').addEventListener('submit',async function(e){
 e.preventDefault();
 var u=document.getElementById('su').value.trim();if(!u)return;
-var d=u.replace(/^https?:\\/\\//,'').replace(/^www\\./,'').split('/')[0];var fu=u.indexOf('http')===0?u:'https://'+u;
+var d=u.replace(/^https?:\/\//,'').replace(/^www\\./,'').split('/')[0];var fu=u.indexOf('http')===0?u:'https://'+u;
 document.getElementById('sf').classList.add('hidden');document.getElementById('ld').classList.remove('hidden');document.getElementById('sb').disabled=true;
 document.getElementById('ps').textContent=d;document.getElementById('rd').textContent=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 document.getElementById('ls').textContent='Assessing your website against the six Trust Signals...';
