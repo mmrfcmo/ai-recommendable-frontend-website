@@ -20,6 +20,8 @@ jobs:
           from pathlib import Path
 
           basic = Path("trust-signals-scanner.html").read_text(encoding="utf-8")
+          assert Path("trust-signals-scanner").exists()
+          assert Path("trust-signals-deep-scanner").exists()
           deep = Path("trust-signals-deep-scanner.html").read_text(encoding="utf-8")
           site_files = [
               Path("index.html"),
@@ -45,6 +47,7 @@ jobs:
           assert "ai-discoverability-scan.html" not in basic
 
           assert "Trust Signals Deep Scanner" in deep
+          assert Path("trust-signals-deep-scanner").read_text(encoding="utf-8") == deep
           assert "mode:'deep'" in deep or 'mode:"deep"' in deep
           assert "https://ai-recommendable-api.onrender.com/api/v2/trust-assessment/scan" in deep
           assert "Recommended Treatment Plan" in deep
