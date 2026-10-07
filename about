@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Us — AI Discoverability for Your Business</title>
-<meta name="description" content="Founded by Mo Rahman. We help businesses get found by AI and build strategic AI readiness with practical, honest advice.">
+<title>About Us — Trust Signals for Your Business</title>
+<meta name="description" content="Founded by Mo Rahman. We help businesses strengthen how your business is represented online and build strategic AI readiness with practical, honest advice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
@@ -14,7 +14,7 @@
 <body class="antialiased bg-zinc-950 text-white">
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
-<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Assess Your Trust Signals. Strengthen Your Digital Representation.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
 <a href="/" class="block text-white transition py-2 font-semibold">Home</a>
@@ -29,7 +29,7 @@
 <a href="/services.html" class="block text-zinc-400 hover:text-white transition py-2">Services &amp; Client Outcomes</a>
 <a href="/benchmarks.html" class="block text-zinc-400 hover:text-white transition py-2">Industry Benchmarks</a>
 <a href="/trust-signals.html" class="block text-zinc-400 hover:text-white transition py-2">The 6 Trust Signals</a>
-<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE AI Discoverability Report →</a>
+<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE Trust Signals Assessment →</a>
 </div></nav>
 
 <div class="max-w-6xl mx-auto px-6 pt-24"><a href="/" class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-amber-400 transition">← Back to Home</a></div>
@@ -62,7 +62,7 @@
 <p class="mt-4 text-white leading-relaxed">Mo Rahman founded AI-Recommendable because he saw a gap that most businesses don't even know exists.</p>
 <p class="mt-4 text-white leading-relaxed">When people ask ChatGPT, Gemini or Perplexity for a recommendation — "find me a good plumber in London" or "recommend an accountant near me" — the AI picks a handful of businesses and ignores the rest. Most business owners have no idea whether they're being chosen or skipped.</p>
 <p class="mt-4 text-white leading-relaxed">That's the problem he set out to solve. Not with hype, not with jargon — but with clear, practical steps and robust technology that actually move the needle.</p>
-<p class="mt-4 text-white leading-relaxed">The AI Discoverability Report and AI Readiness Assessment are the starting points. From there, everything is tailored to what the business actually needs — no retainer traps, no unnecessary upsells.</p>
+<p class="mt-4 text-white leading-relaxed">The Trust Signals Assessment and AI Readiness Assessment are the starting points. From there, everything is tailored to what the business actually needs — no retainer traps, no unnecessary upsells.</p>
 </div>
 </div>
 </div>
@@ -80,8 +80,8 @@
 <div class="flex items-start gap-4">
 <div class="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center text-xl shrink-0">🎯</div>
 <div>
-<h3 class="font-bold text-white">Digital Strategy & AI Discoverability</h3>
-<p class="text-sm text-white mt-1">Mo Rahman brings 20+ years of sales, marketing and SEO experience, helping businesses understand how they appear — and don't appear — in AI-powered search and recommendations. Combining proven digital marketing expertise with emerging AI discoverability strategies, he helps businesses identify the trust signals, authority factors and online presence that can influence whether they're recommended by AI.</p>
+<h3 class="font-bold text-white">Digital Strategy & Trust Signals</h3>
+<p class="text-sm text-white mt-1">Mo Rahman brings 20+ years of sales, marketing and SEO experience, helping businesses understand how they appear — and don't appear — in AI-powered search and recommendations. Combining proven digital marketing expertise with emerging Trust Signals strategies, he helps businesses identify the trust signals, authority factors and online presence that can influence whether they're recommended by AI.</p>
 </div>
 </div>
 </div>
@@ -136,13 +136,13 @@
 <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white">Ready to Find Out Where You Stand?</h2>
 <p class="mt-4 text-zinc-400 text-lg">Two free starting points. Pick the one that fits.</p>
 <div class="mt-8 flex flex-wrap gap-4 justify-center">
-<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
+<a href="/trust-signals-scanner" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE Trust Signals Assessment →</a>
 <a href="/ai-readiness-assessment" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">Take the AI Readiness Assessment →</a>
 </div>
 </div>
 </section>
 
-<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Trust Signals Assessment</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
 <li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
 <li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
 <li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
