@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How It Works — AI Discoverability for Your Business</title>
-<meta name="description" content="Your 3-step path to AI discoverability: Free AI Discoverability Report, 20-Min Review Call, and improvement programme. Know where you stand and get found by AI.">
+<title>How It Works — Trust Signals for Your Business</title>
+<meta name="description" content="Your 3-step path to assessing your Trust Signals: Free Trust Signals Scanner, 20-Min Review Call, and improvement programme.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAI%3C/text%3E%3Ctext x='16' y='26' font-family='Arial' font-size='5' font-weight='700' fill='%23fbbf24' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +21,11 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <body class="antialiased bg-zinc-950 text-white">
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20"><a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">AI-R</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">AI-<span class="text-white">Recommendable.</span></div>
-<div class="text-sm font-semibold tracking-wider text-amber-400">Measure Your Trust Signals. Build Your Discoverability.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<div class="text-sm font-semibold tracking-wider text-amber-400">Assess Your Trust Signals. Strengthen Your Digital Representation.</div></div></a><button id="menu-btn" class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500 text-white hover:bg-orange-400 transition" onclick="toggleMobileMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800 px-6 py-6 space-y-4 text-sm font-medium z-50">
 <a href="/" class="block text-white transition py-2 font-semibold">Home</a>
-<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="block text-zinc-400 hover:text-white transition py-2">AI Trust Score Scanner</a>
+<a href="/trust-signals-scanner" class="block text-zinc-400 hover:text-white transition py-2">Trust Signals Scanner</a>
 <a href="/pricing.html" class="block text-zinc-400 hover:text-white transition py-2">Pricing</a>
 <a href="/about" class="block text-zinc-400 hover:text-white transition py-2">About</a>
 <a href="/blog.html" class="block text-zinc-400 hover:text-white transition py-2">Blog</a>
@@ -36,15 +36,15 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <a href="/services.html" class="block text-zinc-400 hover:text-white transition py-2">Services &amp; Client Outcomes</a>
 <a href="/benchmarks.html" class="block text-zinc-400 hover:text-white transition py-2">Industry Benchmarks</a>
 <a href="/trust-signals.html" class="block text-zinc-400 hover:text-white transition py-2">The 6 Trust Signals</a>
-<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE AI Discoverability Report →</a>
+<a href="/how-it-works" class="block text-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400 mt-2">Start Your FREE Trust Signals Assessment →</a>
 </div></nav>
 
 <!-- Hero -->
 <section class="relative pt-20 sm:pt-36 pb-20 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 30%,#2d1b69 60%,#0f0a2e)">
 <div class="relative max-w-4xl mx-auto px-6 text-center">
 <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">How It Works</div>
-<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] text-white">Your 3-Step Path to <span class="text-amber-400">AI Discoverability</span></h1>
-<p class="mt-4 text-lg text-purple-200/80 max-w-2xl mx-auto">No fluff. No jargon. Just a clear path to being discovered by AI.</p>
+<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] text-white">Your 3-Step Path to <span class="text-amber-400">Stronger Trust Signals</span></h1>
+<p class="mt-4 text-lg text-purple-200/80 max-w-2xl mx-auto">No fluff. No jargon. Just a clear path to understanding and strengthening your digital representation.</p>
 </div>
 </section>
 
@@ -54,38 +54,38 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div>
 <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Step 1 — Free</div>
-<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Get Your Free AI Discoverability Report</h2>
-<p class="mt-4 text-zinc-400 leading-relaxed">We audit how AI platforms like ChatGPT, Gemini, and Perplexity see your business across 6 key trust signals. You get a personalised report delivered within 24-48 hours — completely free, no obligation.</p>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Get Your Free Trust Signals Assessment</h2>
+<p class="mt-4 text-zinc-400 leading-relaxed">We assess your website across six Trust Signals using observable website evidence. You get a clear assessment and practical priorities — completely free, no obligation.</p>
 <ul class="mt-6 space-y-3">
-<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>We analyse your site for schema, NAP consistency, entity clarity, content quality, review signals, and third-party coverage</span></li>
+<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>We assess Entity Clarity, Knowledge Completeness, Trust Evidence, Technical Accessibility, Narrative Consistency and External Validation</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>You receive a clear score and actionable recommendations</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>No credit card required. No sales pressure.</span></li>
 </ul>
-<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">Get Your FREE Report →</a>
+<a href="/trust-signals-scanner" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">Get Your FREE Trust Signals Assessment →</a>
 </div>
 <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-8 text-center">
 <div class="text-5xl mb-4">🔍</div>
 <h3 class="font-bold text-white text-lg">What You'll Get</h3>
 <div class="mt-4 grid grid-cols-3 gap-3 text-left">
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">Schema Markup</div>
-<div class="text-xs text-zinc-400 mt-1">Is your site structured for AI?</div>
+<div class="text-sm font-semibold text-amber-400">Technical Accessibility</div>
+<div class="text-xs text-zinc-400 mt-1">Can your site be accessed and understood technically?</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
 <div class="text-sm font-semibold text-amber-400">Entity Clarity</div>
-<div class="text-xs text-zinc-400 mt-1">Does AI know who you are?</div>
+<div class="text-xs text-zinc-400 mt-1">Is your business clearly and consistently represented?</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">NAP Consistency</div>
-<div class="text-xs text-zinc-400 mt-1">Is your business info consistent?</div>
+<div class="text-sm font-semibold text-amber-400">External Validation</div>
+<div class="text-xs text-zinc-400 mt-1">Does your site provide observable evidence of external validation?</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">Content Quality</div>
-<div class="text-xs text-zinc-400 mt-1">Do you answer AI's questions?</div>
+<div class="text-sm font-semibold text-amber-400">Knowledge Completeness</div>
+<div class="text-xs text-zinc-400 mt-1">Does your site provide enough useful business knowledge?</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">Trust Signals</div>
-<div class="text-xs text-zinc-400 mt-1">Reviews, NAP, coverage</div>
+<div class="text-sm font-semibold text-amber-400">Trust Evidence</div>
+<div class="text-xs text-zinc-400 mt-1">Reviews, testimonials, credentials and other trust evidence</div>
 </div>
 </div>
 </div>
@@ -125,9 +125,9 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <ul class="mt-6 space-y-3">
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>20 minutes. No more, no less.</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>We explain what's working and what's not</span></li>
-<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>If it's not a fit, we'll tell you honestly</span></li>
+<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>If it isn't a fit, we'll tell you honestly</span></li>
 </ul>
-<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="mt-6 inline-flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 px-6 py-3 text-sm font-bold text-amber-400 shadow-sm transition hover:bg-amber-400 hover:text-zinc-900">Start with Your FREE Report →</a>
+<a href="/trust-signals-scanner" class="mt-6 inline-flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 px-6 py-3 text-sm font-bold text-amber-400 shadow-sm transition hover:bg-amber-400 hover:text-zinc-900">Start with Your FREE Trust Signals Assessment →</a>
 </div>
 </div>
 </div>
@@ -145,9 +145,9 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">One-Time Fix — Done Properly</h2>
 <p class="mt-4 text-zinc-400 leading-relaxed">We implement the changes identified in your report — schema markup, content optimisation, trust signal improvements. One payment, no monthly retainers, done properly.</p>
 <ul class="mt-6 space-y-3">
-<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Technical schema and structured data implementation</span></li>
-<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Content gap analysis and optimisation for AI answers</span></li>
-<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Trust signal strengthening (NAP, reviews, citations)</span></li>
+<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Technical accessibility and structured-data improvements</span></li>
+<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Knowledge completeness and content improvements</span></li>
+<li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>Trust evidence, narrative consistency and external validation improvements</span></li>
 <li class="flex items-start gap-3 text-sm text-zinc-300"><span class="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 flex items-center justify-center shrink-0 text-xs font-bold">✓</span><span>No monthly retainers. One payment, done properly.</span></li>
 </ul>
 <a href="/pricing.html" class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-6 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:bg-amber-400">View Pricing →</a>
@@ -169,12 +169,12 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div class="text-xs text-zinc-400 mt-1">AI-focused content gap filling and FAQ creation</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">🔗 Trust Signals</div>
+<div class="text-sm font-semibold text-amber-400">🔗 Trust Evidence</div>
 <div class="text-xs text-zinc-400 mt-1">Citations, reviews, authority building</div>
 </div>
 <div class="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3">
-<div class="text-sm font-semibold text-amber-400">⚙️ Technical SEO</div>
-<div class="text-xs text-zinc-400 mt-1">Meta tags, heading structure, HTTPS, site health</div>
+<div class="text-sm font-semibold text-amber-400">⚙️ Technical Accessibility</div>
+<div class="text-xs text-zinc-400 mt-1">HTTPS, metadata, headings, canonical and structured-data signals</div>
 </div>
 </div>
 </div>
@@ -189,8 +189,8 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white text-center">Common Questions</h2>
 <div class="mt-10 space-y-4">
 <div class="rounded-xl border border-zinc-700 bg-zinc-900 p-5">
-<h3 class="font-bold text-white text-sm">Is the AI Discoverability Report really free?</h3>
-<p class="text-sm text-zinc-400 mt-2">Yes. No credit card, no obligation. We deliver your report within 24-48 hours. If it's not a fit, that's fine.</p>
+<h3 class="font-bold text-white text-sm">Is the Trust Signals assessment really free?</h3>
+<p class="text-sm text-zinc-400 mt-2">Yes. No credit card, no obligation. Your assessment provides an evidence-based starting point. If it's not a fit, that's fine.</p>
 </div>
 <div class="rounded-xl border border-zinc-700 bg-zinc-900 p-5">
 <h3 class="font-bold text-white text-sm">How long does the review call take?</h3>
@@ -202,7 +202,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 </div>
 <div class="rounded-xl border border-zinc-700 bg-zinc-900 p-5">
 <h3 class="font-bold text-white text-sm">What if I'm not ready to proceed after the report?</h3>
-<p class="text-sm text-zinc-400 mt-2">That's fine. The report is yours to keep. No follow-up calls, no pressure. You're welcome to come back when you're ready.</p>
+<p class="text-sm text-zinc-400 mt-2">That's fine. The assessment is yours to keep. No follow-up calls, no pressure. You're welcome to come back when you're ready.</p>
 </div>
 </div>
 </div>
@@ -213,20 +213,20 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div class="max-w-4xl mx-auto px-6 text-center">
 <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Get Started</div>
 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Ready to Find Out Where You Stand?</h2>
-<p class="mt-4 text-white text-lg">Start with a free AI Discoverability Report. No credit card. No obligation.</p>
+<p class="mt-4 text-white text-lg">Start with a free Trust Signals assessment. No credit card. No obligation.</p>
 <div class="mt-8 flex flex-wrap gap-4 justify-center">
-<a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE AI Discoverability Report →</a>
+<a href="/trust-signals-scanner" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400">Get Your FREE Trust Signals Assessment →</a>
 <a href="/ai-readiness-assessment" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-8 py-4 text-base font-medium text-white transition hover:border-amber-400">Take the AI Readiness Assessment →</a>
 </div>
 </div>
 </section>
 
-<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">AI Discoverability Report</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
-<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="https://ai-recommendable-api.onrender.com/trust-scanner-b" class="text-zinc-400 hover:text-amber-400 transition">AI Trust Score Scanner</a></li>
+<footer class="bg-zinc-950 text-zinc-500 py-16 border-t border-zinc-800"><div class="max-w-6xl mx-auto px-6"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"><div><p class="font-semibold text-white text-sm mb-4">Services</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Trust Signals Assessment</a></li><li><a href="/ai-readiness" class="text-zinc-400 hover:text-amber-400 transition">AI Readiness Assessment</a></li><li><a href="/pricing.html" class="text-zinc-400 hover:text-amber-400 transition">Pricing</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Company</p><ul class="space-y-2 text-sm"><li><a href="/" class="text-zinc-400 hover:text-amber-400 transition">Home</a></li><li><a href="/how-it-works" class="text-zinc-400 hover:text-amber-400 transition">How It Works</a></li><li><a href="/about" class="text-zinc-400 hover:text-amber-400 transition">About</a></li><li><a href="/blog.html" class="text-zinc-400 hover:text-amber-400 transition">Blog</a></li><li><a href="/contact.html" class="text-zinc-400 hover:text-amber-400 transition">Contact</a></li>
+<li><a href="/services.html" class="text-zinc-400 hover:text-amber-400 transition">Services &amp; Client Outcomes</a></li></ul></div><div><p class="font-semibold text-white text-sm mb-4">Resources</p><ul class="space-y-2 text-sm"><li><a href="/trust-signals-scanner" class="text-zinc-400 hover:text-amber-400 transition">Trust Signals Scanner</a></li>
 <li><a href="/observatory.html" class="text-zinc-400 hover:text-amber-400 transition">Observatory</a></li><li><a href="/research.html" class="text-zinc-400 hover:text-amber-400 transition">Research</a></li>
 <li><a href="/nap-checker.html" class="text-zinc-400 hover:text-amber-400 transition">N.A.P Checker</a></li><li><a href="/benchmarks.html" class="text-zinc-400 hover:text-amber-400 transition">Industry Benchmarks</a></li>
 <li><a href="/trust-signals.html" class="text-zinc-400 hover:text-amber-400 transition">The 6 Trust Signals</a></li>
-</ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs mt-3"><p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">AI-Recommendable Trust Signal Framework™</span> — Authority, Trust, Content, Entity Clarity, Structured Data, Reputation</p>
+</ul></div><div><p class="font-semibold text-white text-sm mb-4">Contact</p><ul class="space-y-2 text-sm text-zinc-400"><li>&#x1F4DE; <a href="tel:+442085911163" class="hover:text-amber-400 transition">+44 208 591 1163</a></li><li>&#x1F4F1; <a href="tel:+447956393270" class="hover:text-amber-400 transition">+44 7956 393 270</a></li><li>&#x2709;&#xFE0F; <a href="mailto:info@ai-recommendable.com" class="hover:text-amber-400 transition">info@ai-recommendable.com</a></li><li>&#x1F4CD; London</li></ul></div></div><div class="mt-12 pt-8 border-t border-zinc-800 text-center"><p class="text-xs mt-3"><p class="text-xs text-white">Powered by the <span class="text-amber-400 font-semibold">Recommendable by AI Trust Signal Framework™</span> — six Trust Signals: Entity Clarity, Knowledge Completeness, Trust Evidence, Technical Accessibility, Narrative Consistency and External Validation</p>
 <p class="text-xs text-zinc-500 mt-1">&copy; 2025 AI-Recommendable. All rights reserved.</p></p></div></div></footer>
 
 
