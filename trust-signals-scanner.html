@@ -27,8 +27,8 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <p class="mt-4 text-purple-200/80 text-lg max-w-2xl mx-auto">Enter your website URL for a fast assessment across the six Trust Signals.</p>
 <form id="sf" class="no-print mt-8"><div class="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
 <div class="flex-1 flex items-center rounded-xl border border-zinc-700 bg-zinc-900 px-4"><input type="text" required id="su" placeholder="example.com" class="flex-1 py-4 pr-4 text-base text-white placeholder-zinc-500 bg-transparent border-none outline-none focus:outline-none"></div>
-<button type="submit" id="sb" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Scan Report</button>
-</div><p class="text-xs text-zinc-500 mt-3">Enter your website address, e.g. yourwebsite.com</p></form>
+<button type="submit" id="sb" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Start Free Assessment</button>
+</div><p class="text-xs text-zinc-500 mt-3">Enter your website address, e.g. yourwebsite.com</p><p id="ue" class="hidden text-sm text-red-400 font-medium mt-3" role="alert">Invalid website address. Please enter a valid website address and try again.</p></form>
 <div id="ld" class="hidden text-center py-12"><div class="animate-spin w-10 h-10 border-4 border-amber-400 border-t-transparent rounded-full mx-auto mb-4"></div><p class="text-white text-base font-medium" id="ls">Loading...</p></div>
 </div></div></section>
 <div id="rc" class="hidden">
@@ -43,17 +43,25 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <section class="py-10 sm:py-14 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><h3 class="text-lg font-bold text-amber-400 mb-2">Detailed Analysis</h3><p class="text-sm text-zinc-400 mb-6">Here is what we found, what caught our attention, why it matters and what we recommend.</p><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="scd"></div><div class="mt-5 rounded-xl border border-purple-400/20 bg-purple-400/5 p-4 text-xs text-zinc-400">This assessment strengthens six Trust Signals. It does not guarantee discovery, recommendation, ranking, citation, inclusion or visibility by any AI system, search engine or third-party service.</div>
 </div></section>
 <section class="py-10 sm:py-14 bg-zinc-900"><div class="max-w-6xl mx-auto px-6"><h3 class="text-lg font-bold text-amber-400 mb-2">What We Would Prioritise</h3><p class="text-zinc-400 text-sm mb-4">These are the areas we would look at first based on what we found.</p><div id="prr" class="space-y-3"></div></div></section>
-<section class="py-10 sm:py-14 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="max-w-2xl mx-auto text-center"><div class="rounded-2xl border border-amber-400/30 bg-amber-400/5 p-8"><div class="inline-flex items-center gap-2 bg-amber-500 text-zinc-900 text-xs font-bold px-3 py-1 rounded-full mb-4">Book Your Free Discovery Call</div><h3 class="text-2xl font-bold text-white mb-3">Ready to Review Your Trust Signals?</h3><p class="text-sm text-zinc-300 max-w-lg mx-auto mb-6">Let's walk through your Trust Signals assessment together. We'll identify the quickest wins and put together a plan tailored to your business - no pressure, no hard sell. </p><a href="https://social.prospectrocket.com/AR/AIDiscoverabilityReviewMeeting" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg hover:bg-amber-400">Book Your Free 20-Minute Discovery Call</a></div></div></div></section>
+<section class="py-10 sm:py-14 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="max-w-2xl mx-auto text-center"><div class="rounded-2xl border border-amber-400/30 bg-amber-400/5 p-8"><div class="inline-flex items-center gap-2 bg-amber-500 text-zinc-900 text-xs font-bold px-3 py-1 rounded-full mb-4">Diagnostic Review</div><h3 class="text-2xl font-bold text-white mb-3">Ready to Review Your Trust Signals?</h3><p class="text-sm text-zinc-300 max-w-lg mx-auto mb-6">We'll review your Trust Signals assessment, explain what stood out, and tell you what we would prioritise next.</p><a href="https://social.prospectrocket.com/AR/TrustSignalsReviewMeeting" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg hover:bg-amber-400">Book Your Free 20-Minute Diagnostic Review</a></div></div></div></section>
 <footer class="bg-zinc-950 text-zinc-500 py-8 border-t border-zinc-800 no-print"><div class="max-w-6xl mx-auto px-6 text-center"><p class="text-xs text-zinc-500">Recommendable by AI - Trust Signal Optimisation</p></div></footer></div>
 
 <script>
 function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&#39;')}
-function rs(){document.getElementById('rc').classList.add('hidden');document.getElementById('sf').classList.remove('hidden');document.getElementById('ld').classList.add('hidden');document.getElementById('su').value='';document.getElementById('sb').disabled=false;document.getElementById('sb').innerHTML='Scan Report';window.scrollTo({top:0})}
+function rs(){document.getElementById('rc').classList.add('hidden');document.getElementById('sf').classList.remove('hidden');document.getElementById('ld').classList.add('hidden');document.getElementById('su').value='';document.getElementById('sb').disabled=false;document.getElementById('sb').innerHTML='Start Free Assessment';window.scrollTo({top:0})}
 document.getElementById('sf').addEventListener('submit',async function(e){
 e.preventDefault();
 var u=document.getElementById('su').value.trim();if(!u)return;
-var d=u.replace(/^https?:\/\//,'').replace(/^www\\./,'').split('/')[0];var fu=u.indexOf('http')===0?u:'https://'+u;
+var ue=document.getElementById('ue');ue.classList.add('hidden');
+var candidate=/^https?:\/\//i.test(u)?u:'https://'+u;
+var parsed;try{parsed=new URL(candidate);}catch(_e){ue.classList.remove('hidden');return;}
+var host=parsed.hostname.toLowerCase();
+var validHost=host.length>3 && host.indexOf('.')>0 && !host.startsWith('.') && !host.endsWith('.') && !host.includes('..') && /^[a-z0-9.-]+$/.test(host) && host.split('.').every(function(part){return part.length>0 && !part.startsWith('-') && !part.endsWith('-');});
+if(!validHost){ue.classList.remove('hidden');return;}
+var d=host.replace(/^www\./,'');
+var fu=parsed.href;
 document.getElementById('sf').classList.add('hidden');document.getElementById('ld').classList.remove('hidden');document.getElementById('sb').disabled=true;
+ue.classList.add('hidden');
 document.getElementById('ps').textContent=d;document.getElementById('pd').textContent=d;document.getElementById('rd').textContent=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 var scanStarted=Date.now();var scanTimers=[];var scanStages=['Checking Entity Clarity...','Assessing Knowledge Completeness...','Reviewing Trust Evidence...','Checking Technical Accessibility...','Comparing Narrative Consistency...','Assessing External Validation...','Preparing your Trust Signals assessment...'];
 document.getElementById('ls').textContent='Assessing your website against the six Trust Signals...';
