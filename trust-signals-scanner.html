@@ -33,44 +33,83 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <div id="ld" class="hidden text-center py-12"><div class="animate-spin w-10 h-10 border-4 border-amber-400 border-t-transparent rounded-full mx-auto mb-4"></div><p class="text-white text-base font-medium" id="ls">Loading...</p></div>
 </div></div></section>
 
-<!-- Illustrative report preview: this is an example, not live scan data. -->
+<!-- Isolated illustrative preview only. Static sample data; does not call or modify the scanner API. -->
 <section id="sample-report-preview" class="py-16 sm:py-20 bg-zinc-950 border-t border-zinc-800">
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
     <div class="max-w-3xl mx-auto text-center mb-10">
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-400">A look inside your report</p>
-      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">More than a score. Understand what the evidence means.</h2>
-      <p class="mt-4 text-base sm:text-lg leading-7 text-zinc-400">Your assessment combines observable website evidence with clear explanations of why a finding may matter, what to investigate and where to focus next.</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">See the score. Understand the gaps.</h2>
+      <p class="mt-4 text-base sm:text-lg leading-7 text-zinc-400">Your assessment brings the overall score, individual Trust Signals and the most useful areas to investigate together in one clear report.</p>
     </div>
-    <div class="max-w-4xl mx-auto rounded-2xl border border-zinc-700 bg-zinc-900 shadow-2xl overflow-hidden">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 sm:px-7 py-5 border-b border-zinc-800 bg-zinc-900">
+
+    <div class="rounded-2xl border border-violet-800/80 bg-gradient-to-b from-zinc-900 to-zinc-950 shadow-2xl overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 sm:px-7 py-5 border-b border-zinc-800">
         <div>
-          <p class="text-xs uppercase tracking-wider text-zinc-500">Illustrative report preview</p>
-          <h3 class="mt-1 text-lg font-bold text-white">Sample finding: Entity Clarity</h3>
+          <p class="text-xs uppercase tracking-[0.18em] text-zinc-500">Example assessment</p>
+          <h3 class="mt-1 text-xl font-bold text-white">Your Trust Signals overview</h3>
         </div>
-        <span class="inline-flex self-start items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">Worth investigating</span>
+        <span class="inline-flex self-start items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">Illustrative sample</span>
       </div>
-      <div class="p-5 sm:p-7 space-y-5">
-        <div class="grid sm:grid-cols-[150px_1fr] gap-4 sm:gap-6">
-          <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-4 flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-1">
-            <div class="relative w-16 h-16 shrink-0">
-              <svg class="w-16 h-16 -rotate-90" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#27272a" stroke-width="5"/><circle cx="32" cy="32" r="26" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="73.51"/></svg>
-              <span class="absolute inset-0 flex items-center justify-center text-lg font-extrabold text-white">55</span>
+
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-4 p-4 sm:p-6">
+        <div class="rounded-2xl border border-zinc-700 bg-zinc-900/80 p-5 sm:p-6 flex flex-col items-center text-center">
+          <p class="text-sm font-semibold text-zinc-300">Overall Trust Signal Score</p>
+          <div class="relative w-56 h-56 sm:w-64 sm:h-64 mt-3" role="img" aria-label="Illustrative score of 58 out of 100, Developing">
+            <svg viewBox="0 0 220 220" class="w-full h-full -rotate-90" aria-hidden="true">
+              <circle cx="110" cy="110" r="88" fill="none" stroke="#272d38" stroke-width="15"></circle>
+              <circle cx="110" cy="110" r="88" fill="none" stroke="#f59e0b" stroke-width="15" stroke-linecap="round" stroke-dasharray="320.8 552.9"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-6xl sm:text-7xl font-extrabold tracking-tight text-white">58</span>
+              <span class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-zinc-400">out of 100</span>
             </div>
-            <div><p class="text-xs uppercase tracking-wider text-zinc-500">Example score</p><p class="text-sm font-semibold text-amber-300">Developing</p></div>
+          </div>
+          <span class="mt-1 inline-flex rounded-full border border-amber-400/60 bg-amber-400/10 px-5 py-2 text-sm font-extrabold tracking-wide text-amber-300">DEVELOPING</span>
+          <p class="mt-4 max-w-sm text-sm leading-6 text-zinc-400">A sample score helps illustrate the report format. Your actual score is calculated from evidence found on the website you submit.</p>
+        </div>
+
+        <div class="rounded-2xl border border-zinc-700 bg-zinc-900/80 p-5 sm:p-6">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <h4 class="text-lg font-bold text-white">Six Trust Signal scores</h4>
+            <span class="text-xs text-zinc-500">Sample only</span>
           </div>
           <div class="space-y-4">
-            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">01 · What we found</p><p class="mt-1 text-sm leading-6 text-zinc-300">A page title and main heading are present. Their presence is a useful foundation, but the scan needs to examine the actual wording to determine how clearly the business, services and intended customers are described.</p></div>
-            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">02 · Why this matters</p><p class="mt-1 text-sm leading-6 text-zinc-300">If the wording is too broad or generic, a prospective customer may have to work harder to understand what the business does and whether it fits their needs.</p></div>
-            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">03 · Potential business implication</p><p class="mt-1 text-sm leading-6 text-zinc-300">Important questions about the offer may remain unanswered. This scan alone does not establish that customers are being lost; that requires further evidence.</p></div>
-            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">04 · What we recommend</p><p class="mt-1 text-sm leading-6 text-zinc-300">Review the main heading and supporting copy. Check whether they make clear who the business helps, what it offers and why the offer is relevant.</p></div>
-            <div class="rounded-xl border border-amber-400/25 bg-amber-400/5 p-4"><p class="text-xs font-extrabold uppercase tracking-wider text-amber-300">05 · The question to investigate</p><p class="mt-2 text-sm leading-6 text-white">Could a suitable customer quickly understand why this business is relevant to them — and what evidence supports that impression?</p></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">Trust Evidence</span><span class="font-bold text-amber-300">48/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-amber-400" style="width:48%"></div></div></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">Knowledge Completeness</span><span class="font-bold text-emerald-400">72/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-emerald-400" style="width:72%"></div></div></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">Entity Clarity</span><span class="font-bold text-amber-300">55/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-amber-400" style="width:55%"></div></div></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">Technical Accessibility</span><span class="font-bold text-emerald-400">78/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-emerald-400" style="width:78%"></div></div></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">Narrative Consistency</span><span class="font-bold text-amber-300">52/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-amber-400" style="width:52%"></div></div></div>
+            <div><div class="flex justify-between gap-3 text-sm mb-2"><span class="text-zinc-200">External Validation</span><span class="font-bold text-rose-400">39/100</span></div><div class="h-2 rounded-full bg-zinc-800 overflow-hidden"><div class="h-full rounded-full bg-rose-500" style="width:39%"></div></div></div>
           </div>
         </div>
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-zinc-800 pt-5">
-          <p class="text-xs leading-5 text-zinc-500">This is an illustrative example only. Your findings and scores will depend on the evidence returned by your actual scan.</p>
-          <a href="#sf" onclick="document.getElementById('su')?.focus()" class="inline-flex justify-center items-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-bold text-zinc-950 hover:bg-amber-400 transition whitespace-nowrap">Run Your Free Scan ↓</a>
+      </div>
+
+      <div class="px-4 sm:px-6 pb-5 sm:pb-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-4">
+          <div><p class="text-xs font-bold uppercase tracking-[0.18em] text-amber-400">Example findings</p><h4 class="mt-1 text-xl font-bold text-white">Areas worth investigating</h4></div>
+          <p class="text-xs text-zinc-500">Concise examples — not actual scan results</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <article class="rounded-xl border border-rose-500/40 bg-rose-950/20 p-4">
+            <div class="flex items-start gap-3"><span class="flex-none rounded-lg bg-rose-500/15 text-rose-300 p-2 text-sm font-extrabold">01</span><div><h5 class="font-bold text-rose-300">Limited trust evidence</h5><p class="mt-1 text-sm leading-5 text-zinc-300">Relevant proof may be difficult to find or connect to the services offered.</p><p class="mt-2 text-xs leading-5 text-zinc-400"><strong class="text-zinc-200">Question to investigate:</strong> Does the available evidence answer a prospective customer's key doubts?</p></div></div>
+          </article>
+          <article class="rounded-xl border border-amber-500/40 bg-amber-950/15 p-4">
+            <div class="flex items-start gap-3"><span class="flex-none rounded-lg bg-amber-500/15 text-amber-300 p-2 text-sm font-extrabold">02</span><div><h5 class="font-bold text-amber-300">Unclear business identity</h5><p class="mt-1 text-sm leading-5 text-zinc-300">The business, its expertise or the services it provides may not be described consistently.</p><p class="mt-2 text-xs leading-5 text-zinc-400"><strong class="text-zinc-200">Question to investigate:</strong> Can a new visitor quickly understand who you serve and what makes you relevant?</p></div></div>
+          </article>
+          <article class="rounded-xl border border-amber-500/40 bg-amber-950/15 p-4">
+            <div class="flex items-start gap-3"><span class="flex-none rounded-lg bg-amber-500/15 text-amber-300 p-2 text-sm font-extrabold">03</span><div><h5 class="font-bold text-amber-300">Gaps in service detail</h5><p class="mt-1 text-sm leading-5 text-zinc-300">Key pages may name a service without fully explaining scope, process or supporting detail.</p><p class="mt-2 text-xs leading-5 text-zinc-400"><strong class="text-zinc-200">Question to investigate:</strong> Is there enough information to help someone judge whether your offer fits their needs?</p></div></div>
+          </article>
+          <article class="rounded-xl border border-violet-500/40 bg-violet-950/20 p-4">
+            <div class="flex items-start gap-3"><span class="flex-none rounded-lg bg-violet-500/15 text-violet-300 p-2 text-sm font-extrabold">04</span><div><h5 class="font-bold text-violet-300">Limited external validation</h5><p class="mt-1 text-sm leading-5 text-zinc-300">Independent confirmation of expertise or reputation may be limited in the evidence reviewed.</p><p class="mt-2 text-xs leading-5 text-zinc-400"><strong class="text-zinc-200">Question to investigate:</strong> What credible third-party proof could strengthen confidence in your business?</p></div></div>
+          </article>
         </div>
       </div>
+
+      <div class="mx-4 sm:mx-6 mb-4 sm:mb-6 rounded-xl border border-violet-700/70 bg-violet-950/40 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div><h4 class="font-bold text-white">Want to see your own results?</h4><p class="mt-1 text-sm leading-6 text-zinc-300">Run the free assessment to receive findings based on evidence from your website.</p></div>
+        <a href="#sf" onclick="document.getElementById('sf').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){var i=document.getElementById('fu');if(i)i.focus()},350);return false;" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-extrabold text-zinc-950 hover:bg-amber-400 whitespace-nowrap">Start Free Assessment <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="px-5 pb-5 text-center text-xs leading-5 text-zinc-500">Illustration only. The example score, signal scores and findings are not from a real business. Your report will reflect the evidence and limitations of your own scan.</p>
     </div>
   </div>
 </section>
