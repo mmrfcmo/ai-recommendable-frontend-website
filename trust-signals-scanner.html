@@ -28,10 +28,53 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 <p class="mt-4 text-purple-200/80 text-lg max-w-2xl mx-auto">Enter your website URL for a fast assessment across the six Trust Signals.</p>
 <form id="sf" class="no-print mt-8"><div class="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
 <div class="flex-1 flex items-center rounded-xl border border-zinc-700 bg-zinc-900 px-4"><input type="text" required id="su" placeholder="example.com" class="flex-1 py-4 pr-4 text-base text-white placeholder-zinc-500 bg-transparent border-none outline-none focus:outline-none"></div>
-<button type="submit" id="sb" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Scan Report</button>
+<button type="submit" id="sb" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Start Free Assessment</button>
 </div><p class="text-xs text-zinc-500 mt-3">Enter your website address, e.g. yourwebsite.com</p></form>
 <div id="ld" class="hidden text-center py-12"><div class="animate-spin w-10 h-10 border-4 border-amber-400 border-t-transparent rounded-full mx-auto mb-4"></div><p class="text-white text-base font-medium" id="ls">Loading...</p></div>
 </div></div></section>
+
+<!-- Illustrative report preview: this is an example, not live scan data. -->
+<section id="sample-report-preview" class="py-16 sm:py-20 bg-zinc-950 border-t border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-400">A look inside your report</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">More than a score. Understand what the evidence means.</h2>
+      <p class="mt-4 text-base sm:text-lg leading-7 text-zinc-400">Your assessment combines observable website evidence with clear explanations of why a finding may matter, what to investigate and where to focus next.</p>
+    </div>
+    <div class="max-w-4xl mx-auto rounded-2xl border border-zinc-700 bg-zinc-900 shadow-2xl overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 sm:px-7 py-5 border-b border-zinc-800 bg-zinc-900">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-zinc-500">Illustrative report preview</p>
+          <h3 class="mt-1 text-lg font-bold text-white">Sample finding: Entity Clarity</h3>
+        </div>
+        <span class="inline-flex self-start items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">Worth investigating</span>
+      </div>
+      <div class="p-5 sm:p-7 space-y-5">
+        <div class="grid sm:grid-cols-[150px_1fr] gap-4 sm:gap-6">
+          <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-4 flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-1">
+            <div class="relative w-16 h-16 shrink-0">
+              <svg class="w-16 h-16 -rotate-90" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#27272a" stroke-width="5"/><circle cx="32" cy="32" r="26" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="73.51"/></svg>
+              <span class="absolute inset-0 flex items-center justify-center text-lg font-extrabold text-white">55</span>
+            </div>
+            <div><p class="text-xs uppercase tracking-wider text-zinc-500">Example score</p><p class="text-sm font-semibold text-amber-300">Developing</p></div>
+          </div>
+          <div class="space-y-4">
+            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">01 · What we found</p><p class="mt-1 text-sm leading-6 text-zinc-300">A page title and main heading are present. Their presence is a useful foundation, but the scan needs to examine the actual wording to determine how clearly the business, services and intended customers are described.</p></div>
+            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">02 · Why this matters</p><p class="mt-1 text-sm leading-6 text-zinc-300">If the wording is too broad or generic, a prospective customer may have to work harder to understand what the business does and whether it fits their needs.</p></div>
+            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">03 · Potential business implication</p><p class="mt-1 text-sm leading-6 text-zinc-300">Important questions about the offer may remain unanswered. This scan alone does not establish that customers are being lost; that requires further evidence.</p></div>
+            <div><p class="text-xs font-extrabold uppercase tracking-wider text-amber-400">04 · What we recommend</p><p class="mt-1 text-sm leading-6 text-zinc-300">Review the main heading and supporting copy. Check whether they make clear who the business helps, what it offers and why the offer is relevant.</p></div>
+            <div class="rounded-xl border border-amber-400/25 bg-amber-400/5 p-4"><p class="text-xs font-extrabold uppercase tracking-wider text-amber-300">05 · The question to investigate</p><p class="mt-2 text-sm leading-6 text-white">Could a suitable customer quickly understand why this business is relevant to them — and what evidence supports that impression?</p></div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-zinc-800 pt-5">
+          <p class="text-xs leading-5 text-zinc-500">This is an illustrative example only. Your findings and scores will depend on the evidence returned by your actual scan.</p>
+          <a href="#sf" onclick="document.getElementById('su')?.focus()" class="inline-flex justify-center items-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-bold text-zinc-950 hover:bg-amber-400 transition whitespace-nowrap">Run Your Free Scan ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="rc" class="hidden">
 <section class="py-6 bg-zinc-900 border-b border-zinc-800 no-print"><div class="max-w-6xl mx-auto px-6"><div class="flex flex-wrap items-center justify-between gap-4"><div><p class="text-xs text-zinc-500 uppercase tracking-wider">Your Report</p><p class="text-white font-bold text-lg" id="ps">-</p></div><div class="flex items-center gap-3"><span class="text-xs text-zinc-500">Date: <span id="rd" class="text-white">-</span></span><button onclick="rs()" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition">New Scan</button></div></div></div></section>
 <section class="py-10 sm:py-14 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="flex flex-col lg:flex-row items-center gap-8">
@@ -49,7 +92,7 @@ html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-fo
 
 <script>
 function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&#39;')}
-function rs(){document.getElementById('rc').classList.add('hidden');document.getElementById('sf').classList.remove('hidden');document.getElementById('ld').classList.add('hidden');document.getElementById('su').value='';document.getElementById('sb').disabled=false;document.getElementById('sb').innerHTML='Scan Report';window.scrollTo({top:0})}
+function rs(){document.getElementById('rc').classList.add('hidden');document.getElementById('sf').classList.remove('hidden');document.getElementById('ld').classList.add('hidden');document.getElementById('su').value='';document.getElementById('sb').disabled=false;document.getElementById('sb').innerHTML='Start Free Assessment';window.scrollTo({top:0})}
 document.getElementById('sf').addEventListener('submit',async function(e){
 e.preventDefault();
 var u=document.getElementById('su').value.trim();if(!u)return;
