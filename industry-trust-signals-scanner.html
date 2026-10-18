@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Signals Scanner - Recommendable by AI</title>
+<meta name="description" content="Free Trust Signals assessment.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b1f8e'/%3E%3Cstop offset='100%25' stop-color='%235432f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23bg)'/%3E%3Ctext x='16' y='18' font-family='Arial' font-size='9' font-weight='900' fill='white' text-anchor='middle' letter-spacing='0.5'%3ERbAI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif}body{-webkit-font-smoothing:antialiased}
+#scd>div{transition:border-color .2s ease,box-shadow .2s ease}#scd>div:focus-within{outline:2px solid rgba(251,191,36,.25);outline-offset:2px}
+@media print{.no-print{display:none!important}.rounded-2xl,.rounded-xl,.rounded-lg{break-inside:avoid}body{background:white!important;color:black!important}.bg-zinc-950,.bg-zinc-900,.bg-zinc-800{background:#fafafa!important}.text-white,.text-zinc-300,.text-zinc-400{color:#111!important}.text-amber-400{color:#d97706!important}.border-zinc-800,.border-zinc-700{border-color:#ddd!important}}
+
+html.embed-mode nav,html.embed-mode .embed-back-link,html.embed-mode footer{display:none!important}
+html.embed-mode body{min-height:0!important}
+html.embed-mode section.pt-32{
+  padding-top:28px!important;
+  padding-bottom:32px!important;
+  border:3px solid #fbbf24!important;
+  border-radius:18px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  margin-bottom:12px!important;
+}
+#scanner-hero.is-scanning{padding-top:24px!important;padding-bottom:24px!important;min-height:0!important}
+#scanner-hero.is-scanning .scan-hero-badge,#scanner-hero.is-scanning .scan-hero-title,#scanner-hero.is-scanning .scan-hero-intro{display:none!important}
+#scanner-hero.is-scanning #ld{padding-top:0!important;padding-bottom:0!important}
+#scan-stages .scan-stage{min-width:0}
+@media(max-width:639px){
+  .report-block-card{border-width:0!important;border-radius:12px!important}
+  html.embed-mode section.pt-32{border-width:0!important;border-radius:0!important;margin-bottom:0!important}
+  #scanner-hero.is-scanning{padding-top:18px!important;padding-bottom:18px!important}
+  #scanner-hero.is-scanning #ld .text-center{margin-bottom:12px!important}
+  #scanner-hero.is-scanning #ld .text-center p.text-sm{font-size:12px!important}
+}
+html.embed-mode #rc>section.py-6{padding-top:12px!important;padding-bottom:12px!important}
+html.embed-mode #rc>section.py-10,html.embed-mode #rc>section.py-8{padding-top:24px!important;padding-bottom:24px!important}
+html.embed-mode #rc>.report-block:last-of-type{padding-top:8px!important;padding-bottom:4px!important;margin-bottom:0!important}
+html.embed-mode #rc .max-w-6xl{padding-left:16px!important;padding-right:16px!important}
+html.embed-mode #sf{margin-top:20px!important}
+/* No shared outline around the whole report: each report section has its own clear frame. */
+#rc,#rc>section{border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important}
+#rc>.report-block{margin:0 0 18px!important}
+#rc>.report-block:last-of-type{margin-bottom:0!important}
+.report-block-card{border:3px solid #fbbf24!important;border-radius:16px!important;background:#18181b!important;box-shadow:none!important}
+#priority-finding-card.priority-critical{border:3px solid #ef4444!important;border-radius:16px!important;background:linear-gradient(135deg,#251012 0%,#18181b 72%)!important;box-shadow:0 0 0 1px rgba(239,68,68,.18),0 12px 28px rgba(127,29,29,.22)!important}
+
+</style>
+<script>if(new URLSearchParams(location.search).get("embed")==="1"){document.documentElement.classList.add("embed-mode")}</script></head>
+<body class="antialiased bg-zinc-950 text-white min-h-screen">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+<a href="/" class="flex items-center gap-3 text-white"><span class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 text-white flex items-center justify-center text-lg font-extrabold shadow-lg shadow-purple-900/50 ring-2 ring-amber-400/50">RbAI</span><div><div class="font-bold text-xl tracking-tight leading-tight text-white">Recommendable by AI</div><div class="text-sm font-semibold tracking-wider text-amber-400">Trust Signals Scanner</div></div></a>
+<button onclick="window.print()" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition no-print">Print PDF</button>
+</div></nav>
+<div class="max-w-6xl mx-auto px-6 pt-24 embed-back-link"><a href="/" class="inline-flex items-center gap-2 text-sm text-white hover:text-amber-400 transition">← Back to Home</a></div>
+
+<section id="scanner-hero" class="pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden" style="background:linear-gradient(135deg,#0f0a2e 0%,#1a0a3e 35%,#2d1b69 65%,#0f0a2e)"><div class="relative max-w-6xl mx-auto px-4 sm:px-6"><div class="max-w-3xl mx-auto text-center">
+<div class="scan-hero-badge inline-flex items-center gap-2 bg-amber-500 border border-amber-400 text-zinc-900 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Trust Signals Scanner</div>
+<h1 class="scan-hero-title text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] text-white">Trust Signals <span class="text-amber-400">Scanner</span></h1>
+<p class="scan-hero-intro mt-4 text-purple-200/80 text-lg max-w-2xl mx-auto">Enter your website URL for a fast assessment across the six Trust Signals.</p>
+<form id="sf" class="no-print mt-8"><div class="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
+<div class="flex-1 flex items-center rounded-xl border border-zinc-700 bg-zinc-900 px-4"><input type="text" required id="su" placeholder="example.com" class="flex-1 py-4 pr-4 text-base text-white placeholder-zinc-500 bg-transparent border-none outline-none focus:outline-none"></div>
+<button type="submit" id="sb" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg transition hover:bg-amber-400 shrink-0 whitespace-nowrap">Scan Report</button>
+</div><p class="text-xs text-zinc-500 mt-3">Enter your website address, e.g. yourwebsite.com</p></form>
+<div id="ld" class="hidden mx-auto max-w-3xl py-8">
+<div class="text-center mb-6"><div class="animate-spin w-10 h-10 border-4 border-amber-400 border-t-transparent rounded-full mx-auto mb-4"></div><p class="text-white text-lg font-bold" id="ls">Starting your Trust Signals assessment...</p><p class="text-sm text-purple-200/80 mt-2">Reviewing six areas of your website. Your report will appear when the assessment is complete.</p></div>
+<div class="h-2 rounded-full bg-zinc-800 overflow-hidden mb-5"><div id="scan-progress-bar" class="h-full rounded-full bg-amber-400 transition-all duration-500" style="width:3%"></div></div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 text-left" id="scan-stages">
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="0"><p class="text-xs sm:text-sm font-semibold text-zinc-200">1. Entity Clarity</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Business identity and offer</p></div>
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="1"><p class="text-xs sm:text-sm font-semibold text-zinc-200">2. Knowledge Completeness</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Services and expertise</p></div>
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="2"><p class="text-xs sm:text-sm font-semibold text-zinc-200">3. Trust Evidence</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Reviews and proof</p></div>
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="3"><p class="text-xs sm:text-sm font-semibold text-zinc-200">4. Technical Accessibility</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Access to key information</p></div>
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="4"><p class="text-xs sm:text-sm font-semibold text-zinc-200">5. Narrative Consistency</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Consistent business details</p></div>
+<div class="scan-stage rounded-lg border border-zinc-700 bg-zinc-900/80 p-2 sm:p-3" data-stage="5"><p class="text-xs sm:text-sm font-semibold text-zinc-200">6. External Validation</p><p class="text-[10px] sm:text-xs text-zinc-500 mt-1 leading-snug">Independent credibility signals</p></div>
+</div></div>
+</div></div></section>
+<div id="rc" class="hidden">
+<section class="py-6 bg-zinc-900 border-b border-zinc-800 no-print"><div class="max-w-6xl mx-auto px-6"><div class="flex flex-wrap items-center justify-between gap-4"><div><p class="text-xs text-zinc-500 uppercase tracking-wider">Your Report</p><p class="text-white font-bold text-lg" id="ps">-</p></div><div class="flex items-center gap-3"><span class="text-xs text-zinc-500">Date: <span id="rd" class="text-white">-</span></span><button onclick="rs()" class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-700 transition">New Scan</button></div></div></div></section>
+<section class="report-block py-8 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="report-block-card p-5 sm:p-7">
+<div class="flex flex-row items-center gap-5 sm:gap-8">
+<div class="flex flex-col items-center gap-3 flex-shrink-0 w-32 sm:w-48"><div class="relative w-32 h-32 sm:w-48 sm:h-48"><svg class="w-32 h-32 sm:w-48 sm:h-48 -rotate-90" viewBox="0 0 192 192"><circle cx="96" cy="96" r="84" fill="none" stroke="#27272a" stroke-width="10"/><circle id="sr" cx="96" cy="96" r="84" fill="none" stroke="#fbbf24" stroke-width="10" stroke-linecap="round" stroke-dasharray="527.79" stroke-dashoffset="527.79" style="transition:stroke-dashoffset:1.5s ease-out"/></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span id="rsc" class="text-5xl sm:text-6xl font-extrabold text-white">0</span><span class="text-sm text-zinc-400">/100</span></div></div><div class="inline-flex items-center justify-center text-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider border" id="gb"><span id="gt">Loading</span></div></div>
+<div class="min-w-0 flex-1 text-left"><h2 class="text-xl sm:text-2xl font-bold text-white">Trust Signals Assessment <span class="block text-amber-300 mt-1" id="rsite">-</span></h2><p class="mt-3 text-sm text-zinc-400">Your assessment is based on the evidence found on the assessed website.</p><div class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-zinc-300"><span><span class="text-red-400 font-bold">0</span> Critical</span><span><span class="text-orange-400 font-bold">40</span> Developing</span><span><span class="text-lime-400 font-bold">60</span> Strong</span><span><span class="text-emerald-400 font-bold">80</span> Leading</span></div></div></div>
+<div class="mt-7 border-t border-zinc-700/70 pt-6"><h3 class="text-lg font-bold text-amber-400 mb-5">Your Six Trust Signal Scores</h3><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="sgb"></div></div>
+</div></div></section>
+
+<section class="report-block py-6 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="report-block-card p-5 sm:p-7" id="priority-finding-card"><div class="flex flex-wrap items-start justify-between gap-3"><div><p id="priority-finding-kicker" class="text-xs font-extrabold uppercase tracking-widest text-amber-400">Start here</p><h3 class="mt-2 text-xl sm:text-2xl font-bold text-white" id="priority-finding-title">Your priority finding</h3></div><span id="priority-finding-score" class="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-sm font-bold text-amber-300">Review priority</span></div><p id="priority-finding-summary" class="mt-3 max-w-3xl text-sm sm:text-base leading-relaxed text-zinc-200">The scan will highlight the signal that deserves attention first.</p><div class="mt-5 grid md:grid-cols-3 gap-3"><div class="rounded-xl border border-zinc-700 bg-zinc-950/70 p-4"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">What the scan found</p><div id="priority-finding-evidence" class="mt-2 text-sm leading-relaxed text-zinc-300">Evidence will appear here.</div></div><div class="rounded-xl border border-zinc-700 bg-zinc-950/70 p-4"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">Why it may matter</p><p id="priority-finding-implication" class="mt-2 text-sm leading-relaxed text-zinc-300">The potential customer implication will appear here.</p></div><div class="rounded-xl border border-zinc-700 bg-zinc-950/70 p-4"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">What to investigate next</p><p id="priority-finding-question" class="mt-2 text-sm leading-relaxed text-zinc-300">A practical question will appear here.</p></div></div><p class="mt-4 text-xs text-zinc-500">This is a priority for review based on the assessment score—not proof that a customer or job has been lost.</p></div></div></section>
+
+<section id="secondary-potential-gaps" class="report-block py-6 bg-zinc-950 hidden"><div class="max-w-6xl mx-auto px-6"><div class="report-block-card p-5 sm:p-7"><p class="text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-2">Beyond the main finding</p><h3 class="text-xl font-bold text-white mb-2">Two other areas worth investigating</h3><p class="text-sm leading-relaxed text-zinc-400 mb-5">These are secondary signals to review—not confirmed faults. They are shown separately so the main finding remains clear.</p><div id="secondary-potential-gaps-list" class="grid md:grid-cols-2 gap-4"></div></div></div></section>\n<section class="report-block py-8 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="report-block-card p-5 sm:p-7"><h3 class="text-lg font-bold text-amber-400 mb-6">Detailed Analysis</h3><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="scd"></div><div class="mt-5 rounded-xl border border-purple-400/20 bg-purple-400/5 p-4 text-xs text-zinc-400">This assessment reviews website evidence for six Trust Signals. It does not guarantee discovery, recommendation, ranking, citation, inclusion or visibility by any AI system, search engine or third-party service.</div></div></div></section>
+<section class="report-block py-8 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="report-block-card p-5 sm:p-7"><h3 class="text-lg font-bold text-amber-400 mb-2">What We Found</h3><p class="text-zinc-400 text-sm mb-5">Four evidence-led observations from this scan. These are points to review, not assumptions about what customers think.</p><div id="prr" class="space-y-3"></div></div></div></section>
+<section class="report-block py-8 bg-zinc-950"><div class="max-w-6xl mx-auto px-6"><div class="max-w-3xl mx-auto text-center"><div class="rounded-xl border-2 border-amber-400/60 bg-amber-400/5 p-8 sm:p-10"><div id="review-cta-kicker" class="text-amber-400 text-lg font-bold mb-3">Your next step</div><h3 id="review-cta-title" class="text-2xl font-bold text-white mb-3">Ready to review your Trust Signals?</h3><p id="review-cta-copy" class="text-base text-zinc-300 max-w-lg mx-auto mb-6">Let's walk through your assessment, explore what the findings could mean for your business, and agree a practical next step—no pressure, no hard sell.</p><a id="review-cta-button" href="https://social.prospectrocket.com/AR/RooferGrowthReviewCall" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-8 py-4 text-base font-bold text-zinc-900 shadow-lg hover:bg-amber-400">Book Your Free 30-Minute Growth Review</a></div></div></div></section>
+<footer class="bg-zinc-950 text-zinc-500 py-8 border-t border-zinc-800 no-print"><div class="max-w-6xl mx-auto px-6 text-center"><p class="text-xs text-zinc-500">Recommendable by AI - Trust Signal Optimisation</p></div></footer></div>
+
+<script>
+function esc(v){return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&#39;')}
+function rs(){document.getElementById('rc').classList.add('hidden');document.getElementById('sf').classList.remove('hidden');document.getElementById('ld').classList.add('hidden');document.getElementById('scanner-hero').classList.remove('is-scanning');document.getElementById('su').value='';document.getElementById('sb').disabled=false;document.getElementById('sb').innerHTML='Scan Report';window.scrollTo({top:0})}
+document.getElementById('sf').addEventListener('submit',async function(e){
+e.preventDefault();
+var u=document.getElementById('su').value.trim();if(!u)return;
+var d=u.replace(/^https?:\/\//,'').replace(/^www\./,'').split('/')[0];var fu=/^https?:\/\//i.test(u)?u:'https://'+u;
+document.getElementById('sf').classList.add('hidden');document.getElementById('ld').classList.remove('hidden');document.getElementById('scanner-hero').classList.add('is-scanning');document.getElementById('sb').disabled=true;
+document.getElementById('ps').textContent=d;document.getElementById('rd').textContent=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+var scanStartedAt=Date.now();
+var scanStageIndex=0;
+var scanStageLabels=['Checking business identity and offer...','Reviewing services and expertise...','Checking trust and reputation evidence...','Reviewing technical accessibility...','Checking consistency of business information...','Reviewing independent validation signals...'];
+function updateScanProgress(){
+ var stages=document.querySelectorAll('#scan-stages .scan-stage');
+ stages.forEach(function(el,i){
+   var active=i===scanStageIndex,done=i<scanStageIndex;
+   el.style.borderColor=done?'rgba(34,197,94,.65)':active?'rgba(251,191,36,.9)':'rgba(63,63,70,1)';
+   el.style.background=done?'rgba(34,197,94,.08)':active?'rgba(251,191,36,.08)':'rgba(24,24,27,.8)';
+   var title=el.querySelector('p');
+   if(title){title.style.color=done?'#86efac':active?'#fcd34d':'#e4e4e7';}
+   var mark=el.querySelector('.scan-stage-mark');
+   if(!mark){mark=document.createElement('span');mark.className='scan-stage-mark text-xs font-bold';mark.style.float='right';el.querySelector('p').appendChild(mark);}
+   mark.textContent=done?'✓':active?'●':'';
+   mark.style.color=done?'#86efac':'#fbbf24';
+ });
+ document.getElementById('scan-progress-bar').style.width=Math.min(96,Math.max(3,((scanStageIndex+1)/6)*100))+'%';
+ document.getElementById('ls').textContent=scanStageLabels[Math.min(scanStageIndex,5)];
+}
+updateScanProgress();
+var scanStageTimer=setInterval(function(){if(scanStageIndex<5){scanStageIndex++;updateScanProgress();}},1450);
+var scanWait=function(ms){return new Promise(function(resolve){setTimeout(resolve,ms);});};
+try{
+ var res=await fetch('https://ai-recommendable-api.onrender.com/api/v2/trust-assessment/scan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({website:fu,mode:'basic'})});
+ var data=await res.json();
+ if(!res.ok||!data.success){throw new Error(data.error||'Assessment failed');}
+ await scanWait(Math.max(0,9000-(Date.now()-scanStartedAt)));
+ clearInterval(scanStageTimer);
+ scanStageIndex=5;updateScanProgress();
+ document.getElementById('scan-progress-bar').style.width='100%';
+ document.getElementById('ls').textContent='Assessment complete. Preparing your results...';
+ await scanWait(250);
+ var total=data.overall_score||0;
+ var ring=document.getElementById('sr');var clr=total>=80?'#22c55e':total>=60?'#f59e0b':total>=40?'#f97316':'#ef4444';
+ ring.setAttribute('stroke',clr);ring.style.strokeDashoffset=527.79-(total/100)*527.79;
+ document.getElementById('rsc').textContent=total;document.getElementById('rsite').textContent=data.business_name||d;
+ var gc=total>=80?'bg-emerald-900/50 text-emerald-400 border-emerald-800':total>=60?'bg-lime-900/50 text-lime-400 border-lime-800':total>=40?'bg-orange-900/50 text-orange-400 border-orange-800':'bg-red-900/50 text-red-400 border-red-800';
+ document.getElementById('gb').className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider border '+gc;
+ document.getElementById('gt').textContent=data.grade||'Needs Attention';
+
+ var signals=data.signals||[];
+ // Make the first takeaway specific to the lowest-scoring Trust Signal, without claiming that lost business has been measured.
+ var prioritySignal=signals.slice().sort(function(a,b){return Number(a.percentage||0)-Number(b.percentage||0)})[0];
+ if(prioritySignal){
+   var pv=Number(prioritySignal.percentage||0);
+   var pl=String(prioritySignal.label||'Trust Signals');
+   var plower=pl.toLowerCase();
+   var pEvidence=(prioritySignal.evidence||[]).filter(Boolean);
+   var pSummary,pImplication,pQuestion;
+   // Evidence quality guard: don't present routine page mechanics as a meaningful business finding.
+   // Keep the scanner's original scoring intact; change only the interpretation shown in this card.
+   var isBoilerplateEvidence=function(x){
+     return /page title|main heading|heading.*present|title.*present|meta description.*present|html.*valid|https status|https.*enabled|website.*reachable|page.*loaded|response code|robots\.txt.*found|sitemap.*found|canonical.*present|viewport.*present|schema.*detected/i.test(String(x||''));
+   };
+   var meaningfulEvidence=pEvidence.filter(function(x){return !isBoilerplateEvidence(x) && String(x).trim().length>24;});
+   var hasOnlyRoutineEvidence=pEvidence.length>0 && meaningfulEvidence.length===0;
+   if(meaningfulEvidence.length){pEvidence=meaningfulEvidence;}
+   else if(hasOnlyRoutineEvidence){
+     pEvidence=['The scan returned routine technical/page checks, but these do not by themselves show whether a customer can verify the business, understand the core offer, or distinguish it from another contractor. Treat this as a limit of the available evidence—not proof that the business is missing something.'];
+   }
+   if(plower.indexOf('entity clarity')>=0){
+     pSummary='The first thing to investigate is whether a customer can quickly understand who you are, which jobs you take on and where you work.';
+     pImplication='If the offer or service area is unclear, a suitable customer may keep looking for a business whose fit is easier to understand.';
+     pQuestion='Could a customer tell within a few seconds that you handle their exact problem and cover their area?';
+     if(hasOnlyRoutineEvidence){
+       pSummary='The scan has not yet established whether a customer can quickly identify this business, understand its main services, and see which area it serves.';
+       pImplication='If a customer cannot quickly confirm “is this the right business for my job and location?”, they may keep comparing alternatives. This scan has not proved that the website is unclear; it has identified a question the available evidence cannot answer.';
+       pQuestion='On the homepage, can you point to the business name, the specific work offered and the service area in plain language—without having to search around the site?';
+     }
+   }else if(plower.indexOf('knowledge completeness')>=0){
+     pSummary='The first thing to investigate is whether the website answers the practical questions a customer has before making contact.';
+     pImplication='Missing detail about services, coverage or relevant experience can leave a customer unsure whether to call.';
+     pQuestion='Can someone with a specific need, specific service or a main service quickly confirm you handle that job and work in their area?';
+     if(hasOnlyRoutineEvidence){
+       pSummary='The scan has not found enough substantive evidence to judge how fully the website answers a customer’s questions about services, job types and experience.';
+       pImplication='A customer with a specific problem needs to know whether you handle that type of work and cover their area. Basic page checks cannot confirm that those answers are present or useful.';
+       pQuestion='Choose one real job you want more of. Does the website explain the service, who it is for, the areas covered and what a customer should do next?';
+     }
+   }else if(plower.indexOf('trust evidence')>=0){
+     pSummary='The first thing to investigate is how easily a customer can verify the quality and reliability you claim.';
+     pImplication='When reviews, relevant project examples or applicable credentials are difficult to verify, another business may feel like the easier choice to trust.';
+     pQuestion='Can a cautious customer find independent, relevant proof of your work without having to ask you for it?';
+     if(hasOnlyRoutineEvidence){
+       pSummary='The available evidence does not yet establish what independent proof a customer can use to check this business’s work and reputation.';
+       pImplication='A polished website or technical check is not the same as proof. Homeowners may want to inspect relevant completed jobs, genuine reviews, and credentials where applicable before inviting someone to quote.';
+       pQuestion='Can a customer verify at least one relevant completed project and one independent reputation signal from the website, without relying only on the business’s own claims?';
+     }
+   }else if(plower.indexOf('technical accessibility')>=0){
+     pSummary='The first thing to investigate is whether important service information can be reached and understood by search and AI systems.';
+     pImplication='If key pages are hard for automated systems to access or interpret, the information may be less available when people search for help. This scan does not establish that a platform has actually missed your business.';
+     pQuestion='Are the pages for your main services accessible and clear—or is a technical issue limiting what automated systems can understand?';
+     if(hasOnlyRoutineEvidence){
+       pSummary='The evidence returned so far is not enough to identify a specific technical barrier affecting the business information on this website.';
+       pImplication='Technical issues matter when they prevent important service pages or their content from being accessed or understood. Routine checks alone do not prove that search engines or AI systems are missing this business.';
+       pQuestion='Can the key pages for core services and locations be reached directly and have their main content read without scripts, blocked access or errors?';
+     }
+   }else if(plower.indexOf('narrative consistency')>=0){
+     pSummary='The first thing to investigate is whether a customer gets the same clear answer wherever they check your business: what work you do, where you do it, and how to recognise the right company.';
+     pImplication='A customer comparing businesses needs to feel sure you handle their particular job and cover their area. If your website and business profiles give mixed or incomplete answers, they may hesitate or contact a competitor whose offer is easier to understand.';
+     pQuestion='Imagine a customer checks your website, Google Business Profile and a relevant industry directory before calling. Do all three clearly agree on the jobs you take on, the areas you cover and your business details—or could anything make them stop and question whether you are the right business?';
+     var shallowHeadingEvidence=hasOnlyRoutineEvidence || (pEvidence.some(function(x){return /page title|main heading|heading.*present/i.test(String(x))}) && !meaningfulEvidence.length);
+     var specificConsistencyEvidence=meaningfulEvidence;
+     if(shallowHeadingEvidence && !specificConsistencyEvidence.length){
+       pEvidence=['What the scan could verify: a page title and main heading exist. What it could not verify: whether the wording clearly explains the work offered, the areas covered, or whether those details match the business’s Google profile and directory listings. This is an evidence gap—not proof that the details conflict.'];
+       pSummary='The scan has only confirmed that basic headings exist. It has not yet established whether the message a customer sees on this website matches the business information they find elsewhere.';
+       pImplication='A customer comparing businesses needs to confirm three things quickly: “Do they do this type of work? Do they cover my area? Am I looking at the right company?” If those answers are unclear or differ between sources, they may choose a business who is easier to verify. The scan has not proved that this is happening here.';
+       pQuestion='For this business, compare the exact services and locations stated on its website with its Google Business Profile and one relevant relevant industry directory. Can you verify that they agree—or identify a specific difference a customer could notice?';
+     }else if(shallowHeadingEvidence && specificConsistencyEvidence.length){
+       pEvidence=specificConsistencyEvidence.concat(['The scan also detected basic page headings, but those alone do not establish whether the business message is consistent across external profiles.']);
+     }
+   }else if(plower.indexOf('external validation')>=0){
+     if(hasOnlyRoutineEvidence){
+       pSummary='The scan has not established which independent sources, if any, corroborate this business’s reputation, expertise or business details.';
+       pImplication='Homeowners may use reviews, industry memberships, relevant accreditations or other independent sources to cross-check a contractor. The current evidence is not enough to say these are absent.';
+       pQuestion='Which independent source could a customer check to verify this business—and does the website make that source easy to find?';
+     }
+     pSummary='The first thing to investigate is whether evidence outside your own website supports your reputation and expertise.';
+     pImplication='If all the reassurance comes from your own claims, a customer may have fewer independent ways to verify you before making contact.';
+     pQuestion='What credible reviews, verifiable credentials, industry memberships or other independent sources can a customer check?';
+   }else{
+     pSummary='The first thing to investigate is whether the evidence behind this signal is clear, relevant and easy to verify.';
+     pImplication='If the evidence is difficult to check, a customer may have to work harder to decide whether your business is the right fit.';
+     pQuestion='What would a customer need to see to verify this signal confidently before contacting you?';
+   }
+   var priorityCard=document.getElementById('priority-finding-card');
+   var priorityTitle=document.getElementById('priority-finding-title');
+   var priorityKicker=document.getElementById('priority-finding-kicker');
+   var priorityScore=document.getElementById('priority-finding-score');
+   var isCritical=pv<40;
+   priorityCard.classList.toggle('priority-critical',isCritical);
+   priorityKicker.className='text-xs font-extrabold uppercase tracking-widest '+(isCritical?'text-red-400':'text-amber-400');
+   priorityTitle.className='mt-2 text-xl sm:text-2xl font-bold '+(isCritical?'text-red-300':'text-white');
+   priorityTitle.textContent=(pv<80?'Potential Gap: ':'Priority to Validate: ')+pl;
+   priorityScore.textContent=pv+'/100 · '+(pv<40?'High priority':pv<60?'Needs attention':pv<80?'Worth strengthening':'Positive signal');
+   priorityScore.className='rounded-full border px-3 py-1 text-sm font-extrabold '+(isCritical?'border-red-400 bg-red-500 text-zinc-950 shadow-sm shadow-red-950/40':'border-amber-400/40 bg-amber-400/10 text-amber-300');
+   document.getElementById('priority-finding-summary').textContent=pSummary;
+   document.getElementById('priority-finding-implication').textContent=pImplication;
+   document.getElementById('priority-finding-question').textContent=pQuestion;
+   document.getElementById('priority-finding-evidence').innerHTML=pEvidence.length?'<div class="space-y-4">'+pEvidence.map(function(x){
+     var evidenceText=String(x||'');
+     // Give the three-part evidence limitation a readable report layout instead of one dense paragraph.
+     if(/^What the scan could verify:/i.test(evidenceText)){
+       var verifiedMatch=evidenceText.match(/What the scan could verify:\s*([\s\S]*?)(?=\s*What it could not verify:|$)/i);
+       var notVerifiedMatch=evidenceText.match(/What it could not verify:\s*([\s\S]*?)(?=\s*This is an evidence gap|$)/i);
+       var limitationMatch=evidenceText.match(/This is an evidence gap[^.]*\.?/i);
+       return '<div class="space-y-3">'+
+         (verifiedMatch?'<div class="rounded-lg border border-zinc-700 bg-zinc-900/70 p-3"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">What the scan could verify</p><p class="mt-1.5 leading-relaxed text-zinc-200">'+esc(verifiedMatch[1].trim())+'</p></div>':'')+
+         (notVerifiedMatch?'<div class="rounded-lg border border-zinc-700 bg-zinc-900/70 p-3"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">What it could not verify</p><p class="mt-1.5 leading-relaxed text-zinc-200">'+esc(notVerifiedMatch[1].trim())+'</p></div>':'')+
+         (limitationMatch?'<p class="border-l-2 border-amber-400 pl-3 text-xs leading-relaxed text-zinc-400">'+esc(limitationMatch[0].trim())+'</p>':'')+
+       '</div>';
+     }
+     return '<div class="flex gap-2"><span class="text-amber-400">•</span><span>'+esc(evidenceText)+'</span></div>';
+   }).join('')+'</div>':'<p>The scan did not return enough specific evidence to make a firm statement about this signal. Treat this as a point to verify—not proof that the signal is absent.</p>';
+ }
+ // Experimental layout: retain the lowest-scoring primary finding, then show up to two other sub-80 signals as secondary areas to investigate.
+  var secondarySignals=signals.filter(function(s){return s!==prioritySignal && Number(s.percentage||0)<80;})
+    .sort(function(a,b){return Number(a.percentage||0)-Number(b.percentage||0);}).slice(0,2);
+  if(secondarySignals.length){
+    var secondaryCopy=function(label){
+      var l=String(label||'').toLowerCase();
+      if(l.indexOf('entity clarity')>=0)return {why:'Can a customer quickly tell who the business is, what work it offers and where it operates?',question:'Is the business name, core offer and service area obvious within a few seconds?'};
+      if(l.indexOf('knowledge completeness')>=0)return {why:'A customer may compare another business if the services, job types or relevant experience are easier to understand elsewhere.',question:'Can a customer quickly confirm you handle their type of industry job and cover their area?'};
+      if(l.indexOf('trust evidence')>=0)return {why:'If relevant reviews, completed-job examples or applicable credentials are difficult to verify, another business may feel like the safer choice.',question:'Can a customer find convincing proof of your work and reliability without having to ask you for it?'};
+      if(l.indexOf('technical accessibility')>=0)return {why:'Important service information may be harder for automated systems to access or interpret. This score alone does not prove that a platform has missed the business.',question:'Can the key pages for your main services be reached and understood without technical barriers?'};
+      if(l.indexOf('narrative consistency')>=0)return {why:'If the website and business profiles give unclear or different answers, a customer may hesitate over whether they have found the right business.',question:'Do your website, Google Business Profile and relevant directories agree on your services, service area and business details?'};
+      if(l.indexOf('external validation')>=0)return {why:'If independent reviews, relevant industry memberships or verifiable credentials are difficult to find, customers may have less reassurance before contacting you.',question:'What independent evidence can a customer check to support your reputation and experience?'};
+      return {why:'The available scan evidence suggests this signal deserves a closer look, but it does not prove a specific fault.',question:'What could a customer verify about this signal before deciding whether to contact you?'};
+    };
+    document.getElementById('secondary-potential-gaps-list').innerHTML=secondarySignals.map(function(s){
+      var score=Number(s.percentage||0), tone=score<40?{border:'border-red-500/50',text:'text-red-300',pill:'bg-red-500 text-zinc-950',label:'High priority'}:score<60?{border:'border-orange-500/50',text:'text-orange-300',pill:'bg-orange-400/15 text-orange-200',label:'Needs attention'}:{border:'border-amber-400/40',text:'text-amber-300',pill:'bg-amber-400/10 text-amber-200',label:'Worth reviewing'};
+      var copy=secondaryCopy(s.label);
+      return '<article class="rounded-xl border '+tone.border+' bg-zinc-950/70 p-4 sm:p-5"><div class="flex items-start justify-between gap-3"><div><p class="text-xs font-extrabold uppercase tracking-wide text-zinc-500">Secondary potential gap</p><h4 class="mt-1 font-bold text-white">'+esc(s.label)+'</h4></div><div class="text-right shrink-0"><p class="text-xl font-extrabold '+tone.text+'">'+score+'/100</p><span class="inline-block mt-1 rounded-full px-2 py-1 text-xs font-bold '+tone.pill+'">'+tone.label+'</span></div></div><p class="mt-3 text-sm leading-relaxed text-zinc-300">'+esc(copy.why)+'</p><div class="mt-3 rounded-lg border border-zinc-800 bg-zinc-900/70 p-3"><p class="text-xs font-extrabold uppercase tracking-wide text-amber-300">Question to check</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">'+esc(copy.question)+'</p></div></article>';
+    }).join('');
+    document.getElementById('secondary-potential-gaps').classList.remove('hidden');
+  }else{
+    document.getElementById('secondary-potential-gaps').classList.add('hidden');
+  }
+  // Tailor the invitation to the overall score while referring to the complete assessment.
+ var ctaTitle,ctaCopy;
+ if(total<40){
+   ctaTitle='Let’s explore what may be holding your business back';
+   ctaCopy='Your Trust Signals assessment has highlighted several areas worth examining more closely. In your free 30-minute review, we’ll walk through all your findings, explore how they could affect a customer’s decision to contact you, and identify the most important opportunities to strengthen your business.';
+ }else if(total<60){
+   ctaTitle='Let’s close the gaps that may make customers hesitate';
+   ctaCopy='Your Trust Signals assessment has highlighted opportunities to make your business clearer, more credible and easier to choose. In your free 30-minute review, we’ll walk through all your findings, explore what they could mean for customer confidence, and agree which improvements deserve attention first.';
+ }else if(total<80){
+   ctaTitle='Let’s strengthen the signals that help customers choose you';
+   ctaCopy='Your Trust Signals assessment gives you a foundation to build on, with opportunities to make the whole picture stronger. In your free 30-minute review, we’ll walk through all your findings, consider how they work together to shape customer confidence, and prioritise the most useful next steps.';
+ }else{
+   ctaTitle='Let’s validate your strengths and find your next opportunity';
+   ctaCopy='Your overall Trust Signals assessment looks positive, and it is still worth reviewing the complete picture. In your free 30-minute review, we’ll walk through all your findings, check where your strengths can be maintained or improved, and identify any worthwhile opportunities for your business.';
+ }
+ document.getElementById('review-cta-title').textContent=ctaTitle;
+ document.getElementById('review-cta-copy').textContent=ctaCopy;
+ document.getElementById('review-cta-button').textContent='Book Your Free 30-Minute Growth Review';
+ var bh='',dh='';
+ signals.forEach(function(s,i){
+   var v=s.percentage||0;var bc=v>=80?'bg-emerald-500':v>=60?'bg-amber-500':v>=40?'bg-orange-500':'bg-red-500';
+   bh+='<div class="rounded-xl border border-zinc-800 bg-zinc-950 p-4"><div class="flex items-center gap-2 mb-2"><span>'+(i+1)+'</span><span class="text-xs text-zinc-400 uppercase">'+esc(s.label)+'</span></div><p class="text-2xl font-bold text-white">'+v+'</p><div class="w-full bg-zinc-800 rounded-full h-2 mt-2"><div class="'+bc+' h-2 rounded-full" style="width:'+v+'%"></div></div></div>';
+   var evidenceList=(s.evidence||[]).filter(Boolean);
+   var evidence=evidenceList.length?'<ul class="mt-2 space-y-1 text-sm text-zinc-300">'+evidenceList.map(function(x){return '<li class="flex gap-2"><span class="text-zinc-500">•</span><span>'+esc(x)+'</span></li>'}).join('')+'</ul>':'<p class="mt-2 text-sm text-zinc-300">The scan did not return enough specific evidence to make a stronger statement. Treat this as an evidence limitation, not proof that the signal is absent.</p>';
+   var limit=esc((s.limitations||[]).join(' '));
+   var tone=v<40?{hex:'#ef4444',border:'rgba(239,68,68,.8)',bg:'rgba(239,68,68,.08)',label:'High-priority signal'}:v<60?{hex:'#f97316',border:'rgba(249,115,22,.75)',bg:'rgba(249,115,22,.07)',label:'Needs attention'}:v<80?{hex:'#a3e635',border:'rgba(163,230,53,.65)',bg:'rgba(163,230,53,.05)',label:'Worth strengthening'}:{hex:'#22c55e',border:'rgba(34,197,94,.55)',bg:'rgba(34,197,94,.04)',label:'Positive signal'};
+   var label=(s.label||'this signal').toLowerCase();
+   var gapObservation='';
+   var problemMeaning='';
+   if(label.indexOf('entity clarity')>=0){
+     gapObservation='The scan did not build a sufficiently clear picture of the business identity and what it offers from the evidence reviewed.';
+     problemMeaning='When the business identity or offer is not immediately clear, a customer has to piece together who you are, what work you take on and whether you are the right business for the job.';
+   }else if(label.indexOf('knowledge completeness')>=0){
+     gapObservation='Services and experience are mentioned, but the overall evidence is too limited to give a customer a clear, complete picture of the work you handle and the expertise relevant to their job.';
+     problemMeaning='Mentioning services and experience is not always enough: customers also need specific detail to judge whether you handle their type of roof problem, cover their area and have relevant experience.';
+   }else if(label.indexOf('trust evidence')>=0){
+     gapObservation='The scan found limited supporting proof to help a customer independently check the quality and reliability of the business.';
+     problemMeaning='Claims about quality are less reassuring when they are not backed by easy-to-check evidence, such as relevant reviews, credentials, completed projects or customer examples.';
+   }else if(label.indexOf('technical accessibility')>=0){
+     gapObservation='The scan found signs that important business information may not be consistently easy for automated systems to access or interpret.';
+     problemMeaning='If search engines and AI tools cannot reliably reach or understand key information, they may have a weaker basis for matching the business with someone looking for services.';
+   }else if(label.indexOf('narrative consistency')>=0){
+     gapObservation='The evidence reviewed did not establish a consistently clear picture of the business across the information available.';
+     problemMeaning='When business details or descriptions are unclear or inconsistent, customers and automated systems have a harder time deciding which information to rely on.';
+   }else if(label.indexOf('external validation')>=0){
+     gapObservation='The scan found limited independent evidence outside the business’s own website to corroborate its reputation or expertise.';
+     problemMeaning='Information published by the business is more persuasive when independent sources also support it; without that corroboration, a customer has fewer ways to verify the claims.';
+   }else{
+     gapObservation='The scan found too little clear, supporting evidence to make this signal easy to verify.';
+     problemMeaning='When the evidence is difficult to verify, a prospective customer has to do more work to decide whether the business is a suitable and reliable choice.';
+   }
+   if(v<80){
+     if(label.indexOf('knowledge completeness')>=0){
+       evidence='<p class="mt-2 text-xs font-extrabold uppercase tracking-wide text-amber-300">Why this deserves attention</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">If the website does not clearly explain the jobs you handle, the areas you cover and the experience relevant to each job, a customer may not realise you are a suitable option.</p><p class="mt-2 text-sm leading-relaxed text-zinc-300">That can mean missed enquiries—not necessarily because you cannot do the work, but because a competing business makes the answer easier to see. The low score points to information worth checking, not proof that any specific service is missing.</p>';
+     }else if(label.indexOf('trust evidence')>=0){
+       evidence='<p class="mt-2 text-xs font-extrabold uppercase tracking-wide text-amber-300">Why this deserves attention</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">Choosing a business involves trust: customers may want reassurance that the work will be done properly, the contractor is reliable and the claims are credible.</p><p class="mt-2 text-sm leading-relaxed text-zinc-300">If relevant reviews, completed-job examples, applicable credentials or other proof are difficult to find, a cautious customer may choose a competitor whose evidence is easier to check. This score does not prove that you lack those qualities—it means the scan did not find enough clear proof to establish them.</p>';
+     }else if(label.indexOf('narrative consistency')>=0){
+       evidence='<p class="mt-2 text-xs font-extrabold uppercase tracking-wide text-amber-300">Why this deserves attention</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">Basic headings alone do not tell a customer whether your website clearly explains the work you take on and areas you cover—or whether those details agree with your Google Business Profile and directory listings.</p><p class="mt-2 text-sm leading-relaxed text-zinc-300">If those answers are unclear or differ between sources, a customer may hesitate or choose a business whose offer is easier to verify. This scan has not proved that a mismatch exists; it has identified something worth checking.</p>';
+     }else if(label.indexOf('external validation')>=0){
+       evidence='<p class="mt-2 text-xs font-extrabold uppercase tracking-wide text-amber-300">Why this deserves attention</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">A link to an external profile does not, by itself, show that a customer can independently verify your reputation, experience or credentials.</p><p class="mt-2 text-sm leading-relaxed text-zinc-300">If credible reviews, relevant industry memberships, verifiable credentials or other independent proof are difficult to find, a cautious customer may have less reason to shortlist you. The scan has not established that this proof is absent—only that the available evidence does not yet demonstrate it clearly.</p>';
+     }else{
+       evidence=evidenceList.length?'<p class="mt-2 text-xs font-extrabold uppercase tracking-wide text-amber-300">Evidence returned by the scan</p>'+evidence:'<p class="mt-2 text-sm text-zinc-300">The scan did not return enough specific evidence to make a firm statement about this signal. Treat this as an evidence limitation, not proof that the signal is absent.</p>';
+     }
+   }
+   var implication=v<80?problemMeaning:'This signal appears comparatively well supported in the evidence reviewed. Keep it current and consistent as the business changes.';
+   var probe;
+   if(label.indexOf('knowledge completeness')>=0&&v<80){
+     probe='If a customer with a problem compared your website with two local competitors, could they quickly tell that you handle their exact problem, cover their area and have the right experience—or might they leave without contacting you because the answers are not clear enough?';
+   }else if(label.indexOf('trust evidence')>=0&&v<80){
+     probe='If a customer is comparing you with another business, what can they actually verify—recent reviews, relevant completed jobs, or applicable relevant credentials—without simply taking your word for it? If that proof is hard to find, what would make them risk contacting you first?';
+   }else if(label.indexOf('technical accessibility')>=0&&v<80){
+     probe='If someone searches for an urgent need, specific service or a main service, can search engines and AI tools reliably reach and understand the pages that explain your services—or could your business be overlooked before the customer even gets the chance to judge your workmanship?';
+   }else if(label.indexOf('narrative consistency')>=0&&v<80){
+     probe='If your website, Google Business Profile or trade directories describe different services, service areas or business details, which version should a customer trust? Could those conflicting signals give them a reason to hesitate—or quietly remove you from their shortlist before you know they looked?';
+   }else if(label.indexOf('external validation')>=0&&v<80){
+     probe='Beyond your own website, what independent evidence can a cautious customer find to back up your claims—credible reviews, verifiable trade membership or credentials, or recognition from relevant third parties? If they find little beyond your own words, why should they choose you over a business whose reputation is easier to verify?';
+   }else{
+     probe=v<40?'What specific information or proof could you show a customer to answer their first concern about '+label+'?':v<60?'What might a customer still need to see to feel confident about '+label+' before contacting you?':v<80?'What could make '+label+' easier for a customer to verify when comparing businesses?':'What evidence helps keep '+label+' clear, credible and up to date?';
+   }
+   var businessImpact='';
+   if(v<80){
+     if(label.indexOf('entity clarity')>=0){businessImpact='If people cannot quickly establish exactly who you are and what you do, they may hesitate to enquire or choose a competitor whose business is easier to understand.';}
+     else if(label.indexOf('knowledge completeness')>=0){businessImpact='A customer comparing businesses may favour a competitor whose services, locations and expertise are clearer, even if you can do the same quality of work.';}
+     else if(label.indexOf('trust evidence')>=0){businessImpact='When proof is hard to find, a customer may choose a business whose reviews, credentials and examples of completed work are easier to check.';}
+     else if(label.indexOf('technical accessibility')>=0){businessImpact='If important information is difficult for search engines and AI tools to access, your business could be overlooked when people are looking for help.';}
+     else if(label.indexOf('narrative consistency')>=0){businessImpact='If your business details or claims differ across pages and profiles, potential customers may question which information is reliable and move on to a clearer alternative.';}
+     else if(label.indexOf('external validation')>=0){businessImpact='Without enough independent sources backing up your business, a customer may have less reason to shortlist you over a competitor with stronger third-party proof.';}
+     else {businessImpact='This gap may make it harder for a potential customer to verify your business and feel confident choosing you over another business.';}
+   }
+   dh+='<div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5"><div class="flex items-center gap-3 mb-4"><div class="relative w-12 h-12 flex-shrink-0"><svg class="w-12 h-12 -rotate-90" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="#27272a" stroke-width="3"/><circle cx="24" cy="24" r="18" fill="none" stroke="'+tone.hex+'" stroke-width="3" stroke-linecap="round" stroke-dasharray="113.1" stroke-dashoffset="'+(113.1-(v/100)*113.1)+'"/></svg><div class="absolute inset-0 flex items-center justify-center"><span class="text-sm font-bold text-white">'+v+'</span></div></div><div><p class="font-bold text-white text-sm">'+esc(s.label)+'</p><p class="text-xs text-zinc-500 uppercase tracking-wider">Evidence-based assessment</p></div></div><div class="rounded-lg border-l-4 p-4" style="border:1px solid '+tone.border+';border-left-width:5px;background:'+tone.bg+'"><div class="flex items-center justify-between gap-2 flex-wrap"><p class="text-xs font-extrabold uppercase tracking-wider" style="color:'+tone.hex+'">What caught our attention</p><span class="text-xs font-semibold" style="color:'+tone.hex+'">'+tone.label+' · '+v+'/100</span></div>'+evidence+'<p class="mt-3 text-sm text-zinc-200">'+implication+'</p>'+(v<80?'<p class="mt-2 text-sm leading-relaxed text-zinc-300">'+businessImpact+'</p>':'')+'</div>'+(limit?'<div class="text-xs text-purple-300 mt-3">Assessment limitation: '+limit+'</div>':'')+(v<80?'<div class="mt-4 rounded-lg border border-zinc-700 bg-zinc-950/70 p-4"><p class="text-sm text-zinc-200">'+probe+'</p></div>':'')+'</div>';
+ });
+ document.getElementById('sgb').innerHTML=bh;document.getElementById('scd').innerHTML=dh;
+ var ph='';
+ var priorities=(data.priority_improvements||[]).slice();
+ var covered=priorities.map(function(p){return String(p.signal||'').toLowerCase()});
+ (signals.filter(function(s){return Number(s.percentage)<60&&!covered.includes(String(s.label||'').toLowerCase())}).sort(function(a,b){return Number(a.percentage)-Number(b.percentage)})).forEach(function(s){priorities.push({signal:s.label,issue:(s.evidence||[]).filter(Boolean).slice(0,2).join(' ')||'The scan returned limited supporting evidence for this signal.',score:s.percentage,_derived:true})});
+ priorities.sort(function(a,b){var av=Number(a.score),bv=Number(b.score);return (Number.isFinite(av)?av:101)-(Number.isFinite(bv)?bv:101)});
+ // Fill the list from the six assessed signals so the report consistently shows four observations.
+ signals.slice().sort(function(a,b){return Number(a.percentage||0)-Number(b.percentage||0)}).forEach(function(s){
+   if(priorities.length>=4)return;
+   if(priorities.some(function(p){return String(p.signal||'').toLowerCase()===String(s.label||'').toLowerCase()}))return;
+   priorities.push({signal:s.label,issue:(s.evidence||[]).filter(Boolean).slice(0,2).join(' ')||'The scan returned limited specific evidence for this signal; verify it before drawing conclusions.',score:s.percentage,_derived:true});
+ });
+ priorities=priorities.slice(0,4);
+ priorities.forEach(function(p,i){
+   var score=Number(p.score);var color=score<40?'#ef4444':score<60?'#f97316':score<80?'#a3e635':'#22c55e';
+   var evidenceObservation=p.issue||'The scan returned limited specific evidence for this signal; confirm the finding during the review.';
+   var signalName=String(p.signal||'').toLowerCase();
+   var finding='Could a customer understand why your business is the right choice?';
+   if(signalName.indexOf('entity clarity')>=0){finding='Could a customer leave without realising you handle their type of industry job?';}
+   else if(signalName.indexOf('knowledge completeness')>=0){finding='Can a customer quickly confirm you handle their exact problem and cover their area?';}
+   else if(signalName.indexOf('trust evidence')>=0){finding='Would a customer find enough convincing proof to trust you with the job?';}
+   else if(signalName.indexOf('technical accessibility')>=0){finding='Could important information about your services be difficult for search and AI systems to access or interpret?';}
+   else if(signalName.indexOf('narrative consistency')>=0){finding='Could mixed messages make customers question what your business stands for?';}
+   else if(signalName.indexOf('external validation')>=0){finding='Can customers verify your reputation beyond what you say about your own business?';}
+   var customerMeaning='A customer comparing businesses may not find enough clear, reassuring information to answer the question: “Can this company safely and reliably solve my problem?”';
+   var businessMeaning='When this uncertainty appears at the point a customer is deciding who to contact, a suitable job may never turn into an enquiry. This scan cannot confirm that a specific enquiry has been lost.';
+   var commercialGap='A potential gap exists between a customer noticing your business and feeling confident enough to call. A clearer, better-evidenced competitor may be easier to shortlist.';
+   if(signalName.indexOf('entity clarity')>=0){
+     customerMeaning='A customer may land on your website and still have to work out whether you handle their type of roof, the job they need and their area. If that is not obvious quickly, they may keep looking.';
+     commercialGap='The gap is the suitable customer who leaves before recognising you as a good fit—and contacts a business whose services and coverage are easier to understand.';
+     businessMeaning='You could be attracting attention without converting enough of the right visitors into enquiries. The scan identifies a clarity risk, not proof that enquiries have been lost.';
+   }else if(signalName.indexOf('knowledge completeness')>=0){
+     customerMeaning='A customer with a specific needing roof or urgent repair needs to know whether you handle that problem, work in their area and have relevant experience. Missing answers can leave them unsure whether to contact you.';
+     commercialGap='Every unanswered practical question adds friction before the first call. A competitor who explains services, coverage and process more completely may make the decision easier.';
+     businessMeaning='Potentially suitable jobs may be overlooked because the customer cannot quickly match their need to your services. This is an opportunity to remove uncertainty, not a measured loss.';
+   }else if(signalName.indexOf('trust evidence')>=0){
+     customerMeaning='Hiring a business means letting someone work on a valuable part of the home. If recent reviews, real project examples, guarantees or credentials are difficult to verify, the customer has less reassurance before making contact.';
+     commercialGap='The potential gap is a customer who likes what you offer but chooses a business whose quality and reliability are easier to check.';
+     businessMeaning='Your service may be capable of meeting the job, but weak or hard-to-find proof can make it harder to earn the first conversation and compete confidently.';
+   }else if(signalName.indexOf('technical accessibility')>=0){
+     customerMeaning='The website may contain useful information, but if important pages are difficult for search engines or AI systems to access or interpret, that information may not be represented reliably when a customer searches.';
+     commercialGap='The potential gap is relevant discovery: a customer looking for your type of work may not encounter or understand your business as readily as they could.';
+     businessMeaning='Useful services and evidence could be less discoverable than intended. This scan does not establish whether a search engine or AI platform has actually missed or excluded the business.';
+   }else if(signalName.indexOf('narrative consistency')>=0){
+     customerMeaning='If your service descriptions, business details or claims differ across pages or listings, a customer may wonder which information is current and whether they are looking at the right company.';
+     commercialGap='The potential gap is confidence at the comparison stage: even small inconsistencies can make another business with a clearer, more consistent profile feel like the safer choice.';
+     businessMeaning='Mixed messages can weaken the credibility of otherwise good work and make it harder for customers to confirm the basics before calling.';
+   }else if(signalName.indexOf('external validation')>=0){
+     customerMeaning='Your website can say you do good work, but customers may look for independent reassurance in reviews, recognised listings, industry memberships or other credible third-party sources. If those signals are scarce or hard to verify, doubt remains.';
+     commercialGap='The potential gap is the customer who wants a second source of reassurance before contacting you and finds stronger independent evidence for another business.';
+     businessMeaning='Your own claims may have to do all the convincing. More visible, credible third-party evidence could help support trust before a sales conversation begins.';
+   }
+   var redFinding=score<40;
+   ph+='<article class="flex items-start gap-3 rounded-xl border '+(redFinding?'border-red-500/50':'border-zinc-700')+' bg-zinc-950 p-4"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-extrabold" style="background:'+color+';color:#18181b">'+(i+1)+'</span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-center justify-between gap-2"><h4 class="font-bold text-white">'+esc(p.signal||'Trust Signal finding')+'</h4><span class="text-xs font-bold" style="color:'+color+'">'+(Number.isFinite(score)?score+'/100':'Score unavailable')+'</span></div><p class="mt-2 text-sm font-semibold leading-relaxed text-white">'+esc(finding)+'</p><div class="mt-4 rounded-lg border border-red-500/30 bg-red-950/30 p-3"><p class="text-sm leading-relaxed text-red-300">'+esc(customerMeaning)+'</p></div><p class="mt-4 text-xs font-extrabold uppercase tracking-wide text-yellow-300">Potential commercial gap</p><p class="mt-1 text-sm leading-relaxed text-zinc-200">'+esc(commercialGap)+'</p><p class="mt-4 text-xs font-extrabold uppercase tracking-wide text-yellow-300">What this could mean for your business</p><p class="mt-1 text-sm leading-relaxed text-zinc-300">'+esc(businessMeaning)+'</p></div></article>';
+ });
+ document.getElementById('prr').innerHTML=ph||'<p class="text-sm text-zinc-300">The scan did not return enough specific evidence to list reliable findings. Review the detailed analysis and confirm any limitations before drawing conclusions.</p>';
+ document.getElementById('ld').classList.add('hidden');document.getElementById('scanner-hero').classList.remove('is-scanning');document.getElementById('rc').classList.remove('hidden');setTimeout(function(){document.getElementById('rc').scrollIntoView({behavior:'smooth',block:'start'})},200);
+}catch(err){if(typeof scanStageTimer!=='undefined')clearInterval(scanStageTimer);document.getElementById('ls').textContent='The scan could not be completed: '+(err&&err.message?err.message:'Please try again.');setTimeout(function(){document.getElementById('ld').classList.add('hidden');document.getElementById('scanner-hero').classList.remove('is-scanning');document.getElementById('sf').classList.remove('hidden');document.getElementById('sb').disabled=false},3500);}
+});
+
+function notifyEmbedHeight(){
+ if(!document.documentElement.classList.contains('embed-mode'))return;
+ var height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight);
+ window.parent.postMessage({type:'rbai-business-scanner-height',height:height},'*');
+}
+if(document.documentElement.classList.contains('embed-mode')){
+ window.addEventListener('load',notifyEmbedHeight);
+ window.addEventListener('resize',notifyEmbedHeight);
+ if('ResizeObserver' in window){new ResizeObserver(notifyEmbedHeight).observe(document.body);}
+}
+</script>
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  var industry=(params.get('industry')||'').toLowerCase();
+  var country=(params.get('country')||'UK').toUpperCase();
+  var profiles={
+    dental:{customer:'patient',customerPlural:'patients',sector:'dental practice',serviceExample:'treatments',currency:'GBP'},
+    healthcare:{customer:'patient',customerPlural:'patients',sector:'healthcare practice',serviceExample:'care services',currency:'GBP'},
+    legal:{customer:'client',customerPlural:'clients',sector:'law firm',serviceExample:'legal services',currency:'GBP'},
+    home_services:{customer:'customer',customerPlural:'customers',sector:'home services business',serviceExample:'jobs and service areas',currency:'GBP'},
+    roofing:{customer:'homeowner',customerPlural:'homeowners',sector:'roofing business',serviceExample:'roofing jobs and service areas',currency:'GBP'},
+    hvac:{customer:'homeowner',customerPlural:'homeowners',sector:'HVAC business',serviceExample:'heating and cooling services',currency:'GBP'},
+    finance:{customer:'client',customerPlural:'clients',sector:'financial services business',serviceExample:'financial services',currency:'GBP'},
+    ecommerce:{customer:'shopper',customerPlural:'shoppers',sector:'online store',serviceExample:'products and delivery information',currency:'GBP'},
+    professional_services:{customer:'client',customerPlural:'clients',sector:'professional services business',serviceExample:'services and specialisms',currency:'GBP'},
+    default:{customer:'customer',customerPlural:'customers',sector:'business',serviceExample:'services and locations',currency:'GBP'}
+  };
+  function inferIndustry(host){
+    var h=(host||'').toLowerCase();
+    if(/dent|dental|smile|orthodont/.test(h))return 'dental';
+    if(/roof|roofer/.test(h))return 'roofing';
+    if(/hvac|heating|cooling|plumb|electrician|builder|landscap|locksmith/.test(h))return 'home_services';
+    if(/law|solicitor|legal/.test(h))return 'legal';
+    if(/clinic|medical|health|physio|chiro/.test(h))return 'healthcare';
+    if(/account|finance|mortgage|wealth|insurance/.test(h))return 'finance';
+    if(/shop|store|boutique|market/.test(h))return 'ecommerce';
+    return 'professional_services';
+  }
+  var host=(params.get('website')||'').replace(/^https?:\\/\\//,'').split('/')[0];
+  if(!industry||industry==='auto')industry=inferIndustry(host);
+  var p=profiles[industry]||profiles.default;
+  window.RBAI_INDUSTRY_PROFILE={industry:industry,country:country,customer:p.customer,customerPlural:p.customerPlural,sector:p.sector,serviceExample:p.serviceExample,currency:country==='US'?'USD':country==='CA'?'CAD':country==='AU'?'AUD':'GBP'};
+  document.documentElement.dataset.industry=industry;
+  document.documentElement.dataset.country=country;
+  var oldTitle=document.querySelector('.scan-hero-title');
+  if(oldTitle)oldTitle.innerHTML='Industry-Aware <span class="text-amber-400">Trust Signals Scanner</span>';
+  var intro=document.querySelector('.scan-hero-intro');
+  if(intro)intro.textContent='Assess the evidence behind your website’s six Trust Signals, with the report tailored to your industry and market.';
+  var reportTitle=document.querySelector('#report h2');
+  if(reportTitle)reportTitle.textContent='Industry-Aware Trust Signals Assessment';
+  window.addEventListener('load',function(){
+    var input=document.querySelector('input[type=url],input[name=website],#website');
+    if(input&&host&&!input.value)input.value=(host.indexOf('.')>=0?'https://':'https://')+host;
+  });
+})();
+</script>
+</body></html>
